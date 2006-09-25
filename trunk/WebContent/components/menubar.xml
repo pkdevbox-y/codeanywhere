@@ -1,19 +1,165 @@
-<div dojoType="PopupMenu2" widgetId="submenu1" contextMenuForWindow="true">
-	<div dojoType="MenuItem2" caption="Enabled Item" onClick="alert('Hello world');"></div>
-	<div dojoType="MenuItem2" caption="Disabled Item" disabled="true"></div>
+<div dojoType="PopupMenu2" widgetId="submenu_File" contextMenuForWindow="true">
+	
+	<div dojoType="MenuItem2" caption="New" submenuId="submenu_File_New"></div>
+	<div dojoType="MenuItem2" caption="Open File..." onClick="alert('Hello world');"></div>
 	<div dojoType="MenuSeparator2"></div>
-	<div dojoType="MenuItem2" caption="Enabled Submenu" submenuId="submenu2"></div>
-	<div dojoType="MenuItem2" caption="Disabled Submenu" submenuId="submenu2" disabled="true"></div>
+	
+	<div dojoType="MenuItem2" caption="Close"></div>
+	<div dojoType="MenuItem2" caption="Close All"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Save" iconSrc="icon/save.gif"></div>
+	<div dojoType="MenuItem2" caption="Save As..."></div>
+	<div dojoType="MenuItem2" caption="Save All"></div>
+	<div dojoType="MenuItem2" caption="Revert"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Move..."></div>
+	<div dojoType="MenuItem2" caption="Rename..."></div>
+	<div dojoType="MenuItem2" caption="Refresh"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Properties..."></div>
+	<div dojoType="MenuItem2" caption="Exit"></div>
+	
 </div>
 
-<div dojoType="PopupMenu2" widgetId="submenu2">
-	<div dojoType="MenuItem2" caption="Submenu Item One" onClick="document.getElementById('codeframe1').contentWindow.document.designMode = 'on';"></div>
-	<div dojoType="MenuItem2" caption="Submenu Item Two" onClick="alert(document.getElementById('codeframe1').contentWindow.document.designMode)"></div>
+<div dojoType="PopupMenu2" widgetId="submenu_File_New">
+	<div dojoType="MenuItem2" caption="Project"></div>
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Edit">
+
+	<div dojoType="MenuItem2" caption="Undo" iconSrc="icon/undo.gif"></div>
+	<div dojoType="MenuItem2" caption="Redo" iconSrc="icon/redo.gif"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Cut"></div>
+	<div dojoType="MenuItem2" caption="Copy"></div>
+	<div dojoType="MenuItem2" caption="Paste"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Delete" iconSrc="icon/delete.gif"></div>
+	<div dojoType="MenuItem2" caption="Select All"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Find/Replace..."></div>
+	<div dojoType="MenuItem2" caption="Find Next"></div>
+	<div dojoType="MenuItem2" caption="Find Previous"></div>
+	<div dojoType="MenuItem2" caption="Incremental Find Next"></div>
+	<div dojoType="MenuItem2" caption="Incremental Find Previous"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Word Completion"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Set Encoding..."></div>
+	
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Source">
+
+	<div dojoType="MenuItem2" caption="Toggle Comment"></div>
+	<div dojoType="MenuItem2" caption="Add Block Comment"></div>
+	<div dojoType="MenuItem2" caption="Remove Block Comment"></div>
+	<div dojoType="MenuItem2" caption="Generate Element Comment"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Correct Indentation"></div>
+	<div dojoType="MenuItem2" caption="Format"></div>
+	<div dojoType="MenuItem2" caption="Element Format"></div>
+	
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Refactor">
+
+	<div dojoType="MenuItem2" caption="Rename..."></div>
+	<div dojoType="MenuItem2" caption="Move"></div>
+
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Search">
+
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Project">
+
+	<div dojoType="MenuItem2" caption="Generate Javadoc..."></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Properties"></div>
+	
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Run">
+
+	<div dojoType="MenuItem2" caption="Add Debug"></div>
+	<div dojoType="MenuItem2" caption="Resume" disabled="true"></div>
+	<div dojoType="MenuItem2" caption="Suspend" disabled="true"></div>
+	<div dojoType="MenuItem2" caption="Terminate" disabled="true" iconSrc="icon/stop.gif"></div>
+	<div dojoType="MenuItem2" caption="Step Into" disabled="true"></div>
+	<div dojoType="MenuItem2" caption="Step Over" disabled="true"></div>
+	<div dojoType="MenuItem2" caption="Step Return" disabled="true"></div>
+	<div dojoType="MenuItem2" caption="Run to line" disabled="true"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Run Last Launched"></div>
+	<div dojoType="MenuItem2" caption="Debug Last Launched"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Run History"></div>
+	<div dojoType="MenuItem2" caption="Run As"></div>
+	<div dojoType="MenuItem2" caption="Run..."></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Debug History"></div>
+	<div dojoType="MenuItem2" caption="Debug As"></div>
+	<div dojoType="MenuItem2" caption="Debug..."></div>
+
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Window">
+	
+	<div dojoType="MenuItem2" caption="Show View" submenuId="submenu_Window_ShowView"></div>
+	<div dojoType="MenuSeparator2"></div>
+	
+	<div dojoType="MenuItem2" caption="Preferences..."></div>
+	
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Window_ShowView">
+
+	<div dojoType="MenuItem2" caption="Console"></div>
+	<div dojoType="MenuItem2" caption="Problems"></div>
+	<div dojoType="MenuItem2" caption="Servers"></div>
+	
+</div>
+
+
+<div dojoType="PopupMenu2" widgetId="submenu_Help">
+	
+	<div dojoType="MenuItem2" caption="Help"></div>
+	<div dojoType="MenuItem2" caption="Wiki"></div>
+	<div dojoType="MenuItem2" caption="About codeAnywhere"></div>
+
 </div>
 
 <div dojoType="MenuBar2">
-	<div dojoType="MenuBarItem2" caption="File" submenuId="submenu1"></div>
-	<div dojoType="MenuBarItem2" caption="Edit" submenuId="submenu2"></div>
-	<div dojoType="MenuBarItem2" caption="View" disabled="true"></div>
-	<div dojoType="MenuBarItem2" caption="Help" submenuId="submenu2"></div>
+	<div dojoType="MenuBarItem2" caption="File" submenuId="submenu_File"></div>
+	<div dojoType="MenuBarItem2" caption="Edit" submenuId="submenu_Edit"></div>
+	<div dojoType="MenuBarItem2" caption="Source" submenuId="submenu_Source"></div>
+	<div dojoType="MenuBarItem2" caption="Refactor" submenuId="submenu_Refactor"></div>
+	<div dojoType="MenuBarItem2" caption="Search" submenuId="submenu_Search"></div>
+	<div dojoType="MenuBarItem2" caption="Project" submenuId="submenu_Project"></div>
+	<div dojoType="MenuBarItem2" caption="Run" submenuId="submenu_Run"></div>
+	<div dojoType="MenuBarItem2" caption="Window" submenuId="submenu_Window"></div>
+	<div dojoType="MenuBarItem2" caption="Help" submenuId="submenu_Help"></div>
 </div>
