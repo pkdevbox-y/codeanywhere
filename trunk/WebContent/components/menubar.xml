@@ -8,7 +8,7 @@
 	<div dojoType="MenuItem2" caption="Close All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Save" iconSrc="icon/save.gif"></div>
+	<div dojoType="MenuItem2" caption="Save" iconSrc="icons/save.gif"></div>
 	<div dojoType="MenuItem2" caption="Save As..."></div>
 	<div dojoType="MenuItem2" caption="Save All"></div>
 	<div dojoType="MenuItem2" caption="Revert"></div>
@@ -31,8 +31,8 @@
 
 <div dojoType="PopupMenu2" widgetId="submenu_Edit">
 
-	<div dojoType="MenuItem2" caption="Undo" iconSrc="icon/undo.gif"></div>
-	<div dojoType="MenuItem2" caption="Redo" iconSrc="icon/redo.gif"></div>
+	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif"></div>
+	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Cut"></div>
@@ -40,7 +40,7 @@
 	<div dojoType="MenuItem2" caption="Paste"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Delete" iconSrc="icon/delete.gif"></div>
+	<div dojoType="MenuItem2" caption="Delete" iconSrc="icons/delete.gif"></div>
 	<div dojoType="MenuItem2" caption="Select All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
@@ -102,7 +102,7 @@
 	<div dojoType="MenuItem2" caption="Add Debug"></div>
 	<div dojoType="MenuItem2" caption="Resume" disabled="true"></div>
 	<div dojoType="MenuItem2" caption="Suspend" disabled="true"></div>
-	<div dojoType="MenuItem2" caption="Terminate" disabled="true" iconSrc="icon/stop.gif"></div>
+	<div dojoType="MenuItem2" caption="Terminate" disabled="true" iconSrc="icons/stop.gif"></div>
 	<div dojoType="MenuItem2" caption="Step Into" disabled="true"></div>
 	<div dojoType="MenuItem2" caption="Step Over" disabled="true"></div>
 	<div dojoType="MenuItem2" caption="Step Return" disabled="true"></div>
