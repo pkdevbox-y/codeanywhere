@@ -1,0 +1,79 @@
+div.border {
+	border: solid 1px #3169B5;
+}
+
+div.noborder {
+	border: solid 0px #3169B5;
+}
+
+div.container{
+	width: 100%;
+	height: 100%;
+}
+
+div.innercontainer {
+	width: 100%;
+	height: 88%;
+}
+
+div.window {
+	position: absolute;
+	width: 98%;
+	height: 98%;
+	margin: 4px;
+	padding: 0px;
+}
+
+div.titlebar {
+	font-size: 11pt;
+	font-weight: bold;
+	background-color: #3169B5;
+	background-image: url(../images/bg_img.png);
+	background-repeat: repeat-x;
+	background-position: center;
+	color: #FFFFFF;
+	height: 23px;
+	padding: 0;
+}
+
+div.menubar {
+	height: 29px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+div.toolbar {
+	height: 29px;
+	margin: 0 0 4px 0;
+	padding: 0px;
+}
+
+div.navigator {
+	width: 160px;
+	height: 88%;
+	margin: 4px;
+	float: left;
+}
+
+div.codearea {
+	margin: 4px;
+	float: right;
+}
+
+iframe.codeframe {
+	border: solid 0px red;
+	width: 100%;
+	height: 100%;	
+}
+
+div.console {
+	margin: 4px;
+	float: right;
+}
+
+div.consoletest {
+	width: 400px;
+	height: 300px;
+	overflow: auto;
+}

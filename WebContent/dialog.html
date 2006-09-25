@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>dialog test</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/dialog.css"/>
+
+<script type="text/javascript" src="scripts/dojo.js"></script>
+<script type="text/javascript">
+	dojo.require("dojo.dnd.HtmlDragMove");
+	dojo.require("dojo.event.*");
+
+	function byId(id){
+		return document.getElementById(id);
+	}
+
+	function init(){
+		new dojo.dnd.HtmlDragMoveSource(byId("dialog"));
+	}
+
+	dojo.event.connect(dojo, "loaded", "init");
+</script>
+</head>
+<body>
+<div class="mengban translucent"></div>
+<div id="dialog" class="dialog">
+	<div class="titlebar">
+		<div class="button close"></div>
+		<div class="button min"></div>
+	</div>
+</div>
+</body>
+</html>

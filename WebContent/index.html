@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>codeAnywhere beta</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/dialog.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/window.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
+<script language="javascript" type="text/javascript" src="scripts/dojo.js">
+</script>
+<script language="javascript" type="text/javascript" src="scripts/ajax.js">
+</script>
+<script language="javascript" type="text/javascript" src="scripts/component.js">
+</script>
+<script language="javascript" type="text/javascript">
+	dojo.require("dojo.io.*");
+	dojo.require("dojo.widget.SplitContainer");
+	dojo.require("dojo.widget.ContentPane");
+	dojo.require("dojo.widget.TabContainer");
+	dojo.require("dojo.widget.LinkPane");
+	dojo.require("dojo.widget.Toolbar");
+	dojo.require("dojo.widget.Menu2");
+	dojo.require("dojo.dnd.HtmlDragMove");
+	dojo.require("dojo.event.*");
+	dojo.hostenv.writeIncludes();
+
+	function byId(id){
+		return document.getElementById(id);
+	}
+
+	function init(){
+		new dojo.dnd.HtmlDragMoveSource(byId("dialog"));
+	}
+
+	dojo.event.connect(dojo, "loaded", "init");
+</script>
+
+</head>
+
+<body>
+<div class="mengban translucent"></div>
+<div id="dialog" class="dialog">
+	<div class="titlebar">
+		<div class="button close"></div>
+		<div class="button min"></div>
+	</div>
+</div>
+
+<div id="window" class="border window">
+	<div id="titlebar" class="noborder titlebar"><div class="titletext">codeAnyehere - Untitled</div><div class="button close"></div></div>
+	<div id="menubar" class="noborder menubar" src="components/menubar.xml">
+	</div>
+	
+	<div id="toolbar" class="noborder toolbar" src="components/toolbar.xml">
+	</div>
+	
+	<div dojoType="SplitContainer"
+		orientation="horizontal"
+		sizerWidth="5"
+		activeSizing="0"
+		class="innercontainer noborder">
+		
+		<div id="navigator" class="noborder navigator" src="components/navigator.xml" dojoType="ContentPane" sizeShare="20">
+		</div>
+		
+		<div dojoType="SplitContainer"
+			orientation="vertical"
+			sizerWidth="5"
+			activeSizing="0"
+			sizeShare="60"
+			class="innercontainer noborder">
+			
+			<div id="codearea" class="border codearea" src="components/codearea.xml" dojoType="ContentPane" sizeShare="50">
+				<iframe id="codeframe" class="codeframe"></iframe>			
+			</div>
+			<div id="console" class="border console" src="components/console.xml" dojoType="ContentPane" sizeShare="50">
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+</body>
+<script language="javascript" type="text/javascript">
+	initComponent("menubar");
+	initComponent("toolbar");
+	initComponent("navigator");
+	
+	var d = document.getElementById("codeframe").contentWindow.document;
+	d.designMode = "On";
+	d.open();
+	d.write("<html><head><title>IFrame</title></head><body>Hello</doby></html>");
+	d.close();
+	
+</script>
+</html>

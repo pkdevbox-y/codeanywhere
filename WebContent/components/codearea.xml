@@ -1,0 +1,14 @@
+<div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1" closeButton="tab">
+	
+	<div id="tab1" dojoType="ContentPane" label="File 1">
+		<div id="codeframe1" dojoType="Editor" class="codeframe">
+		</div>
+	</div>
+	
+	<div id="tab2" dojoType="ContentPane" label="File 2">
+		<div id="codeframe2" dojoType="Editor" class="codeframe">
+		</div>
+	</div>	
+			
+</div>
+

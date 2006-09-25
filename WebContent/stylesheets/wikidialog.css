@@ -1,0 +1,28 @@
+div.wiki {
+	width: 600px;
+	height: 450px;
+}
+
+div.search {
+	width: 128px;
+	margin: 4px;
+	padding: 2px;
+	float: left;
+}
+
+input.searchtext {
+	border: solid 1px #3169B5;
+	width: 128px;
+}
+
+div.index {
+	height: 85%;
+}
+
+div.result {
+	width: 440px;
+	height: 90%;
+	margin: 4px;
+	padding: 2px;
+	float: right;
+}
