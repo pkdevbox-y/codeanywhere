@@ -1,7 +1,7 @@
 <div dojoType="PopupMenu2" widgetId="submenu_File" contextMenuForWindow="true">
 	
-	<div dojoType="MenuItem2" caption="New" submenuId="submenu_File_New"></div>
-	<div dojoType="MenuItem2" caption="Open File..." onClick="alert('Hello world');"></div>
+	<div dojoType="MenuItem2" caption="New" iconSrc="icons/new.gif" submenuId="submenu_File_New"></div>
+	<div dojoType="MenuItem2" caption="Open File..." iconSrc="icons/openFolder.gif" onClick="alert('Hello world');"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Close"></div>
@@ -16,7 +16,7 @@
 	
 	<div dojoType="MenuItem2" caption="Move..."></div>
 	<div dojoType="MenuItem2" caption="Rename..."></div>
-	<div dojoType="MenuItem2" caption="Refresh"></div>
+	<div dojoType="MenuItem2" caption="Refresh" iconSrc="icons/refresh.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Properties..."></div>
@@ -35,16 +35,16 @@
 	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Cut"></div>
-	<div dojoType="MenuItem2" caption="Copy"></div>
-	<div dojoType="MenuItem2" caption="Paste"></div>
+	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif"></div>
+	<div dojoType="MenuItem2" caption="Copy" iconSrc="icons/copy.gif"></div>
+	<div dojoType="MenuItem2" caption="Paste" iconSrc="icons/paste.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Delete" iconSrc="icons/delete.gif"></div>
 	<div dojoType="MenuItem2" caption="Select All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Find/Replace..."></div>
+	<div dojoType="MenuItem2" caption="Find/Replace..." iconSrc="icons/find.gif"></div>
 	<div dojoType="MenuItem2" caption="Find Next"></div>
 	<div dojoType="MenuItem2" caption="Find Previous"></div>
 	<div dojoType="MenuItem2" caption="Incremental Find Next"></div>
@@ -115,7 +115,7 @@
 	
 	<div dojoType="MenuItem2" caption="Run History"></div>
 	<div dojoType="MenuItem2" caption="Run As"></div>
-	<div dojoType="MenuItem2" caption="Run..."></div>
+	<div dojoType="MenuItem2" caption="Run..." iconSrc="icons/run.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Debug History"></div>
