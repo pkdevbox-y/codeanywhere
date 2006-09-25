@@ -1,0 +1,16 @@
+div.splitbar {
+	position: relative;
+	border: solid 1px red;
+	width: 8px;
+	height: 100px;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+}
+
+div.common {
+	border: solid 1px #3169B5;
+	width: 100px;
+	height: 100px;
+	float: left;
+}

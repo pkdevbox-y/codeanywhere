@@ -1,0 +1,48 @@
+div.border {
+	border: solid 1px #3169B5;
+}
+
+div.noborder {
+	border: solid 0px #3169B5;
+}
+
+body {
+	font-family: courier new, courier, monospace;
+	font-size: 9pt;
+}
+
+div.mengban {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #DADADA;
+	width: 100%;
+	height: 100%;
+	z-index: 15;	
+}
+
+div.translucent {
+	filter: alpha(opacity=75); /*IE*/
+	-moz-opacity: 0.75; /*FF*/
+	opacity: 0.75;
+}
+
+div.titletext {
+	float: left;
+}
+
+div.warn {
+	color: #FF0000;
+}
+
+div.debug {
+	color; #000000;
+}
+
+div.info {
+	color: #0066A9;
+}
+
+div.message {
+	color: #3169B5;
+}

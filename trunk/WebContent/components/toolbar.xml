@@ -1,0 +1,31 @@
+<div id="toolbarContainer" dojoType="ToolbarContainer" >
+	<div dojoType="toolbar">
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/cut.gif"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/copy.gif"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/paste.gif"/>
+		<span dojoType="ToolbarSeparator"></span>
+
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/bold.gif" toggleItem="true"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/italic.gif" toggleItem="true"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/underline.gif" toggleItem="true"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/strikethrough.gif" toggleItem="true"/>
+
+		<span dojoType="ToolbarSeparator"></span>
+
+		<span dojoType="ToolbarButtonGroup" name="justify" defaultButton="justifyleft" preventDeselect="true">
+
+			<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/justifyleft.gif" toggleItem="true" name="justifyleft"/>
+			<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/justifycenter.gif" toggleItem="true" name="justifycenter"/>
+			<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/justifyright.gif" toggleItem="true" name="justifyright"/>
+               <img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/justifyfull.gif" toggleItem="true" name="justifyfull"/>
+		</span>
+
+		<span dojoType="ToolbarSeparator"></span>
+
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/insertorderedlist.gif"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/insertunorderedlist.gif"/>
+
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/indent.gif"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/outdent.gif"/>
+	</div>
+</div>

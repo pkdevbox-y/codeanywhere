@@ -1,0 +1,19 @@
+<div dojoType="PopupMenu2" widgetId="submenu1" contextMenuForWindow="true">
+	<div dojoType="MenuItem2" caption="Enabled Item" onClick="alert('Hello world');"></div>
+	<div dojoType="MenuItem2" caption="Disabled Item" disabled="true"></div>
+	<div dojoType="MenuSeparator2"></div>
+	<div dojoType="MenuItem2" caption="Enabled Submenu" submenuId="submenu2"></div>
+	<div dojoType="MenuItem2" caption="Disabled Submenu" submenuId="submenu2" disabled="true"></div>
+</div>
+
+<div dojoType="PopupMenu2" widgetId="submenu2">
+	<div dojoType="MenuItem2" caption="Submenu Item One" onClick="document.getElementById('codeframe1').contentWindow.document.designMode = 'on';"></div>
+	<div dojoType="MenuItem2" caption="Submenu Item Two" onClick="alert(document.getElementById('codeframe1').contentWindow.document.designMode)"></div>
+</div>
+
+<div dojoType="MenuBar2">
+	<div dojoType="MenuBarItem2" caption="File" submenuId="submenu1"></div>
+	<div dojoType="MenuBarItem2" caption="Edit" submenuId="submenu2"></div>
+	<div dojoType="MenuBarItem2" caption="View" disabled="true"></div>
+	<div dojoType="MenuBarItem2" caption="Help" submenuId="submenu2"></div>
+</div>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>console test</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/window.css"/>
+
+<script type="text/javascript" src="scripts/console.js"></script>
+</head>
+<body>
+<div class="border consoletest" id="consoletest"></div>
+</div>
+</body>
+<script type="text/javascript">
+var c = new Console("consoletest");
+c.write(WARN, "This is from console.");
+c.write(DEBUG, "This is from console.");
+c.write(INFO, "This is from console.");
+c.write(MESSAGE, "This is from console.");
+c.write(8, "Missing Type");
+</script>
+</html>
