@@ -86,7 +86,7 @@
 
 
 <div dojoType="PopupMenu2" widgetId="submenu_Search">
-
+	<div dojoType="MenuItem2" caption="Search..." iconSrc="icons/search.gif"></div>
 </div>
 
 
@@ -112,7 +112,7 @@
 	<div dojoType="MenuItem2" caption="Run to line" disabled="true"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Run Last Launched"></div>
+	<div dojoType="MenuItem2" caption="Run Last Launched" iconSrc="icons/relaunch.gif"></div>
 	<div dojoType="MenuItem2" caption="Debug Last Launched"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
