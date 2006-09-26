@@ -1,3 +1,9 @@
+/**
+ * The function sendRequest(url, parseMethod, sender, params, httpMethod)
+ * author: Biao Zhang
+ * date: 2006-8-X
+ */
+
 var READY_STATE_UNINITIALIZED = 0;
 var READY_STATE_LOADING = 1;
 var READY_STATE_LOADED = 2;

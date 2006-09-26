@@ -1,7 +1,8 @@
 /*
  * provides a Console class
- * 2006-9-24 Biao Zhang
-  */ 
+ * author: Biao Zhang
+ * date: 2006-9-24
+ */ 
 var WARN = 0;
 var DEBUG = 1;
 var INFO = 2;

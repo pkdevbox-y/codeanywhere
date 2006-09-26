@@ -30,12 +30,6 @@ function fillCodeArea(content, codeArea) {
 	fillComponent(content, codeArea);
 	var frames = codeArea.getElementsByTagName("iframe");
 	for (var i = 0; i < frames.length; i++) {
-		frames[i].contentWindow.mousedown = function() {
-			var d = this.contentWindow.document;
-			if (d.designMode == "off") {
-				d.designMode = "on";			
-			}
-		};
 		var doc = frames[i].contentWindow.document;;
 		doc.designMode = "on";
 	}
