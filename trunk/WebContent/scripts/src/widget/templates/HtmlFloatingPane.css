@@ -21,6 +21,13 @@
 	margin: 2px 2px 2px 2px;
 	z-index: 10;
 	background-color: #7596c6;
+	
+	/* added by Biao Zhang */
+	background-image: url(../../../../images/bg_img.png);
+	background-repeat: repeat-x;
+	background-position: center;
+	/* 2006-9-26 */
+	
 	cursor: default;
 	overflow: hidden;
 	border-color: ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;
@@ -78,20 +85,33 @@
 .dojoFloatingPaneCloseIcon {
 	vertical-align: middle;
 	height: 22px;
-	width: 22px;
+	
+	width: 24px;
+	/* width: 22px; */
+	
 	float: right;
+	
+	/* added by Biao Zhang */
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 1px;
+	/* 2006-9-26 */
 }
 .dojoFloatingPaneMinimizeIcon {
-	background-image: url(images/floatingPaneMinimize.gif);
+	background-image: url(../../../../images/min_common.png);
+	/* background-image: url(images/floatingPaneMinimize.gif); */
 }
 .dojoFloatingPaneMaximizeIcon {
-	background-image: url(images/floatingPaneMaximize.gif);
+	background-image: url(../../../../images/max_common.png);
+	/* background-image: url(images/floatingPaneMaximize.gif); */
 }
 .dojoFloatingPaneRestoreIcon {
-	background-image: url(images/floatingPaneRestore.gif);
+	background-image: url(../../../../images/restore_common.png);
+	/* background-image: url(images/floatingPaneRestore.gif);*/
 }
 .dojoFloatingPaneCloseIcon {
-	background-image: url(images/floatingPaneClose.gif);
+	background-image: url(../../../../images/close_common.png);
+	/* background-image: url(images/floatingPaneClose.gif); */
 }
 
 /* bar at bottom of window that holds resize handle */
