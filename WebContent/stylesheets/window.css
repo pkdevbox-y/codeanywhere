@@ -31,15 +31,21 @@ div.window {
 }
 
 div.titlebar {
-	font-size: 11pt;
-	font-weight: bold;
 	background-color: #3169B5;
 	background-image: url(../images/bg_img.png);
 	background-repeat: repeat-x;
-	background-position: center;
+	background-position: center;	
+	vertical-align: middle;
 	color: #FFFFFF;
 	height: 23px;
 	padding: 0;
+}
+
+div.titlebartext {
+	float: left;
+	font-size: 11pt;
+	font-weight: bold;
+	padding: 2px 4px 2px 2px;
 }
 
 div.menubar {

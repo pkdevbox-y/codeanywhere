@@ -32,10 +32,6 @@ div.translucent {
 	opacity: 0.75;
 }
 
-div.titletext {
-	float: left;
-}
-
 div.warn {
 	color: #FF0000;
 }
