@@ -268,7 +268,6 @@ dojo.lang.extend(dojo.widget.TreeBasicController, {
 		if (!this.canCreateChild(parent, index, data)) {
 			return false;
 		}
-
 		return this.doCreateChild.apply(this, arguments);
 	},
 
