@@ -1,7 +1,7 @@
 <div dojoType="PopupMenu2" widgetId="submenu_File" contextMenuForWindow="true">
 	
 	<div dojoType="MenuItem2" caption="New" iconSrc="icons/new.gif" submenuId="submenu_File_New"></div>
-	<div dojoType="MenuItem2" caption="Open File..." iconSrc="icons/openFolder.gif" onClick="alert('Hello world');"></div>
+	<div dojoType="MenuItem2" caption="Open File..." iconSrc="icons/openFolder.gif" onClick="OnFileOpen();"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Close"></div>

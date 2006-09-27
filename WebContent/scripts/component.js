@@ -1,5 +1,13 @@
-function initComponent(componentId) {
+/**
+ * Initializer of the web component
+ * Navigatro, Menubar, Toolbar, Codearea, Console
+ */
+function initComponentById(componentId) {
 	var component = document.getElementById(componentId);
+	initComponent(component);
+}
+
+function initComponent(component) {
 	if (component == null) return false;
 	var path = component.getAttribute("src");
 	/*dojo.io.bind({
@@ -9,10 +17,11 @@ function initComponent(componentId) {
 		},
 		mimetype: "text/plain"
 	});*/
-	sendRequest(path, fillComponent, component);
+	sendRequest(path, fillComponent, component);	
 }
 
 function fillComponent(content, component) {
+	alert(content.responseText);
 	component.innerHTML = content.responseText;
 }
 

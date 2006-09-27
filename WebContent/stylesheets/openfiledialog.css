@@ -1,0 +1,50 @@
+span.text {
+	position: absolute;
+	left: 5%;
+	float: left;
+}
+
+div.openfilecontent {
+	position: relative;
+	left: 5%;
+	width: 90%;
+	height: 70%;
+	background-color: #FFFFFF;
+	border: solid 1px #3169B5;
+	
+	margin: 0;
+}
+
+input.test {
+	position: absolute;
+	width: 70%;
+	left: 25%;
+	float: left;
+}
+
+div.wrapper {
+	position: relative;
+	height: 22px;
+	margin: 1px;
+	padding: 0;
+	color: blue;
+	border: solid 0px blue;
+}
+
+div.openfiledialog {
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	width: 480px;
+	height: 360px;
+	padding: 0;
+}
+
+div.openfile {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
