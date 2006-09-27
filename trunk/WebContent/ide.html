@@ -1,14 +1,18 @@
 <html>
 <head>
 <title>codeAnywhere beta</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/openfiledialog.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/window.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
+
 <script language="javascript" type="text/javascript" src="scripts/dojo.js">
 </script>
 <script language="javascript" type="text/javascript" src="scripts/ajax.js">
 </script>
 <script language="javascript" type="text/javascript" src="scripts/component.js">
+</script>
+<script language="javascript" type="text/javascript" src="scripts/file.js">
 </script>
 <script language="javascript" type="text/javascript">
 	dojo.require("dojo.io.*");
@@ -19,6 +23,15 @@
 	dojo.require("dojo.widget.Toolbar");
 	dojo.require("dojo.widget.Menu2");
 	dojo.require("dojo.widget.Editor");
+	
+	/* for dialogs */
+	dojo.require("dojo.widget.*");
+	dojo.require("dojo.widget.TaskBar");
+	dojo.require("dojo.widget.LayoutContainer");
+	dojo.require("dojo.widget.FloatingPane");
+	dojo.require("dojo.widget.ResizeHandle");
+	/* end */
+	
 	dojo.hostenv.writeIncludes();
 </script>
 
@@ -58,13 +71,15 @@
 	</div>
 	
 </div>
+
+<div id="openfile" class="openfile" src="components/openfiledialog.xml"></div>
 </body>
 <script language="javascript" type="text/javascript">
-	initComponent("menubar");
-	initComponent("toolbar");
-	initComponent("navigator");
-	initComponent("codearea");
-	
+	initComponentById("menubar");
+	initComponentById("toolbar");
+	initComponentById("navigator");
+	initComponentById("codearea");
+	initComponentById("openfile");
 	
 	//var ca = new CodeArea("codearea");
 	//ca.init();
