@@ -1,0 +1,24 @@
+	<div dojoType="FloatingPane"
+		id="openfiledialog"
+		title="Open File"
+		iconSrc="icons/openFolder.gif"
+		constrainToContainer="true"
+		hasShadow="true"
+		resizable="false" 
+		taskBarId="hiddentaskbar"
+		windowState="normal";
+		displayCloseAction="true";
+		displayMinimizeAction="false"
+		displayMaximizeAction="false"
+		toggle="explode"
+		class="openfiledialog"
+	>
+		<div class="wrapper"><span class="text">Look in: </span><input type="text" class="test"></input></div>
+		<div class="openfilecontent"></div>
+		<div class="wrapper"><span class="text">File name: </span><input type="text" class="test"></input></div><br/>
+		<div class="wrapper"><span class="text">Files of type: </span><input type="text" class="test"></input></div>
+	</div>
+
+	<div dojoType="TaskBar" id="hiddentaskbar" hasShadow="true" resizable="false";
+		style="width: 90%; height: 72px;margin: 0px; padding:0px; bottom: 30px; left: 5%; overflow: hidden; display: none;">
+	</div>
