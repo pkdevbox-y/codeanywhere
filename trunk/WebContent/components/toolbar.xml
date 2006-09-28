@@ -1,14 +1,14 @@
 <div id="toolbarContainer" dojoType="ToolbarContainer" >
 	<div dojoType="toolbar">
 	
-		<img dojoType="ToolbarButton" dojo:icon="images/static/create.gif" onclick="createClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this);"/>
-		<img dojoType="ToolbarButton" dojo:icon="images/static/up.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'up');"/>
-		<img dojoType="ToolbarButton" dojo:icon="images/static/down.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'down');"/>
-		<img dojoType="ToolbarButton" dojo:icon="images/static/recyclebin.gif" onclick="removeClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);"/>
+		<img dojoType="ToolbarButton" dojo:icon="images/static/create.gif" widgetId="newTreeNode"/>
+		<img dojoType="ToolbarButton" dojo:icon="images/static/up.gif" widgetId="moveUp"/>
+		<img dojoType="ToolbarButton" dojo:icon="images/static/down.gif" widgetId="moveDown"/>
+		<img dojoType="ToolbarButton" dojo:icon="images/static/recyclebin.gif" widgetId="deleteTreeNode"/>
 
 		<span dojoType="ToolbarSeparator"></span>
 			
-		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/cut.gif" onclick="alert('haha');"/>
+		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/cut.gif"/>
 		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/copy.gif"/>
 		<img dojoType="ToolbarButton" dojo:icon="scripts/src/widget/templates/buttons/paste.gif"/>
 		<span dojoType="ToolbarSeparator"></span>
