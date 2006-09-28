@@ -5,7 +5,7 @@
 	</div>
 	
 	<div id="tab2" dojoType="ContentPane" label="File 2">
-		<iframe src="about:blank" id="codeframe2" class="codeframe" frameborder="no"></iframe>
+		<iframe src="about:blank" id="codeframe2" frameborder="no"></iframe>
 	</div>	
 			
 </div>
