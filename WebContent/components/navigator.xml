@@ -1,8 +1,74 @@
 <div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
 	<div id="tab1" dojoType="ContentPane" label="Tab 1">
-		<h1>Tab 1</h1>
-		<p>lalala</p>
+
+		<div id="toolsDiv">
+		<img src="images/static/create.gif" onclick="createClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this);"/>
+		<img src="images/static/up.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'up');"/>
+		<img src="images/static/down.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'down');"/>
+		<img src="images/static/recyclebin.gif" onclick="removeClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);"/>
+		</div>
+		
+		<hr/>
+
+		<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
+		<div dojoType="TreeSelector" widgetId="treeSelector"></div>
+		
+		<div dojoType="TreeContextMenu" toggle="explode" contextMenuForWindow="false" widgetId="treeContextMenu">
+			<div dojoType="TreeMenuItem" treeActions="addChild" iconSrc="images/static/createsmall.gif" widgetId="treeContextMenuCreate" caption="Create"></div>
+			<div dojoType="TreeMenuItem" treeActions="remove" iconSrc="images/static/removesmall.gif" caption="Remove" widgetId="treeContextMenuRemove"></div>
+			<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/downsmall.png" caption="Up" widgetId="treeContextMenuUp"></div>
+			<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
+		</div>
+		
+		<script>
+		
+		/* setup menu actrions */
+		dojo.addOnLoad(function() {
+		
+			dojo.event.topic.subscribe('treeContextMenuCreate/engage',
+				function (menuItem) { createClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+			);
+		
+			dojo.event.topic.subscribe('treeContextMenuRemove/engage',
+				function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+			);
+		
+			dojo.event.topic.subscribe('treeContextMenuUp/engage',
+				function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'up'); }
+			);
+		
+			dojo.event.topic.subscribe('treeContextMenuDown/engage',
+				function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'down'); }
+			);
+		
+		});
+		
+		</script>
+		
+		<div dojoType="TreeSelector" eventNames="select:nodeSelected" widgetId="treeSelector"></div>
+	
+		<div dojoType="Tree" menu="treeContextMenu" DNDMode="between" DNDAcceptTypes="tree" selector="treeSelector" toggle="explode" widgetId="tree" controller="treeController">
+		
+		    <div dojoType="TreeNode" widgetId="1.1" title="Can't remove me" actionsDisabled="remove">
+				<div dojoType="TreeNode" widgetId="1.1.1" title="mmd" isFolder="true">
+				</div>
+		    </div>
+		
+			<div dojoType="TreeNode" widgetId="1.2" title="Can't add child to me" actionsDisabled="addChild" isFolder="true"></div>
+			<div dojoType="TreeNode" widgetId="1.3" title="Can't move me" actionsDisabled="move" isFolder="true"></div>
+			
+			<div dojoType="TreeNode" widgetId="1.4" title="Item 1.4" isFolder="true"></div>
+		    <div dojoType="TreeNode" widgetId="1.5" title="Item 1.5" object="test/haha.html"></div>
+		
+		</div>
+				
+			
+		<div dojoType="ContentPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;"
+				id="docPane" executeScripts="true">
+			<p>haha</p>
+		</div>
+		
 	</div>
 			
-	<a id="tab2" dojoType="LinkPane" href="tab2.html" refreshOnShow="true">Tab 2</a>				
+	<a id="tab2" dojoType="LinkPane" href="test/haha.html" refreshOnShow="true">Tab 2</a>				
 </div>
