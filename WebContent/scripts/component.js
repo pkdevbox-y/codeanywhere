@@ -21,7 +21,7 @@ function initComponent(component) {
 }
 
 function fillComponent(content, component) {
-	alert(content.responseText);
+	//alert(content.responseText);
 	component.innerHTML = content.responseText;
 }
 
