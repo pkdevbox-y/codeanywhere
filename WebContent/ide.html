@@ -152,17 +152,14 @@ But I don't know what to do. -->
 	</div>
 	
 </div>
-
-<div id="openfile" class="openfile" src="components/openfiledialog.xml"></div>
 </body>
 <script language="javascript" type="text/javascript">
 	initComponentById("menubar");
 	initComponentById("toolbar");
 	initComponentById("navigator");
-	initComponentById("codearea");
-	initComponentById("openfile");
+	//initComponentById("openfile");
 	
-	//var ca = new CodeArea("codearea");
-	//ca.init();
+	var ca = new CodeArea("codearea");
+	ca.init();
 </script>
 </html>

@@ -4,7 +4,7 @@
 	<div dojoType="MenuItem2" caption="Open File..." iconSrc="icons/openFolder.gif" onClick="OnFileOpen();"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Close"></div>
+	<div dojoType="MenuItem2" caption="Close" onClick="document.getElementById('codeframe1').contentWindow.document.designMode='on';"></div>
 	<div dojoType="MenuItem2" caption="Close All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
