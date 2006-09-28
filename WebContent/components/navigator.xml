@@ -1,15 +1,6 @@
 <div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
 	<div id="tab1" dojoType="ContentPane" label="Tab 1">
 
-		<div id="toolsDiv">
-		<img src="images/static/create.gif" onclick="createClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this);"/>
-		<img src="images/static/up.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'up');"/>
-		<img src="images/static/down.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'down');"/>
-		<img src="images/static/recyclebin.gif" onclick="removeClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);"/>
-		</div>
-		
-		<hr/>
-
 		<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
 		<div dojoType="TreeSelector" widgetId="treeSelector"></div>
 		
