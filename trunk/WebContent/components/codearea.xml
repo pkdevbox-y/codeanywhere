@@ -1,11 +1,11 @@
 <div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1" closeButton="tab">
 	
 	<div id="tab1" dojoType="ContentPane" label="File 1">
-		<iframe src="about:blank" id="codeframe1" class="codeframe"></iframe>
+		<iframe src="about:blank" id="codeframe1" class="codeframe" frameboder="no"></iframe>
 	</div>
 	
 	<div id="tab2" dojoType="ContentPane" label="File 2">
-		<iframe src="about:blank" id="codeframe2" class="codeframe"></iframe>
+		<iframe src="about:blank" id="codeframe2" class="codeframe" frameboder="no"></iframe>
 	</div>	
 			
 </div>
