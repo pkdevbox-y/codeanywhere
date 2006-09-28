@@ -41,6 +41,13 @@ function fillCodeArea(content, codeArea) {
 	for (var i = 0; i < frames.length; i++) {
 		var doc = frames[i].contentWindow.document;;
 		doc.designMode = "on";
+		doc.open();
+		doc.close();
+		
+		var parentPageDomain = document.location.href.split('#')[1];
+       	if (parentPageDomain) {
+          	doc.domain = parentPageDomain;
+       	}
 	}
 }
 
