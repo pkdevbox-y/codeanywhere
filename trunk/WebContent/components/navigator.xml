@@ -11,30 +11,6 @@
 			<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
 		</div>
 		
-		<script>
-		
-		/* setup menu actrions */
-		dojo.addOnLoad(function() {
-		
-			dojo.event.topic.subscribe('treeContextMenuCreate/engage',
-				function (menuItem) { createClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
-			);
-		
-			dojo.event.topic.subscribe('treeContextMenuRemove/engage',
-				function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
-			);
-		
-			dojo.event.topic.subscribe('treeContextMenuUp/engage',
-				function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'up'); }
-			);
-		
-			dojo.event.topic.subscribe('treeContextMenuDown/engage',
-				function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'down'); }
-			);
-		
-		});
-		
-		</script>
 		
 		<div dojoType="TreeSelector" eventNames="select:nodeSelected" widgetId="treeSelector"></div>
 	
