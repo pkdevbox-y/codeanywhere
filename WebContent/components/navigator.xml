@@ -11,7 +11,6 @@
 			<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
 		</div>
 		
-		
 		<div dojoType="TreeSelector" eventNames="select:nodeSelected" widgetId="treeSelector"></div>
 	
 		<div dojoType="Tree" menu="treeContextMenu" DNDMode="between" DNDAcceptTypes="tree" selector="treeSelector" toggle="explode" widgetId="tree" controller="treeController">
