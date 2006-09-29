@@ -28,12 +28,6 @@
 		    <div dojoType="TreeNode" widgetId="1.5" title="Item 1.5" object="test/haha.html"></div>
 		
 		</div>
-				
-			
-		<div dojoType="ContentPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;"
-				id="docPane" executeScripts="true">
-			<p>haha</p>
-		</div>
 		
 	</div>
 			
