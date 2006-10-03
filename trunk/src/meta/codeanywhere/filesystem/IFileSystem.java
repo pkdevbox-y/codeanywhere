@@ -1,7 +1,5 @@
-/**
- * 
- */
 package meta.codeanywhere.filesystem;
+
 
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
