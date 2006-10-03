@@ -30,3 +30,6 @@ create table file (
 	
 alter table folder add constraint folder_parentfolder_fk foreign key(parentfolder) references folder(id) on delete cascade;
 alter table file add constraint file_parentfolder_fk foreign key(parentfolder) references folder(id) on delete cascade;
+
+insert into abstractfile values (0, "/", NULL);
+insert into folder values(0, NULL);

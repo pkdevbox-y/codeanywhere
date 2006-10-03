@@ -28,16 +28,16 @@ public class VirtualFileSystem {
 		fileSystem = new FileSystemOper();
 	}
 
-	public VirtualFile createFile(String path, String name) {
-		return fileSystem.createFile(path, name);
+	public VirtualFile createFile(String path) {
+		return fileSystem.createFile(path);
 	}
 
 	public VirtualFolder createFolder(String path) {
 		return fileSystem.createFolder(path);
 	}
 
-	public void deleteFile(String path, String name) {
-		fileSystem.deleteFile(path, name);
+	public void deleteFile(String path) {
+		fileSystem.deleteFile(path);
 		
 	}
 
@@ -46,8 +46,8 @@ public class VirtualFileSystem {
 		
 	}
 
-	public VirtualFile openFile(String path, String name) {
-		return fileSystem.openFile(path, name);
+	public VirtualFile openFile(String path) {
+		return fileSystem.openFile(path);
 	}
 
 	public VirtualFolder openFolder(String path) {
