@@ -6,6 +6,7 @@ package meta.codeanywhere.filesystem;
 import java.util.List;
 
 import meta.codeanywhere.dao.DAOFactory;
+import meta.codeanywhere.dao.VirtualAbstractFileDAO;
 import meta.codeanywhere.dao.VirtualFileDAO;
 import meta.codeanywhere.dao.VirtualFolderDAO;
 import meta.codeanywhere.filesystem.file.VirtualAbstractFile;
@@ -19,16 +20,27 @@ import meta.codeanywhere.filesystem.file.VirtualFolder;
  */
 public class FileSystemOper implements IFileSystem {
 
+	private VirtualAbstractFileDAO abstractFileDAO = null;
 	private VirtualFileDAO fileDAO = null;
 	private VirtualFolderDAO folderDAO = null;
 	
 	public FileSystemOper() {
+		abstractFileDAO = DAOFactory.DEFAULT.getVirtualAbstractFileDAO();
 		fileDAO = DAOFactory.DEFAULT.getVirtualFileDAO();
 		folderDAO = DAOFactory.DEFAULT.getVirtualFolderDAO();
 	}
 	
 	public VirtualFile createFile(String path, String name) {
-		VirtualFile file = new VirtualFile(path);
+		VirtualFile file = queryFile(path, name);
+		if (file == null) {
+			file = new VirtualFile(path);
+			String parentPath = getParentPath(path);
+			VirtualFolder parentFolder = queryFolder(parentPath);
+			if (parentFolder == null) {
+				parentFolder = createFolder(parentPath);
+			}
+			file.setParentFolder(parentFolder);
+		}
 		fileDAO.makePersistent(file);
 		return file;
 	}
@@ -56,15 +68,19 @@ public class FileSystemOper implements IFileSystem {
 	public void deleteFolder(String path) {
 		VirtualFolder folder = queryFolder(path);
 		if (folder != null) {
-			List<VirtualFolder> children = folderDAO.getSubFiles(folder);
+			List<VirtualAbstractFile> children = folderDAO.getSubFiles(folder);
 			if (children != null) {
-				for (VirtualFolder child: children) {
+				for (VirtualAbstractFile child: children) {
 					deleteFolder(child.getPath());
 				}
 			}
-			folderDAO.makeTransient(folder);
+			abstractFileDAO.makeTransient(folder);
 		}
 		
+		VirtualFile file = fileDAO.getByPath(path);
+		if (file != null) {
+			abstractFileDAO.makeTransient(file);
+		}
 	}
 
 	public VirtualFile openFile(String path, String name) {
@@ -76,8 +92,7 @@ public class FileSystemOper implements IFileSystem {
 	}
 
 	public VirtualFile queryFile(String path, String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return fileDAO.getByPath(path);
 	}
 
 	public VirtualFolder queryFolder(String path) {

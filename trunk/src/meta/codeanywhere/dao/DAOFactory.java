@@ -15,6 +15,9 @@ public interface DAOFactory {
 	public static final DAOFactory HIBERNATE = new DAOFactoryImpl();
 	public static final DAOFactory DEFAULT = HIBERNATE;
 	
+	public VirtualAbstractFileDAO getVirtualAbstractFileDAO();
 	public VirtualFolderDAO getVirtualFolderDAO();
 	public VirtualFileDAO getVirtualFileDAO();
+	
+	
 }
