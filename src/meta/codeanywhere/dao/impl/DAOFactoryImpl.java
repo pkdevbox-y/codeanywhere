@@ -4,6 +4,7 @@
 package meta.codeanywhere.dao.impl;
 
 import meta.codeanywhere.dao.DAOFactory;
+import meta.codeanywhere.dao.VirtualAbstractFileDAO;
 import meta.codeanywhere.dao.VirtualFileDAO;
 import meta.codeanywhere.dao.VirtualFolderDAO;
 import meta.codeanywhere.util.HibernateSessionUtil;
@@ -22,5 +23,10 @@ public class DAOFactoryImpl implements DAOFactory {
 	public VirtualFileDAO getVirtualFileDAO() {
 		VirtualFileDAO virtualFileDAO = new VirtualFileDAOImpl().setSession(HibernateSessionUtil.currentSession());
 		return virtualFileDAO;
+	}
+
+	public VirtualAbstractFileDAO getVirtualAbstractFileDAO() {
+		VirtualAbstractFileDAO virtualAbstractFileDAO = new VirtualAbstractFileDAOImpl().setSession(HibernateSessionUtil.currentSession());
+		return virtualAbstractFileDAO;
 	}
 }

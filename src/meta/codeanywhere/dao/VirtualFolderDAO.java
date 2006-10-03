@@ -5,6 +5,7 @@ package meta.codeanywhere.dao;
 
 import java.util.List;
 
+import meta.codeanywhere.filesystem.file.VirtualAbstractFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
 
 /**
@@ -14,5 +15,5 @@ import meta.codeanywhere.filesystem.file.VirtualFolder;
  */
 public interface VirtualFolderDAO extends GenericDAO<VirtualFolder, Integer> {
 	public VirtualFolder getByPath(String path);
-	public List<VirtualFolder> getSubFiles(VirtualFolder parent);
+	public List<VirtualAbstractFile> getSubFiles(VirtualFolder parent);
 }
