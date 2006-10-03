@@ -16,9 +16,9 @@ public interface IFileSystem {
 	 * @param name
 	 * @return
 	 */
-	public VirtualFile createFile(String path, String name);
-	public VirtualFile openFile(String path, String name);
-	public void deleteFile(String path, String name);
+	public VirtualFile createFile(String path);
+	public VirtualFile openFile(String path);
+	public void deleteFile(String path);
 	
 	/**
 	 * 
@@ -35,6 +35,6 @@ public interface IFileSystem {
 	 * @param name
 	 * @return
 	 */
-	public VirtualFile queryFile(String path, String name);
+	public VirtualFile queryFile(String path);
 	public VirtualFolder queryFolder(String path);
 }

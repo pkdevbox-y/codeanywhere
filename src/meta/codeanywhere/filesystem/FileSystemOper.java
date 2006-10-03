@@ -30,8 +30,8 @@ public class FileSystemOper implements IFileSystem {
 		folderDAO = DAOFactory.DEFAULT.getVirtualFolderDAO();
 	}
 	
-	public VirtualFile createFile(String path, String name) {
-		VirtualFile file = queryFile(path, name);
+	public VirtualFile createFile(String path) {
+		VirtualFile file = queryFile(path);
 		if (file == null) {
 			file = new VirtualFile(path);
 			String parentPath = getParentPath(path);
@@ -40,8 +40,8 @@ public class FileSystemOper implements IFileSystem {
 				parentFolder = createFolder(parentPath);
 			}
 			file.setParentFolder(parentFolder);
+			fileDAO.makePersistent(file);
 		}
-		fileDAO.makePersistent(file);
 		return file;
 	}
 
@@ -55,13 +55,16 @@ public class FileSystemOper implements IFileSystem {
 				parentFolder = createFolder(parentPath);
 			}
 			folder.setParentFolder(parentFolder);
+			folderDAO.makePersistent(folder);
 		}
-		folderDAO.makePersistent(folder);
 		return folder;
 	}
 
-	public void deleteFile(String path, String name) {
-		// TODO Auto-generated method stub
+	public void deleteFile(String path) {
+		VirtualFile file = queryFile(path);
+		if (file != null) {
+			fileDAO.makeTransient(file);
+		}
 		
 	}
 
@@ -83,15 +86,15 @@ public class FileSystemOper implements IFileSystem {
 		}
 	}
 
-	public VirtualFile openFile(String path, String name) {
-		return queryFile(path, name);
+	public VirtualFile openFile(String path) {
+		return queryFile(path);
 	}
 
 	public VirtualFolder openFolder(String path) {
 		return queryFolder(path);
 	}
 
-	public VirtualFile queryFile(String path, String name) {
+	public VirtualFile queryFile(String path) {
 		return fileDAO.getByPath(path);
 	}
 

@@ -5,6 +5,8 @@ package meta.codeanywhere.filesystem.file;
 
 import java.util.List;
 
+import meta.codeanywhere.dao.DAOFactory;
+
 /**
  * @author Biao Zhang
  * @version 10/02/2006
@@ -56,7 +58,7 @@ public class VirtualFolder extends VirtualAbstractFile {
 	 */
 	public List<VirtualAbstractFile> getSubFiles() {
 		if (subFiles == null) {
-			// TODO Get subfiles from database or other record media
+			subFiles = DAOFactory.DEFAULT.getVirtualFolderDAO().getSubFiles(this);
 		}
 		
 		return subFiles;
