@@ -12,6 +12,11 @@
 	<joined-subclass name="VirtualFile" table="file">
 		<key column="id" />
 		<many-to-one name="parentFolder" class="VirtualFolder" column="parentfolder" unique="true"/>
+		
+		<joined-subclass name="VirtualBinaryFile" table="binaryfile">
+			<key column="id" />
+			<property name="data" type="blob" column="data"/>
+		</joined-subclass>
 	</joined-subclass>
 	
 	<joined-subclass name="VirtualFolder" table="folder">

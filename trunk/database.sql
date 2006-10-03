@@ -27,7 +27,15 @@ create table file (
 	constraint file_base_fk foreign key(id) references abstractfile(id) on delete cascade
 	#constraint file_parentfolder_fk foreign key(parentfolder) references folder(id) on delete cascade
 );
-	
+
+#table binaryfile
+create table binaryfile (
+	id int,
+	data blob,
+	primary key(id),
+	constraint binary_file_base_fk foreign key(id) references file(id) on delete cascade
+);	
+
 alter table folder add constraint folder_parentfolder_fk foreign key(parentfolder) references folder(id) on delete cascade;
 alter table file add constraint file_parentfolder_fk foreign key(parentfolder) references folder(id) on delete cascade;
 
