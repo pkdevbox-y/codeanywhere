@@ -18,6 +18,6 @@ public interface DAOFactory {
 	public VirtualAbstractFileDAO getVirtualAbstractFileDAO();
 	public VirtualFolderDAO getVirtualFolderDAO();
 	public VirtualFileDAO getVirtualFileDAO();
-	
+	public VirtualBinaryFileDAO getVirtualBinaryFileDAO();
 	
 }
