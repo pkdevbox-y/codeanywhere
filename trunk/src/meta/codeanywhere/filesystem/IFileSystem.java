@@ -25,7 +25,16 @@ public interface IFileSystem {
 	 * @param path
 	 * @return
 	 */
-	public VirtualFolder createFile(String path);
-	public VirtualFolder openFile(String path);
+	public VirtualFolder createFolder(String path);
+	public VirtualFolder openFolder(String path);
 	public void deleteFolder(String path);
+	
+	/**
+	 * 
+	 * @param path
+	 * @param name
+	 * @return
+	 */
+	public VirtualFile queryFile(String path, String name);
+	public VirtualFolder queryFolder(String path);
 }

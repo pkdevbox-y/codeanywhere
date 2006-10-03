@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="meta.codeanywhere.filesystem.file"> 
+  <class name="VirtualAbstractFile" table="abstractfile"> 
+    <id name="id" type="integer" unsaved-value="null" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="path" type="string" column="path"/>
+    <property name="name" type="string" column="name"/>
+    
+	<joined-subclass name="VirtualFile" table="file">
+		<key column="id" />
+		<many-to-one name="parentFolder" class="VirtualFolder" column="parentfolder" unique="true"/>
+	</joined-subclass>
+	
+	<joined-subclass name="VirtualFolder" table="folder">
+		<key column="id" />
+		<many-to-one name="parentFolder" class="VirtualFolder" column="parentfolder" unique="true"/>
+	</joined-subclass>
+  </class>
+</hibernate-mapping>
