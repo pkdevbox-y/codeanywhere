@@ -3,6 +3,8 @@
  */
 package meta.codeanywhere.filesystem;
 
+import java.util.List;
+
 import meta.codeanywhere.dao.DAOFactory;
 import meta.codeanywhere.dao.VirtualFileDAO;
 import meta.codeanywhere.dao.VirtualFolderDAO;
@@ -32,11 +34,14 @@ public class FileSystemOper implements IFileSystem {
 	}
 
 	public VirtualFolder createFolder(String path) {
-		VirtualFolder folder = openFolder(path);
+		VirtualFolder folder = queryFolder(path);
 		if (folder == null) {
 			folder = new VirtualFolder(path);
 			String parentPath = getParentPath(path);
-			VirtualFolder parentFolder = openFolder(parentPath);
+			VirtualFolder parentFolder = queryFolder(parentPath);
+			if (parentFolder == null) {
+				parentFolder = createFolder(parentPath);
+			}
 			folder.setParentFolder(parentFolder);
 		}
 		folderDAO.makePersistent(folder);
@@ -49,7 +54,16 @@ public class FileSystemOper implements IFileSystem {
 	}
 
 	public void deleteFolder(String path) {
-		// TODO Auto-generated method stub
+		VirtualFolder folder = queryFolder(path);
+		if (folder != null) {
+			List<VirtualFolder> children = folderDAO.getSubFiles(folder);
+			if (children != null) {
+				for (VirtualFolder child: children) {
+					deleteFolder(child.getPath());
+				}
+			}
+			folderDAO.makeTransient(folder);
+		}
 		
 	}
 
@@ -67,13 +81,17 @@ public class FileSystemOper implements IFileSystem {
 	}
 
 	public VirtualFolder queryFolder(String path) {
-		// TODO Auto-generated method stub
-		return null;
+		return folderDAO.getByPath(path);
 	}
 	
 	private String getParentPath(String path) {
 		int lastIndex = path.lastIndexOf(VirtualAbstractFile.SPLIT_CHAR, path.length() - 2);
-		String parentPath = path.substring(0, lastIndex);
+		String parentPath = null;
+		if (lastIndex == 0) {
+			parentPath = path.substring(0, 1);
+		} else {
+			parentPath = path.substring(0, lastIndex);
+		}
 		
 		return parentPath;
 	}

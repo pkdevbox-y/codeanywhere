@@ -42,7 +42,7 @@ public class VirtualFileSystem {
 	}
 
 	public void deleteFolder(String path) {
-		fileSystem.createFolder(path);
+		fileSystem.deleteFolder(path);
 		
 	}
 
