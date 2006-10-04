@@ -3,6 +3,7 @@
  */
 package meta.codeanywhere.filesystem;
 
+import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
 
@@ -53,4 +54,18 @@ public class VirtualFileSystem {
 	public VirtualFolder openFolder(String path) {
 		return fileSystem.openFolder(path);
 	}
+
+	public VirtualBinaryFile createBinaryFile(String path) {
+		return fileSystem.createBinaryFile(path);
+	}
+
+	public void deleteBinaryFile(String path) {
+		fileSystem.deleteBinaryFile(path);
+		
+	}
+
+	public VirtualBinaryFile openBinaryFile(String path) {
+		return fileSystem.openBinaryFile(path);
+	}
+
 }

@@ -1,6 +1,7 @@
 package meta.codeanywhere.filesystem;
 
 
+import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
 
@@ -25,6 +26,15 @@ public interface IFileSystem {
 	 * @param path
 	 * @return
 	 */
+	public VirtualBinaryFile createBinaryFile(String path);
+	public VirtualBinaryFile openBinaryFile(String path);
+	public void deleteBinaryFile(String path);
+	
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 */
 	public VirtualFolder createFolder(String path);
 	public VirtualFolder openFolder(String path);
 	public void deleteFolder(String path);
@@ -36,5 +46,6 @@ public interface IFileSystem {
 	 * @return
 	 */
 	public VirtualFile queryFile(String path);
+	public VirtualBinaryFile queryBinaryFile(String path);
 	public VirtualFolder queryFolder(String path);
 }

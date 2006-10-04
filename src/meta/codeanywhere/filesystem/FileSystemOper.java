@@ -7,9 +7,11 @@ import java.util.List;
 
 import meta.codeanywhere.dao.DAOFactory;
 import meta.codeanywhere.dao.VirtualAbstractFileDAO;
+import meta.codeanywhere.dao.VirtualBinaryFileDAO;
 import meta.codeanywhere.dao.VirtualFileDAO;
 import meta.codeanywhere.dao.VirtualFolderDAO;
 import meta.codeanywhere.filesystem.file.VirtualAbstractFile;
+import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
 
@@ -22,11 +24,13 @@ public class FileSystemOper implements IFileSystem {
 
 	private VirtualAbstractFileDAO abstractFileDAO = null;
 	private VirtualFileDAO fileDAO = null;
+	private VirtualBinaryFileDAO binaryFileDAO = null;
 	private VirtualFolderDAO folderDAO = null;
 	
 	public FileSystemOper() {
 		abstractFileDAO = DAOFactory.DEFAULT.getVirtualAbstractFileDAO();
 		fileDAO = DAOFactory.DEFAULT.getVirtualFileDAO();
+		binaryFileDAO = DAOFactory.DEFAULT.getVirtualBinaryFileDAO();
 		folderDAO = DAOFactory.DEFAULT.getVirtualFolderDAO();
 	}
 	
@@ -112,6 +116,34 @@ public class FileSystemOper implements IFileSystem {
 		}
 		
 		return parentPath;
+	}
+
+	public VirtualBinaryFile createBinaryFile(String path) {
+		VirtualBinaryFile file = queryBinaryFile(path);
+		if (file == null) {
+			file = new VirtualBinaryFile(path);
+			String parentPath = getParentPath(path);
+			VirtualFolder parentFolder = queryFolder(parentPath);
+			if (parentFolder == null) {
+				parentFolder = createFolder(parentPath);
+			}
+			file.setParentFolder(parentFolder);
+			binaryFileDAO.makePersistent(file);
+		}
+		return file;
+	}
+
+	public void deleteBinaryFile(String path) {
+		deleteFile(path);
+		
+	}
+
+	public VirtualBinaryFile openBinaryFile(String path) {
+		return queryBinaryFile(path);
+	}
+
+	public VirtualBinaryFile queryBinaryFile(String path) {
+		return binaryFileDAO.getByPath(path);
 	}
 
 }

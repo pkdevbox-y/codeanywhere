@@ -27,6 +27,9 @@ public class VirtualBinaryFile extends VirtualFile {
 		super(id, path, name, parentFolder);
 		this.data = data;
 	}
+	public VirtualBinaryFile(String path) {
+		super(path);
+	}
 	public Blob getData() {
 		return data;
 	}
