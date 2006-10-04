@@ -10,6 +10,7 @@ import java.sql.Blob;
 
 import meta.codeanywhere.dao.DAOFactory;
 import meta.codeanywhere.dao.VirtualBinaryFileDAO;
+import meta.codeanywhere.filesystem.VirtualFileSystem;
 import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 
 import org.hibernate.Hibernate;
@@ -24,11 +25,12 @@ public class TestBlobInHibernate {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		VirtualFileSystem vfs = VirtualFileSystem.getInstance();
 		VirtualBinaryFileDAO bfDAO = DAOFactory.DEFAULT.getVirtualBinaryFileDAO();
 		try {
 			FileInputStream fis = new FileInputStream("D:/TestShift.class");
 			Blob data = Hibernate.createBlob(fis);
-			VirtualBinaryFile bf = new VirtualBinaryFile();
+			VirtualBinaryFile bf = vfs.createBinaryFile("/bin/TestShift.class");
 			bf.setData(data);
 			bfDAO.makePersistent(bf);
 		} catch (FileNotFoundException e) {

@@ -10,5 +10,5 @@ import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
  *
  */
 public interface VirtualBinaryFileDAO extends GenericDAO<VirtualBinaryFile, Integer> {
-
+	public VirtualBinaryFile getByPath(String path);
 }
