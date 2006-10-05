@@ -4,9 +4,9 @@
  * @date: 2006-10-5
  */
 
-var doc = document.getElementById("codeframe1").document;
+var doc = document.getElementById("codeframe1").contentWindow.document;
 
-function Onundo(){
+function OnUndo(){
 	alert("shit");
 	doc.execCommand("undo");
 }
