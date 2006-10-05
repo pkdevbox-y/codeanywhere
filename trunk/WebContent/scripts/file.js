@@ -18,7 +18,7 @@
  						id:"openfiledialog",
  						title:"Open File",
  						iconSrc:"icons/openFolder.gif",
- 						constrainToContainer:"true",
+ 						constrainToContainer:true,
  						hasShadow:true,
  						resizable:true,
  						taskBarId:"hiddentaskbar",

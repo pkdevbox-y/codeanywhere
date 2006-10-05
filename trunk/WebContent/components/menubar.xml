@@ -34,16 +34,16 @@
 
 <div dojoType="PopupMenu2" widgetId="submenu_Edit">
 
-	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif" onClick="OnCommand('undo', false, '');"></div>
-	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif" onClick="OnCommand('redo', false, '');"></div>
+	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif" onClick="OnCommand('undo', 'false', '');"></div>
+	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif" onClick="OnCommand('redo', 'false', '');"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif" onClick="OnCommand('cut', true, '');" accelKey="Ctrl+X"></div>
-	<div dojoType="MenuItem2" caption="Copy" iconSrc="icons/copy.gif" onClick="OnCommand('copy', true, '');"></div>
-	<div dojoType="MenuItem2" caption="Paste" iconSrc="icons/paste.gif" onClick="OnCommand('paste', true, '');"></div>
+	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif" onClick="OnCommand('cut', 'false', '');" accelKey="Ctrl+X"></div>
+	<div dojoType="MenuItem2" caption="Copy" iconSrc="icons/copy.gif" onClick="OnCommand('copy', 'false', '');"></div>
+	<div dojoType="MenuItem2" caption="Paste" iconSrc="icons/paste.gif" onClick="OnCommand('paste', 'false', '');"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Delete" iconSrc="icons/delete.gif" onClick="OnCommand('delete', true, '');"></div>
+	<div dojoType="MenuItem2" caption="Delete" iconSrc="icons/delete.gif" onClick="OnCommand('delete', 'false', '');"></div>
 	<div dojoType="MenuItem2" caption="Select All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
