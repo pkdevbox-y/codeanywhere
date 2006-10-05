@@ -7,16 +7,14 @@
 
 
 function getActiveDoc() {
-	var tabcontainer = dojo.widget.byId("mainTabContainer");//document.getElementById("mainTabContainer");
-	alert(tabcontainer.selectedTabWidget.label);
-	var activetab = document.getElementById(tabcontainer.getAttribute("selectedTab"));
-	
-	var activedoc = activetab.firstChild.contentWindow.document;
-	return activedoc; 
+	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
+	var widgetId = tabcontainer.selectedTabWidget.widgetId;
+	var activeDoc = document.getElementById(widgetId + "_frame").contentWindow.document;
+	return activeDoc; 
 	
 }
 function OnUndo(){
-	var doc = getActiveDoc(); //document.getElementById("codeframe1").contentWindow.document;
+	var doc = getActiveDoc(); //("codeframe1").contentWindow.document;
 	doc.execCommand("undo");
 }
 
