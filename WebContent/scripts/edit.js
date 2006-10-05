@@ -4,10 +4,10 @@
  * @date: 2006-10-5
  */
 
-var doc = document.getElementById("codeframe1").contentWindow.document;
+
 
 function OnUndo(){
-	alert(doc);
+	var doc = document.getElementById("codeframe1").contentWindow.document;
 	doc.execCommand("undo");
 }
 
