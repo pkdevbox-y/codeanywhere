@@ -1,4 +1,4 @@
-<div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
+<div id="navigatorMainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
 	<div id="tab1" dojoType="ContentPane" label="Tab 1">
 
 		<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
