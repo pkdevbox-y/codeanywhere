@@ -11,7 +11,6 @@ function getActiveDoc() {
 	var widgetId = tabcontainer.selectedTabWidget.widgetId;
 	var activeFrame = document.getElementById(widgetId + "_frame");
 	var activeDoc = activeFrame.contentWindow.document;
-	alert(activeDoc);
 	return activeDoc; 
 	
 }
