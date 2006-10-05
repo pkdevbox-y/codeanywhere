@@ -7,10 +7,10 @@
 
 
 function getActiveDoc() {
-	tabcontainer = document.getElementById("mainTabContainer");
-	activetab = document.getElementById(tabcontainer.getAttribute("selectedTab"));
-	alert(tabcontainer.getAttribute("selectedTab"));
-	activedoc = activetab.firstChild.contentWindow.document;
+	var tabcontainer = document.getElementById("mainTabContainer");
+	var activetab = document.getElementById(tabcontainer.getAttribute("selectedTab"));
+	alert(tabcontainer);
+	var activedoc = activetab.firstChild.contentWindow.document;
 	return activedoc; 
 	
 }
