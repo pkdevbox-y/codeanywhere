@@ -7,6 +7,7 @@
 var doc = document.getElementById("codeframe1").document;
 
 function Onundo(){
+	alert("shit");
 	doc.execCommand("undo");
 }
 
