@@ -1,3 +1,9 @@
+/**
+ * @description: Load the function of toolbar
+ * @author: zz
+ * @date: 2006-9-28
+ */
+
 dojo.addOnLoad(function(){
 	dojo.event.connect(dojo.widget.byId("newTreeNode"), "onClick", function() {
 		createClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this);

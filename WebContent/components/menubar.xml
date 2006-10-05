@@ -34,11 +34,11 @@
 
 <div dojoType="PopupMenu2" widgetId="submenu_Edit">
 
-	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif"></div>
+	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif" onClick="OnUndo();"></div>
 	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif"></div>
+	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif" accelKey="Ctrl+X"></div>
 	<div dojoType="MenuItem2" caption="Copy" iconSrc="icons/copy.gif"></div>
 	<div dojoType="MenuItem2" caption="Paste" iconSrc="icons/paste.gif"></div>
 	<div dojoType="MenuSeparator2"></div>
