@@ -1,4 +1,4 @@
-<div id="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1" closeButton="tab">
+<div widgetId="mainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1" closeButton="tab">
 	
 	<div id="tab1" dojoType="ContentPane" label="File 1">
 		<iframe src="about:blank" id="codeframe1" class="codeframe" frameborder="no"></iframe>
