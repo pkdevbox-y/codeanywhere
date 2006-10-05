@@ -1,5 +1,7 @@
-/*
- * 
+/**
+ * @description: Listeners of tree in navigate
+ * @author: zz
+ * @date: 2006-9-29
  */
 function restoreIconSrc() {
 	//icon was changed during the action => no need to move it back

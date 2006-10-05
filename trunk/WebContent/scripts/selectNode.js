@@ -1,5 +1,7 @@
 /**
- * 
+ * @description: Select the node of tree in navigate
+ * @author: zz
+ * @date: 2006-9-29 
  */
 function DisplayTreeContent(){
     this.update = function(message) {
