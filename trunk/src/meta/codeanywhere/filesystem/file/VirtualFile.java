@@ -3,6 +3,8 @@
  */
 package meta.codeanywhere.filesystem.file;
 
+import meta.codeanywhere.dao.DAOFactory;
+
 /**
  * @author Biao Zhang
  * @version 10/02/2006
@@ -42,4 +44,7 @@ public class VirtualFile extends VirtualAbstractFile {
 		this.parentFolder = parentFolder;
 	}	
 	
+	public void save() {
+		DAOFactory.DEFAULT.getVirtualFileDAO().makePersistent(this);
+	}
 }

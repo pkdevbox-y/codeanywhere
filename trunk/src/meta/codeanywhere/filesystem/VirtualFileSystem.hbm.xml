@@ -17,6 +17,11 @@
 			<key column="id" />
 			<property name="data" type="blob" column="data"/>
 		</joined-subclass>
+		
+		<joined-subclass name="VirtualTextFile" table="textfile">
+			<key column="id" />
+			<property name="data" type="blob" column="data"/>
+		</joined-subclass>
 	</joined-subclass>
 	
 	<joined-subclass name="VirtualFolder" table="folder">

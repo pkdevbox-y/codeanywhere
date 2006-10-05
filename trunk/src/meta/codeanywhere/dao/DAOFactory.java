@@ -19,5 +19,6 @@ public interface DAOFactory {
 	public VirtualFolderDAO getVirtualFolderDAO();
 	public VirtualFileDAO getVirtualFileDAO();
 	public VirtualBinaryFileDAO getVirtualBinaryFileDAO();
+	public VirtualTextFileDAO getVirtualTextFileDAO();
 	
 }

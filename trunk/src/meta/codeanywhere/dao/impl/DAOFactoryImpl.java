@@ -8,6 +8,7 @@ import meta.codeanywhere.dao.VirtualAbstractFileDAO;
 import meta.codeanywhere.dao.VirtualBinaryFileDAO;
 import meta.codeanywhere.dao.VirtualFileDAO;
 import meta.codeanywhere.dao.VirtualFolderDAO;
+import meta.codeanywhere.dao.VirtualTextFileDAO;
 import meta.codeanywhere.util.HibernateSessionUtil;
 
 /**
@@ -34,5 +35,10 @@ public class DAOFactoryImpl implements DAOFactory {
 	public VirtualBinaryFileDAO getVirtualBinaryFileDAO() {
 		VirtualBinaryFileDAO virtualBinaryFileDAO = new VirtualBinaryFileDAOImpl().setSession(HibernateSessionUtil.currentSession());
 		return virtualBinaryFileDAO;
+	}
+
+	public VirtualTextFileDAO getVirtualTextFileDAO() {
+		VirtualTextFileDAO virtualTextFileDAO = new VirtualTextFileDAOImpl().setSession(HibernateSessionUtil.currentSession());
+		return virtualTextFileDAO;
 	}
 }

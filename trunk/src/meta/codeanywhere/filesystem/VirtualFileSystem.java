@@ -6,6 +6,7 @@ package meta.codeanywhere.filesystem;
 import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
+import meta.codeanywhere.filesystem.file.VirtualTextFile;
 
 /**
  * @author Biao Zhang
@@ -67,5 +68,19 @@ public class VirtualFileSystem {
 	public VirtualBinaryFile openBinaryFile(String path) {
 		return fileSystem.openBinaryFile(path);
 	}
+
+	public VirtualTextFile createTextFile(String path) {
+		return fileSystem.createTextFile(path);
+	}
+
+	public void deleteTextFile(String path) {
+		fileSystem.deleteTextFile(path);
+		
+	}
+
+	public VirtualTextFile openTextFile(String path) {
+		return fileSystem.openTextFile(path);
+	}
+
 
 }

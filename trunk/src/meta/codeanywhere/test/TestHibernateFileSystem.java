@@ -26,6 +26,7 @@ public class TestHibernateFileSystem {
 		VirtualBinaryFile vfile = vfs.openBinaryFile("/home/talent/video/player.conf");
 		VirtualFolder vfolder = vfile.getParentFolder();
 		System.out.println(vfolder.getPath());
+		System.out.println(vfile.getName());
 		//vfs.deleteFolder("/lib");
 		
 		/*VirtualFileDAO fileDAO = DAOFactory.DEFAULT.getVirtualFileDAO();
