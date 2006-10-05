@@ -6,8 +6,15 @@
 
 
 
+function getActiveDoc() {
+	tabcontainer = document.getElementById("mainTabContainer");
+	activetab = document.getElementById(tabcontainer.selectedTab);
+	activedoc = activetab.firstChild.contentWindow.document;
+	return activedoc; 
+	
+}
 function OnUndo(){
-	var doc = document.getElementById("codeframe1").contentWindow.document;
+	var doc = getActiveDoc(); //document.getElementById("codeframe1").contentWindow.document;
 	doc.execCommand("undo");
 }
 
