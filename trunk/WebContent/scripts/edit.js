@@ -9,7 +9,9 @@
 function getActiveDoc() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
 	var widgetId = tabcontainer.selectedTabWidget.widgetId;
-	var activeDoc = document.getElementById(widgetId + "_frame").contentWindow.document;
+	var activeFrame = document.getElementById(widgetId + "_frame");
+	var activeDoc = activeFrame.contentWindow.document;
+	alert(activeDoc);
 	return activeDoc; 
 	
 }
