@@ -26,10 +26,17 @@
  						displayCloseAction:true,
  						displayMinimizeAction:false,
  						displayMaximizeAction:false,
- 						toggle:"explode",
- 						style:"width: 400px; height: 300px;"
+ 						toggle:"explode"
  					};
-	var parentNode = document.getElementById("window");
-	dojo.widget.fromScript("FloatingPane", properties, parentNode, "last");
- 	 
+	//var parentNode = document.getElementById("window");
+	//dojo.widget.fromScript("FloatingPane", properties, parentNode, "last");
+ 	
+ 	var dialog = document.createElement("div");
+ 	dialog.src = "components/openfiledialog.xml";
+ 	dialog.setAttribute("class", "openfiledialog");
+ 	dialog.setAttribute("className", "openfiledialog");
+ 	document.body.appendChild(dialog);
+ 	sendRequest(dialog.src, fillComponent, dialog);
+ 	
+ 	dojo.widget.createWidget("FloatingPane", properties, dialog);
  }
