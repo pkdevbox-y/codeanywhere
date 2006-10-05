@@ -9,7 +9,7 @@
 function getActiveDoc() {
 	tabcontainer = document.getElementById("mainTabContainer");
 	activetab = document.getElementById(tabcontainer.getAttribute("selectedTab"));
-	alert(activetab);
+	alert(tabcontainer.getAttribute("selectedTab"));
 	activedoc = activetab.firstChild.contentWindow.document;
 	return activedoc; 
 	
