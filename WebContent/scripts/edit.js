@@ -4,8 +4,6 @@
  * @date: 2006-10-5
  */
 
-
-
 function getActiveDoc() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
 	var widgetId = tabcontainer.selectedTabWidget.widgetId;
@@ -15,8 +13,10 @@ function getActiveDoc() {
 	return activeDoc; 
 	
 }
-function OnUndo(){
+
+function OnCommand(cmd, userInterface, value){
 	var doc = getActiveDoc(); //("codeframe1").contentWindow.document;
-	doc.execCommand("undo",false,"");
+	doc.execCommand(cmd, userInterface, value);
 }
+
 
