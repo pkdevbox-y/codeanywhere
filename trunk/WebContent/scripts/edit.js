@@ -7,6 +7,6 @@
 var doc = document.getElementById("codeframe1").document;
 
 function Onundo(){
-	doc.write("haha");
-
+	doc.execCommand("undo");
 }
+
