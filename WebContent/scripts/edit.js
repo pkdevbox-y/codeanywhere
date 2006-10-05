@@ -7,7 +7,7 @@
 
 
 function getActiveDoc() {
-	var tabcontainer = document.getElementById("mainTabContainer");
+	var tabcontainer = dojo.widget.byId("mainTabContainer");//document.getElementById("mainTabContainer");
 	var activetab = document.getElementById(tabcontainer.getAttribute("selectedTab"));
 	alert(tabcontainer.selectedTabWidget);
 	var activedoc = activetab.firstChild.contentWindow.document;
