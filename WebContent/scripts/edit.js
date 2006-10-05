@@ -11,11 +11,12 @@ function getActiveDoc() {
 	var widgetId = tabcontainer.selectedTabWidget.widgetId;
 	var activeFrame = document.getElementById(widgetId + "_frame");
 	var activeDoc = activeFrame.contentWindow.document;
+	activeDoc.designMode = "on";
 	return activeDoc; 
 	
 }
 function OnUndo(){
 	var doc = getActiveDoc(); //("codeframe1").contentWindow.document;
-	doc.execCommand("undo");
+	doc.execCommand("undo",false,"");
 }
 
