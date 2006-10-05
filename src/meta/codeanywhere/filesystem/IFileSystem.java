@@ -4,6 +4,7 @@ package meta.codeanywhere.filesystem;
 import meta.codeanywhere.filesystem.file.VirtualBinaryFile;
 import meta.codeanywhere.filesystem.file.VirtualFile;
 import meta.codeanywhere.filesystem.file.VirtualFolder;
+import meta.codeanywhere.filesystem.file.VirtualTextFile;
 
 /**
  * @author Biao Zhang
@@ -30,6 +31,10 @@ public interface IFileSystem {
 	public VirtualBinaryFile openBinaryFile(String path);
 	public void deleteBinaryFile(String path);
 	
+	public VirtualTextFile createTextFile(String path);
+	public VirtualTextFile openTextFile(String path);
+	public void deleteTextFile(String path);
+	
 	/**
 	 * 
 	 * @param path
@@ -47,5 +52,6 @@ public interface IFileSystem {
 	 */
 	public VirtualFile queryFile(String path);
 	public VirtualBinaryFile queryBinaryFile(String path);
+	public VirtualTextFile queryTextFile(String path);
 	public VirtualFolder queryFolder(String path);
 }

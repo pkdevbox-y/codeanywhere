@@ -3,7 +3,14 @@
  */
 package meta.codeanywhere.filesystem.file;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Blob;
+import java.sql.SQLException;
+
+import meta.codeanywhere.dao.DAOFactory;
+
+import org.hibernate.Hibernate;
 
 /**
  * @author Biao Zhang
@@ -16,6 +23,12 @@ public class VirtualBinaryFile extends VirtualFile {
 	public VirtualBinaryFile() {
 		
 	}
+	
+	public VirtualBinaryFile(String path, InputStream inputStream) throws IOException {
+		super(path);
+		data = Hibernate.createBlob(inputStream);
+	}
+	
 	/**
 	 * @param data
 	 */
@@ -38,4 +51,15 @@ public class VirtualBinaryFile extends VirtualFile {
 		this.data = data;
 	}
 	
+	public InputStream getBinaryData() throws SQLException {
+		return data.getBinaryStream();
+	}
+	
+	public void setBinaryData(InputStream inputStream) throws IOException {
+		data = Hibernate.createBlob(inputStream);
+	}
+	
+	public void save() {
+		DAOFactory.DEFAULT.getVirtualBinaryFileDAO().makePersistent(this);
+	}
 }
