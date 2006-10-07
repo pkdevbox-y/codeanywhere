@@ -8,8 +8,8 @@
 
 		<span dojoType="ToolbarSeparator"></span>
 			
-		<img dojoType="ToolbarButton" dojo:icon="icons/new_18.png"/>
-		<img dojoType="ToolbarButton" dojo:icon="icons/save_18.gif"/>
+		<img dojoType="ToolbarMenu" dojo:icon="icons/new_18.png"/>
+		<img dojoType="ToolbarButton" dojo:icon="icons/save_18.gif"/> 
 		
 		
 	</div>
