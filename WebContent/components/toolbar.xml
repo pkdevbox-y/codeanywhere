@@ -8,15 +8,11 @@
 
 		<span dojoType="ToolbarSeparator"></span>
 			
-		<img dojoType="ToolbarMenu" dojo:icon="icons/new_18.png" submenuId="submenu_File_New"/>
+		<img dojoType="ToolbarMenu" dojo:icon="icons/new_18.png" submenuId="submenu_File_New">
+		<div dojoType="ToolbarMenuItem" caption="Class" iconSrc="icons/newclass.gif"/>
+		</img>
+	
+		
 		<img dojoType="ToolbarButton" dojo:icon="icons/save_18.gif"/> 
-		
-		<div dojoType="PopupMenu2" widgetId="submenu_File_New">
-			<div dojoType="MenuItem2" caption="Class" iconSrc="icons/newclass.gif"/>
-			<div dojoType="MenuItem2" caption="Servlet" iconSrc="icons/newservlet.gif"/>
-			<div dojoType="MenuItem2" caption="File" iconSrc="icons/newfile.gif"/>
-		</div>
-		
-		
 	</div>
 </div>
