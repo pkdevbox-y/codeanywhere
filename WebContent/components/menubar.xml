@@ -34,8 +34,8 @@
 
 <div dojoType="PopupMenu2" widgetId="submenu_Edit">
 
-	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif" onClick="OnCommand('undo', 'false', '');"></div>
-	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif" onClick="OnCommand('redo', 'false', '');"></div>
+	<div dojoType="MenuItem2" caption="Undo" iconSrc="icons/undo.gif" onClick="OnCommand('undo', false, '');"></div>
+	<div dojoType="MenuItem2" caption="Redo" iconSrc="icons/redo.gif" onClick="OnCommand('redo', false, '');"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Cut" iconSrc="icons/cut.gif" onClick="OnCommand('cut', false, '');" accelKey="Ctrl+X"></div>
@@ -144,7 +144,7 @@
 	<div dojoType="MenuItem2" caption="Problems"></div>
 	<div dojoType="MenuItem2" caption="Servers"></div>
 	
-</div>
+</div> 
 
 
 <div dojoType="PopupMenu2" widgetId="submenu_Help">
