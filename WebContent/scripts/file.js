@@ -40,3 +40,15 @@
  	
  	dojo.widget.createWidget("FloatingPane", properties, dialog);
  }
+ 
+ function sendSourceFile(url, source, fileName)
+ {
+ 	var params = "?fileName=" + fileName + "&source=" + source;  
+ 	sendRequest(url, afterSendSourceFile, null, params, "POST"); 	
+ }
+ 
+ function afterSendSourceFile(req, sender)
+ {
+ 	var temp = req.responseText;
+ 	var result = temp.toJSONObject();
+ }
