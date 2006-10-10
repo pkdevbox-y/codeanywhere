@@ -14,6 +14,7 @@
 <script language="javascript" type="text/javascript" src="scripts/toolbar.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/selectNode.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/edit.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/console.js"></script>
 
 <script language="javascript" type="text/javascript">
 	dojo.require("dojo.io.*");
@@ -95,5 +96,7 @@
 	
 	var ca = new CodeArea("codearea");
 	ca.init();
+	alert(theConsole);
+	theConsole.write(WARN, "TEST");
 </script>
 </html>

@@ -15,6 +15,7 @@ function Console(consoleId) {
  }
  
 function globalWrite(type, content) {
+	alert(content);
 	var message = document.createElement("div");
 	switch(type) {
 	case WARN:
@@ -41,4 +42,6 @@ function globalWrite(type, content) {
  
 function globalRead() {
 	 
- }
+}
+
+var theConsole = new Console("console");
