@@ -6,13 +6,31 @@
 		<img dojoType="ToolbarButton" dojo:icon="images/static/down.gif" widgetId="moveDown"/>
 		<img dojoType="ToolbarButton" dojo:icon="images/static/recyclebin.gif" widgetId="deleteTreeNode"/>
 
-		<span dojoType="ToolbarSeparator"></span>
+		<span dojoType="ToolbarSeparator"></span> 
 			
-		<img dojoType="ToolbarMenu" dojo:icon="icons/new_18.png" >
-		<img dojoType="ToolbarMenuItem" caption="Class" dojo:iocn="icons/newclass.gif"/>
-		</img>
+		<img dojoType="ToolbarButton" dojo:icon="icons/newl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/savel.png"/> 
+		
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img dojoType="ToolbarButton" dojo:icon="icons/debugl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/runl.png" />
+		
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img dojoType="ToolbarButton" dojo:icon="icons/newprojectl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/newpackagel.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/newclassl.png" />
+		
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img dojoType="ToolbarButton" dojo:icon="icons/searchl.png" />
+		
+		<span dojoType="ToolbarSeparator"></span> 
+		<img dojoType="ToolbarButton" dojo:icon="icons/backtolasteditlocationl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/backtol.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/forwardtol.png" />
 	
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/save_18.gif"/> 
 	</div>
 </div>
