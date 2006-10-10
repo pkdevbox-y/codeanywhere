@@ -50,5 +50,6 @@
  function afterSendSourceFile(req, sender)
  {
  	var temp = req.responseText;
- 	var result = temp.toJSONObject();
+ 	//var result = temp.toJSONObject();
+ 	console.write(MESSAGE, temp);
  }
