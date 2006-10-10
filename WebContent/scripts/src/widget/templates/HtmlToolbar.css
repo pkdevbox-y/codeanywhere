@@ -1,6 +1,6 @@
 .toolbarContainer {
 	border-bottom : 0;
-	background-color : #def;
+	background-color : #def; 
 	color : ButtonText;
 	font : Menu;
 	background-image: url(images/toolbar-bg.gif);
@@ -15,7 +15,7 @@
 .toolbarItem {
 	float : left;
 	padding : 1px 2px;
-	margin : 0 2px 1px 0;
+	margin : 4px 2px 1px 0;
 	cursor : pointer;
 }
 
@@ -27,17 +27,17 @@
 }
 
 .toolbarButton img {
-	vertical-align : bottom;
+	margin : 0px 1px 1px 1px; 
 }
 
 .toolbarButton span {
 	line-height : 16px;
-	vertical-align : middle;
+	vertical-align : bottom;
 }
 
 .toolbarButton.hover {
 	padding : 0px 1px;
-	border : 1px solid #99c;
+	border : 0px solid #99c;
 }
 
 .toolbarItem.disabled {
