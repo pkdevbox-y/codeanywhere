@@ -24,7 +24,7 @@
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/searchl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/formatl.png" />
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
@@ -34,7 +34,12 @@
 	
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<label>Search: <input TYPE="text" NAME="search" SIZE="16"/></label>
+		
+		<input TYPE="text" NAME="search" SIZE="16" class="searchtext"/>
+		<img dojoType="ToolbarButton" dojo:icon="icons/searchl.png" class="searchbutton"/>
+		
+		
+		
 		
 	</div>
 </div>
