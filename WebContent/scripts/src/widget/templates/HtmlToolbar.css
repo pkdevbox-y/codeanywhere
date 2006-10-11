@@ -20,10 +20,10 @@
 }
 
 .toolbarItem.selected, .toolbarItem.down {
-	margin : 1px 1px 0 1px;
+	margin : 2px 1px 0 1px;
 	padding : 0px 1px;
 	border : 1px solid #bbf;
-	background-color : #fafaff;
+	/*background-color : #fafaff;*/
 }
 
 .toolbarButton img {
@@ -51,8 +51,4 @@
 }
 
 .toolbarFlexibleSpace {
-}
-
-label {
-	margin: 3px 1px 1px 1px
 }
