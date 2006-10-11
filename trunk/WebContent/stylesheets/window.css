@@ -61,6 +61,20 @@ div.toolbar {
 	padding: 0px;
 }
 
+input.searchtext {
+	position: relative;
+	float: left;
+	margin: 4px 2px 1px 0;
+	height: 21px;
+}
+
+img.searchbutton {
+	position: relative;
+	float: left;
+	margin: 4px 2px 1px 0;
+	cursor : pointer;
+}
+
 div.navigator {
 	width: 160px;
 	height: 88%;
