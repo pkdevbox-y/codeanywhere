@@ -34,7 +34,7 @@
 	
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<label>Search: <input TYPE="text" NAME="search" SIZE="8" MAXLENGTH="8"/></label>
+		<label>Search: <input TYPE="text" NAME="search" SIZE="16"/></label>
 		
 	</div>
 </div>
