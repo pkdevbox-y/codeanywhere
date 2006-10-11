@@ -27,10 +27,14 @@
 		<img dojoType="ToolbarButton" dojo:icon="icons/searchl.png" />
 		
 		<span dojoType="ToolbarSeparator"></span> 
+		
 		<img dojoType="ToolbarButton" dojo:icon="icons/backtolasteditlocationl.png" />
 		<img dojoType="ToolbarButton" dojo:icon="icons/backtol.png" />
 		<img dojoType="ToolbarButton" dojo:icon="icons/forwardtol.png" />
 	
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<label>Search: <input TYPE="text" NAME="search" SIZE="8" MAXLENGTH="8"/></label>
 		
 	</div>
 </div>
