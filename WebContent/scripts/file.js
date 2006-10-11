@@ -4,6 +4,7 @@
  * date: 2006-9-27
  */
 
+var tabcount = 0;
  function OnFileOpen() {
  	/*var dialog = document.getElementById("openfile");	
  	dialog.style.zIndex = "16";*/
@@ -39,4 +40,37 @@
  	sendRequest(dialog.src, fillComponent, dialog);
  	
  	dojo.widget.createWidget("FloatingPane", properties, dialog);
+ }
+
+ function OnFileNewClass() {
+ 	var fileName = getNewClassName();
+ 	tabcount++;
+ 	var properties = {
+ 		dojoType:"ContentPane",
+ 		widgetId:"tab" + tabcount,
+ 		id:"tab" + tabcount,
+ 		label:fileName
+ 	};
+ 	
+ 	var tabdiv = document.createElement("div");
+ 	var iframeId = properties.id + "_frame";
+ 	var cframe = document.createElement("iframe");
+ 	cframe.id = iframeId;
+ 	cframe.src = "about:blank";
+ 	cframe.setAttribute("class", "codeframe");
+ 	cframe.setAttribute("className", "codeframe");
+ 	cframe.frameBorder = "no";
+	tabdiv.appendChild(cframe);
+ 	
+ 	var parentNode = dojo.widget.getWidgetById("codeareaMainTabContainer");
+ 	var tab = dojo.widget.createWidget("ContentPane", properties, tabdiv);
+ 	parentNode.addChild(tab);
+ 	parentNode.selectTab(tab);
+ 	
+ 	var doc = cframe.contentWindow.document;
+ 	doc.designMode = "on";
+ }
+ 
+ function getNewClassName() {
+ 	return "Hello";	
  }
