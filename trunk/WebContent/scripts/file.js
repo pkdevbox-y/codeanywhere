@@ -5,6 +5,7 @@
  */
 
 var tabcount = 0;
+var newClassDialog = 0;
  function OnFileOpen() {
  	/*var dialog = document.getElementById("openfile");	
  	dialog.style.zIndex = "16";*/
@@ -56,7 +57,7 @@ var tabcount = 0;
  	var iframeId = properties.id + "_frame";
  	var cframe = document.createElement("iframe");
  	cframe.id = iframeId;
- 	cframe.src = "about:blank";
+ 	cframe.src = "blank.html";
  	cframe.setAttribute("class", "codeframe");
  	cframe.setAttribute("className", "codeframe");
  	cframe.frameBorder = "no";
@@ -72,5 +73,18 @@ var tabcount = 0;
  }
  
  function getNewClassName() {
+ 	/*var properties = {
+ 		dojoType:"dialog",
+ 		id:"DialogContent",
+ 		bgColor:"white",
+ 		bgOpacity:"0.5",
+ 		toggle:"fade",
+ 		toggleDuration:"250"
+ 	};
+ 	var newDiv = document.createElement("div");
+ 	newDiv.innerHTML = "<input type='text'></input>";
+ 	var newClassDialog = dojo.widget.createWidget("DialogContent", properties, newDiv);
+ 	
+ 	document.body.appendChild(newDiv);*/
  	return "Hello";	
  }

@@ -1,7 +1,6 @@
  function sendSourceFile(url, fileName, source)
  {
  	var params = "fileName=" + fileName + "&source=" + source;  
- 	alert(params);
  	sendRequest(url, afterSendSourceFile, null, params, "POST"); 	
  }
  
@@ -9,6 +8,7 @@
  {
  	var temp = req.responseText;
  	//var result = temp.toJSONObject();
+ 	//theConsole.clean();
  	theConsole.write(MESSAGE, temp);
  }
 

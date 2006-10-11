@@ -16,6 +16,10 @@ body {
 	font-size: 9pt;
 }
 
+p {
+	margin: 0;
+	padding: 0;	
+}
 div.mengban {
 	position: absolute;
 	left: 0;

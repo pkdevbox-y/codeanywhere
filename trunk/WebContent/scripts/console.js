@@ -12,6 +12,7 @@ function Console(consoleId) {
 	this.console = document.getElementById(consoleId);
  	this.write = globalWrite;
  	this.read = globalRead;
+ 	this.clean = function() { glablaClean(this.console); };
  }
  
 function globalWrite(type, content) {
@@ -41,6 +42,12 @@ function globalWrite(type, content) {
  
 function globalRead() {
 	 
+}
+
+function globalClean(c) {
+	while (c.hasChildNodes()) {
+		c.removeChild(c.childNodes[0]);
+	}
 }
 
 var theConsole = new Console("console");
