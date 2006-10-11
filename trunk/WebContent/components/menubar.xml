@@ -8,7 +8,7 @@
 	<div dojoType="MenuItem2" caption="Close All"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Save" iconSrc="icons/save.gif"></div>
+	<div dojoType="MenuItem2" caption="Save" iconSrc="icons/save.gif" onClick="setIDEWindowTitle('Hello');"></div>
 	<div dojoType="MenuItem2" caption="Save As..."></div>
 	<div dojoType="MenuItem2" caption="Save All"></div>
 	<div dojoType="MenuItem2" caption="Revert"></div>
@@ -25,7 +25,7 @@
 </div>
 
 <div dojoType="PopupMenu2" widgetId="submenu_File_New">
-	<div dojoType="MenuItem2" caption="Class" iconSrc="icons/newclass.gif"></div>
+	<div dojoType="MenuItem2" caption="Class" iconSrc="icons/newclass.gif" onClick="OnFileNewClass();"></div>
 	<div dojoType="MenuItem2" caption="Servlet" iconSrc="icons/newservlet.gif"></div>
 	<div dojoType="MenuItem2" caption="File" iconSrc="icons/newfile.gif"></div>
 	

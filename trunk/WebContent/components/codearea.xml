@@ -1,11 +1,3 @@
 <div widgetId="codeareaMainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1" closeButton="tab">
-	
-	<div widgetId="tab1" id="tab1" dojoType="ContentPane" label="File 1">
-		<iframe src="about:blank" id="tab1_frame" class="codeframe" frameborder="no"></iframe>
-	</div>
-	
-	<div widgetId="tab2" id="tab2" dojoType="ContentPane" label="File 2">
-		<iframe src="about:blank" id="tab2_frame" class="codeframe" frameborder="no"></iframe>
-	</div>	
 			
 </div>
