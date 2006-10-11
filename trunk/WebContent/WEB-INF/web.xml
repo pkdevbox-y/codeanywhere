@@ -48,23 +48,13 @@
   </servlet-mapping>
  
   <servlet>
-    <servlet-name>expend</servlet-name>
-    <servlet-class>pfms.controller.servlet.velocity.ExpendInfoServlet</servlet-class>
+    <servlet-name>compile</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.CompileServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>expend</servlet-name>
-    <url-pattern>/expend</url-pattern>
-  </servlet-mapping> 
-
-  <servlet>
-    <servlet-name>income</servlet-name>
-    <servlet-class>pfms.controller.servlet.velocity.IncomeInfoServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>income</servlet-name>
-    <url-pattern>/income</url-pattern>
+    <servlet-name>compile</servlet-name>
+    <url-pattern>/compile</url-pattern>
   </servlet-mapping>
   
   <servlet>
