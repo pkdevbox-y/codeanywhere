@@ -68,6 +68,10 @@ input.searchtext {
 	height: 21px;
 }
 
+.foundtext {
+	background-color: yellow;	
+}
+
 img.searchbutton {
 	position: relative;
 	float: left;

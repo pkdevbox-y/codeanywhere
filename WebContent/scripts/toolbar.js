@@ -20,4 +20,6 @@ dojo.addOnLoad(function(){
 	dojo.event.connect(dojo.widget.byId("deleteTreeNode"), "onClick", function() {
 		removeClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);
 	});
+	
+	dojo.event.connect(dojo.widget.byId("searchbutton"), "onClick", search);
 });
