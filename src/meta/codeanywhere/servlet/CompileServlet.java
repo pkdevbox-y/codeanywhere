@@ -39,16 +39,18 @@ public class CompileServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		
 		PrintWriter out = response.getWriter();
+		String fileName = request.getParameter("fileName");
 		String source = request.getParameter("source");
 		
-		FileWriter fw = new FileWriter(path + "WEB-INF/classes/" + "Hello.java");
+		FileWriter fw = new FileWriter(path + "WEB-INF/classes/" + fileName + ".java");
 		fw.write(source);
 		fw.close();
 		JavaCompiler javaCompiler = new JavaCompiler();
-		javaCompiler.addSourceFile(path + "WEB-INF/classes/" + "Hello.java");
+		javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java");
+		//javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java", source);
 		javaCompiler.compile();
 		
-		JavaProcessRunner javaRunner = new JavaProcessRunner("Hello", path + "WEB-INF/classes/");
+		JavaProcessRunner javaRunner = new JavaProcessRunner(fileName, path + "WEB-INF/classes/");
 		javaRunner.setWriter(out);
 		javaRunner.run();
 		out.close();

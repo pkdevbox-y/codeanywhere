@@ -80,6 +80,8 @@ iframe.codeframe {
 
 div.console {
 	margin: 4px;
+	padding: 2px;
+	overflow: auto;
 	float: right;
 }
 
