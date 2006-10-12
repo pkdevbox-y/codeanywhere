@@ -43,8 +43,11 @@ var newClassDialog = 0;
  	dojo.widget.createWidget("FloatingPane", properties, dialog);
  }
 
- function OnFileNewClass() {
- 	var fileName = getNewClassName();
+ function OnNewButtonClick() {
+ 	var fileName = document.getElementById("newclassname").value;
+ 	OnFileNewClass(fileName); 	
+ }
+ function OnFileNewClass(fileName) {
  	tabcount++;
  	var properties = {
  		dojoType:"ContentPane",
@@ -70,21 +73,25 @@ var newClassDialog = 0;
  	
  	var doc = cframe.contentWindow.document;
  	doc.designMode = "on";
+ 	doc.write("public class " + fileName + " {<br>" + "public static void main(String[] args) {<br>}<br>}");
  }
- 
+ /*
  function getNewClassName() {
- 	/*var properties = {
- 		dojoType:"dialog",
- 		id:"DialogContent",
+ 	var properties = {
+ 		dojoType:"Dialog",
+ 		id:"newclassdialog",
+ 		widgetId:"newclassdialog",
  		bgColor:"white",
  		bgOpacity:"0.5",
  		toggle:"fade",
  		toggleDuration:"250"
  	};
  	var newDiv = document.createElement("div");
- 	newDiv.innerHTML = "<input type='text'></input>";
- 	var newClassDialog = dojo.widget.createWidget("DialogContent", properties, newDiv);
- 	
- 	document.body.appendChild(newDiv);*/
+ 	newDiv.style.height = "200px";
+ 	newDiv.style.width = "200px";
+ 	newDiv.innerHTML = "HELLO<input type='text'></input>";
+ 	var newClassDialog = dojo.widget.createWidget("Dialog", properties, newDiv);
+ 	var parentNode = document.getElementById("window");
+ 	parentNode.appendChild(newDiv);
  	return "Hello";	
- }
+ }*/
