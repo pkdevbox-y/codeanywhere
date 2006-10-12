@@ -2,7 +2,6 @@ function search() {
 	var strText = document.getElementById("search").value;
 	var activeDoc = getActiveDoc();
 	if (activeDoc == null) {
-		alert("FUCK");
 		return;
 	}
 	var content = activeDoc.body.innerHTML;

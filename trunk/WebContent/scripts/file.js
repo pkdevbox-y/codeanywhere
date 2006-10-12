@@ -73,7 +73,10 @@ var newClassDialog = 0;
  	
  	var doc = cframe.contentWindow.document;
  	doc.designMode = "on";
- 	doc.write("public class " + fileName + " {<br>" + "public static void main(String[] args) {<br>}<br>}");
+ 	
+ 	setIDEWindowTitle(fileName);
+ 	//doc.write("<html><head><link rel='stylesheet' type='text/css' href='stylesheets/common.css'/></head><body>" + "public class " + fileName + " {<br/>" + "public static void main(String[] args) {<br/>}<br/>}" + "</body></html>");
+ 	//doc.body.innerHTML = "public class " + fileName + " {<br>" + "public static void main(String[] args) {<br>}<br>}";
  }
  /*
  function getNewClassName() {

@@ -15,17 +15,17 @@
 		<span dojoType="ToolbarSeparator"></span> 
 		
 		<img dojoType="ToolbarButton" dojo:icon="icons/debugl.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/runl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/runl.png" widgetId="run"/>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
 		<img dojoType="ToolbarButton" dojo:icon="icons/newprojectl.png" />
 		<img dojoType="ToolbarButton" dojo:icon="icons/newpackagel.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/newclassl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/newclassl.png" widgetId="newclass"/>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/formatl.png" />
+		<img dojoType="ToolbarButton" dojo:icon="icons/formatl.png" id="format" widgetId="format"/>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
