@@ -36,9 +36,9 @@
 		<span dojoType="ToolbarSeparator"></span> 
 		
 		<input type="text" id="search" size="16" class="searchtext" widgetId="search" />
-		<img id="searchbutton" dojoType="ToolbarButton" dojo:icon="icons/searchl.png" class="searchbutton" widgetId="searchbutton"/>
+		<img id="searchbutton" src="icons/searchl.png" class="searchbutton" widgetId="searchbutton"/>
 		
-		<span dojoType="tooltip" connectId="one" caption="tooltip on button" toggle="fade" toggleDuration="500"/>
+		<span dojoType="tooltip" connectId="searchbutton" caption="Search"/>
 		
 	</div>
 </div>
