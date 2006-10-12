@@ -25,7 +25,7 @@
 </div>
 
 <div dojoType="PopupMenu2" widgetId="submenu_File_New">
-	<div dojoType="MenuItem2" caption="Class" iconSrc="icons/newclass.gif" onClick="OnFileNewClass();"></div>
+	<div id="File_New_Class" dojoType="MenuItem2" caption="Class" iconSrc="icons/newclass.gif"></div>
 	<div dojoType="MenuItem2" caption="Servlet" iconSrc="icons/newservlet.gif"></div>
 	<div dojoType="MenuItem2" caption="File" iconSrc="icons/newfile.gif"></div>
 	
