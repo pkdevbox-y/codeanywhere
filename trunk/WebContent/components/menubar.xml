@@ -71,7 +71,7 @@
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Correct Indentation"></div>
-	<div dojoType="MenuItem2" caption="Format"></div>
+	<div dojoType="MenuItem2" caption="Format" onClick="format();"></div>
 	<div dojoType="MenuItem2" caption="Element Format"></div>
 	
 </div>
@@ -86,7 +86,7 @@
 
 
 <div dojoType="PopupMenu2" widgetId="submenu_Search">
-	<div dojoType="MenuItem2" caption="Search..." iconSrc="icons/search.gif"></div>
+	<div dojoType="MenuItem2" caption="Search..." iconSrc="icons/search.gif" onClick="search();"></div>
 </div>
 
 
