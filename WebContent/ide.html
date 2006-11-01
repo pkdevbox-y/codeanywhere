@@ -93,9 +93,10 @@
 		style="width: 90%; height: 72px;margin: 0px; padding:0px; bottom: 30px; left: 5%; overflow: hidden; display: none;">
 	</div>
 
-<div dojoType="Dialog" id="newDialog" bgColor="white" bgOpacity="0.5" toggle="fade" toggleDuration="250">
+<div dojoType="FloatingPane" id="newDialog" title="New Class" style="width: 300px; height: 200px; left: 300px; top: 100px; display: none;"
+	hasShadow="true" resizable="true">
 Class name: <input type="text" id="newclassname"></input>
-<input type="button" id="hider" value="New" onClick="OnNewButtonClick();"></td>
+<input type="button" id="hider" value="New" onClick="OnNewButtonClick();dojo.widget.byId('newDialog').hide();"></td>
 </div>
 
 </body>

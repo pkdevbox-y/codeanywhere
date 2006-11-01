@@ -6,7 +6,5 @@ dojo.addOnLoad(function() {
 
 function showNewClassDialog() {
 	var dlg = dojo.widget.byId("newDialog");
-	var btn = document.getElementById("hider");
-	dlg.setCloseControl(btn);
 	dlg.show();
 }
