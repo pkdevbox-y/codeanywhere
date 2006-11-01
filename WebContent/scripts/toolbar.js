@@ -23,9 +23,10 @@ dojo.addOnLoad(function(){
 	
 	//dojo.event.connect(dojo.widget.byId("searchbutton"), "onClick", search);
 	
-	dojo.event.connect(dojo.widget.byId("format"), "onClick", format);
+	//dojo.event.connect(dojo.widget.byId("format"), "onClick", format);
 	
-	dojo.event.connect(dojo.widget.byId("newclass"), "onClick", showNewClassDialog);
+	//dojo.event.connect(dojo.widget.byId("newclass"), "onClick", showNewClassDialog);
 	
-	dojo.event.connect(dojo.widget.byId("run"), "onClick", compile);
+	//dojo.event.connect(dojo.widget.byId("run"), "onClick", compile);
+	
 });

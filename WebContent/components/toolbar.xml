@@ -1,44 +1,53 @@
 <div id="toolbarContainer" dojoType="ToolbarContainer" >
 	<div dojoType="toolbar">
 	
-		<img dojoType="ToolbarButton" dojo:icon="images/static/create.gif" widgetId="newTreeNode"/>
-				
+		<img dojoType="ToolbarButton" dojo:icon="images/static/create.gif" widgetId="newTreeNode"/>	
 		<img dojoType="ToolbarButton" dojo:icon="images/static/up.gif" widgetId="moveUp"/>
 		<img dojoType="ToolbarButton" dojo:icon="images/static/down.gif" widgetId="moveDown"/>
 		<img dojoType="ToolbarButton" dojo:icon="images/static/recyclebin.gif" widgetId="deleteTreeNode"/>
 
 		<span dojoType="ToolbarSeparator"></span> 
 			
-		<img dojoType="ToolbarButton" dojo:icon="icons/newl.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/savel.png"/> 
+		<img id="newbutton" src="icons/newl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="newbutton" caption="New" ></span>
+		<img id="savebutton" src="icons/savel.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="savebutton" caption="Save" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/debugl.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/runl.png" widgetId="run"/>
+		<img id="debugbutton" src="icons/debugl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="debugbutton" caption="Debug" ></span>
+		<img id="runbutton" src="icons/runl.png" class="toolbarbutton" onclick="compile();"/>
+		<span dojoType="tooltip" connectId="runbutton" caption="Run" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/newprojectl.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/newpackagel.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/newclassl.png" widgetId="newclass"/>
+		<img id="newprojectbutton" src="icons/newprojectl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="newprojectbutton" caption="New project" ></span>
+		<img id="newpackagebutton" src="icons/newpackagel.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="newpackagebutton" caption="New package" ></span>
+		<img id="newclassbutton" src="icons/newclassl.png" class="toolbarbutton" onclick="showNewClassDialog();"/>
+		<span dojoType="tooltip" connectId="newclassbutton" caption="New class" ></span>
+			
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img id="formatbutton" src="icons/formatl.png" class="toolbarbutton" onclick="format();"/>
+		<span dojoType="tooltip" connectId="formatbutton" caption="Format" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img dojoType="ToolbarButton" dojo:icon="icons/formatl.png" id="format" widgetId="format"/>
-		
-		<span dojoType="ToolbarSeparator"></span> 
-		
-		<img dojoType="ToolbarButton" dojo:icon="icons/backtolasteditlocationl.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/backtol.png" />
-		<img dojoType="ToolbarButton" dojo:icon="icons/forwardtol.png" />
+		<img id="lasteditlocationbutton" src="icons/lasteditlocationl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="lasteditlocationbutton" caption="Last edit location" ></span>
+		<img id="backbutton" src="icons/backl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="backbutton" caption="Back" ></span>
+		<img id="forwardbutton" src="icons/forwardl.png" class="toolbarbutton" />
+		<span dojoType="tooltip" connectId="forwardbutton" caption="Forward" ></span>
 	
 		<span dojoType="ToolbarSeparator"></span> 
 		
 		<input type="text" id="search" size="16" class="searchtext" widgetId="search" />
-		<img id="searchbutton" src="icons/searchl.png" class="searchbutton" onClick="search();"/>
-		
-		<span dojoType="tooltip" connectId="searchbutton" caption="Search"/>
+		<img id="searchbutton" src="icons/searchl.png" class="toolbarbutton" onClick="search();"/>
+		<span dojoType="tooltip" connectId="searchbutton" caption="Search" ></span>
 		
 	</div>
 </div>

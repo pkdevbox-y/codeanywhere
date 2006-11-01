@@ -64,7 +64,7 @@ div.toolbar {
 input.searchtext {
 	position: relative;
 	float: left;
-	margin: 4px 2px 1px 0;
+	margin: 4px 2px 1px 3px;
 	height: 21px;
 }
 
@@ -72,10 +72,10 @@ input.searchtext {
 	background-color: yellow;	
 }
 
-img.searchbutton {
+img.toolbarbutton {
 	position: relative;
 	float: left;
-	margin: 4px 2px 1px 0;
+	margin: 5px 5px 1px 3px;
 	cursor : pointer;
 }
 
