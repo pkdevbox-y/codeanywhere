@@ -97,6 +97,17 @@
 	hasShadow="true" resizable="true">
 Class name: <input type="text" id="newclassname"></input>
 <input type="button" id="hider" value="New" onClick="OnNewButtonClick();dojo.widget.byId('newDialog').hide();"></td>
+<input type="button" id="cancler" value="Cancle" onClick="dojo.widget.byId('newDialog').hide();"></td>
+</div>
+
+<div dojoType="FloatingPane" id="aboutDialog" title="About codeAnywhere" style="width: 320px; height: 240px; left: 300px; top: 100px; display: none;"
+	hasShadow="true" resizable="true">
+	<img src="images/calogo.png"></img>
+codeAnywhere - Online Development Tool
+<br>
+by Team Meta
+<br>
+<center><input type="button" id="oker" value="OK" onClick="dojo.widget.byId('aboutDialog').hide();"></td></center>
 </div>
 
 </body>

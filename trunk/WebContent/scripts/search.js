@@ -1,11 +1,11 @@
 function search() {
 	var strText = document.getElementById("search").value;
-	var activeDoc = getActiveDoc();
-	if (activeDoc == null) {
+	var aDiv = getActiveDiv();
+	if (aDiv == null) {
 		return;
 	}
-	var content = activeDoc.body.innerHTML;
-	doSearch(strText, content, activeDoc.body);	
+	var content = aDiv.innerHTML;
+	doSearch(strText, content, aDiv);	
 }
 
 function doSearch(str, content, body) {

@@ -151,7 +151,7 @@
 	
 	<div dojoType="MenuItem2" caption="API Search" iconSrc="icons/help.gif"></div>
 	<div dojoType="MenuItem2" caption="Wiki"></div>
-	<div dojoType="MenuItem2" caption="About codeAnywhere"></div>
+	<div id="Help_About" dojoType="MenuItem2" caption="About codeAnywhere"></div>
 
 </div>
 

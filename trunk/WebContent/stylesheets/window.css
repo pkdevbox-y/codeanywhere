@@ -91,10 +91,12 @@ div.codearea {
 	float: right;
 }
 
-iframe.codeframe {
+div.codeframe {
+	margin: 4px;
+	padding: 2px;
 	border: solid 0px red;
-	width: 100%;
-	height: 100%;	
+	width: 98%;
+	height: 98%;	
 }
 
 div.console {
