@@ -9,6 +9,8 @@
 		
 		<img id="debugbutton" src="icons/debugl.png" class="toolbarbutton" />
 		<span dojoType="tooltip" connectId="debugbutton" caption="Debug" ></span>
+		<img id="compilebutton" src="icons/compilel.png" class="toolbarbutton" onclick="compile();"/>
+		<span dojoType="tooltip" connectId="compilebutton" caption="Compile" ></span>
 		<img id="runbutton" src="icons/runl.png" class="toolbarbutton" onclick="compile();"/>
 		<span dojoType="tooltip" connectId="runbutton" caption="Run" ></span>
 		
