@@ -4,7 +4,7 @@
 		<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
 		<div dojoType="TreeSelector" widgetId="treeSelector"></div>
 		
-		<div dojoType="TreeContextMenu" toggle="explode" contextMenuForWindow="false" widgetId="treeContextMenu">
+		<div dojoType="TreeContextMenu" toggle="explode" contextMenuForWindow="true" widgetId="treeContextMenu">
 			<div dojoType="TreeMenuItem" treeActions="addChild" iconSrc="images/static/createsmall.gif" widgetId="treeContextMenuCreate" caption="Create"></div>
 			<div dojoType="TreeMenuItem" treeActions="remove" iconSrc="images/static/removesmall.gif" caption="Remove" widgetId="treeContextMenuRemove"></div>
 			<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/downsmall.png" caption="Up" widgetId="treeContextMenuUp"></div>
@@ -27,8 +27,7 @@
 		    <div dojoType="TreeNode" widgetId="1.5" title="Item 1.5" object="test/haha.html"></div>
 		
 		</div>
-		
 	</div>
 			
-	<a id="tab2" dojoType="LinkPane" href="test/haha.html" refreshOnShow="true">Hierarchy</a>				
+	<div id="tab2" dojoType="ContentPane" label="Hierarchy"></div>				
 </div>
