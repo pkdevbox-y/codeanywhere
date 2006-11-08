@@ -1,13 +1,5 @@
 <div id="toolbarContainer" dojoType="ToolbarContainer" >
 	<div dojoType="toolbar">
-	
-		<img dojoType="ToolbarButton" dojo:icon="images/static/create.gif" widgetId="newTreeNode"/>	
-		<img dojoType="ToolbarButton" dojo:icon="images/static/up.gif" widgetId="moveUp"/>
-		<img dojoType="ToolbarButton" dojo:icon="images/static/down.gif" widgetId="moveDown"/>
-		<img dojoType="ToolbarButton" dojo:icon="images/static/recyclebin.gif" widgetId="deleteTreeNode"/>
-
-		<span dojoType="ToolbarSeparator"></span> 
-			
 		<img id="newbutton" src="icons/newl.png" class="toolbarbutton" />
 		<span dojoType="tooltip" connectId="newbutton" caption="New" ></span>
 		<img id="savebutton" src="icons/savel.png" class="toolbarbutton" />

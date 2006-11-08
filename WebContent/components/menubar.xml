@@ -1,4 +1,4 @@
-<div dojoType="PopupMenu2" widgetId="submenu_File" contextMenuForWindow="false">
+<div dojoType="PopupMenu2" widgetId="submenu_File">
 	
 	<div dojoType="MenuItem2" caption="New" iconSrc="icons/new.gif" submenuId="submenu_File_New"></div>
 	<div dojoType="MenuItem2" caption="Open File..." iconSrc="icons/openFolder.gif" onClick="OnFileOpen();"></div>
