@@ -3,7 +3,7 @@
  * @author: zz
  * @date: 2006-9-29 
  */
-function DisplayTreeContent(){
+function selectNode(){
     this.update = function(message) {
         var clickedTreeNode = message.node;
 
@@ -11,7 +11,7 @@ function DisplayTreeContent(){
     };
 }
 
-var displayer = new DisplayTreeContent();
+var displayer = new selectNode();
 
 var nodeSelectionTopic = dojo.event.topic.getTopic("nodeSelected");
 nodeSelectionTopic.subscribe(displayer, "update");
