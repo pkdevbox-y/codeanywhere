@@ -57,44 +57,78 @@ var newClassDialog = 0;
  	};
  	
  	var tabdiv = document.createElement("div");
- 	var iframeId = properties.id + "_frame";
+ 	/*var iframeId = properties.id + "_frame";
  	var cframe = document.createElement("iframe");
  	cframe.id = iframeId;
  	cframe.src = "blank.html";
  	cframe.setAttribute("class", "codeframe");
  	cframe.setAttribute("className", "codeframe");
  	cframe.frameBorder = "no";
-	tabdiv.appendChild(cframe);
+ 	tabdiv.appendChild(cframe);*/
+ 	var innerdiv = document.createElement("div");
+ 	var divid = properties.id + "_div"
+ 	innerdiv.id = divid;
+ 	innerdiv.setAttribute("class", "codeframe");
+ 	innerdiv.setAttribute("className", "codeframe");
+ 	innerdiv.contentEditable = "true";
+ 	innerdiv.onkeyup=function() { logCart(this); };
+ 	innerdiv.onclick=function() { logCart(this); };
+ 	innerdiv.onselect=function() { logCart(this); };
+ 	innerdiv.onkeydown=function() { return insertText(this); };
+	tabdiv.appendChild(innerdiv);
  	
  	var parentNode = dojo.widget.getWidgetById("codeareaMainTabContainer");
  	var tab = dojo.widget.createWidget("ContentPane", properties, tabdiv);
  	parentNode.addChild(tab);
  	parentNode.selectTab(tab);
  	
- 	var doc = cframe.contentWindow.document;
- 	doc.designMode = "on";
+ 	/*var doc = cframe.contentWindow.document;
+ 	doc.designMode = "on";*/
  	
  	setIDEWindowTitle(fileName);
  	//doc.write("<html><head><link rel='stylesheet' type='text/css' href='stylesheets/common.css'/></head><body>" + "public class " + fileName + " {<br/>" + "public static void main(String[] args) {<br/>}<br/>}" + "</body></html>");
  	//doc.body.innerHTML = "public class " + fileName + " {<br>" + "public static void main(String[] args) {<br>}<br>}";
  }
- /*
- function getNewClassName() {
- 	var properties = {
- 		dojoType:"Dialog",
- 		id:"newclassdialog",
- 		widgetId:"newclassdialog",
- 		bgColor:"white",
- 		bgOpacity:"0.5",
- 		toggle:"fade",
- 		toggleDuration:"250"
- 	};
- 	var newDiv = document.createElement("div");
- 	newDiv.style.height = "200px";
- 	newDiv.style.width = "200px";
- 	newDiv.innerHTML = "HELLO<input type='text'></input>";
- 	var newClassDialog = dojo.widget.createWidget("Dialog", properties, newDiv);
- 	var parentNode = document.getElementById("window");
- 	parentNode.appendChild(newDiv);
- 	return "Hello";	
- }*/
+
+function logCart(obj)
+{
+   obj.logPos = document.selection.createRange().duplicate();
+}
+
+function insertAtCaret (objit, text) 
+{
+    if (objit.logPos) 
+    {
+       var logPos = objit.logPos;
+       logPos.text= logPos.text.charAt(logPos.text.length - 1) == ' ' ? text + ' ' : text;
+    }
+    else
+    {
+         objit.innerText = text;
+    }
+}
+
+
+
+function insertText(ta)
+{
+    if (window.event.keyCode == 9)
+    {
+       var sv = "    ";
+       var t = ta;
+       if (t.logPos)
+       {
+          insertAtCaret(t, sv);
+       }
+       else
+       {
+          sv = "\n" + sv;
+          t.innerText+= sv;
+       }
+        return false;
+   }
+   else
+   {
+        return true;
+   }
+}

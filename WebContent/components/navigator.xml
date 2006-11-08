@@ -1,5 +1,5 @@
 <div id="navigatorMainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
-	<div id="tab1" dojoType="ContentPane" label="Tab 1">
+	<div id="tab1" dojoType="ContentPane" label="Project">
 
 		<div dojoType="TreeRPCController" RPCUrl="local" widgetId="treeController" DNDController="create"></div>
 		<div dojoType="TreeSelector" widgetId="treeSelector"></div>
@@ -30,5 +30,5 @@
 		
 	</div>
 			
-	<a id="tab2" dojoType="LinkPane" href="test/haha.html" refreshOnShow="true">Tab 2</a>				
+	<a id="tab2" dojoType="LinkPane" href="test/haha.html" refreshOnShow="true">Hierarchy</a>				
 </div>

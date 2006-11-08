@@ -1,13 +1,13 @@
 dojo.addOnLoad(initKeywordTable);
 function format() {
 	var strText = document.getElementById("search").value;
-	var activeDoc = getActiveDoc();
-	if (activeDoc == null) {
+	var activeDiv = getActiveDiv();
+	if (activeDiv == null) {
 		return;
 	}
-	var content = activeDoc.body.innerHTML;
+	var content = activeDiv.innerHTML;
 	var newStr = doFormat(content);
-	activeDoc.body.innerHTML = newStr;	
+	activeDiv.innerHTML = newStr;	
 }
 
 

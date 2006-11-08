@@ -15,7 +15,7 @@
 function compile() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
 	var fileName = tabcontainer.selectedTabWidget.label;
-	var doc = getActiveDoc();
-	var source = doc.body.innerText;
+	var aDiv = getActiveDiv();
+	var source = aDiv.innerText;
 	sendSourceFile("compile", fileName, source);
 }
