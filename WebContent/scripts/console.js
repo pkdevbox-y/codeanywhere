@@ -16,6 +16,7 @@ function Console(consoleId) {
  }
  
 function globalWrite(type, content) {
+	//globalClean(console);
 	var message = document.createElement("div");
 	switch(type) {
 	case WARN:

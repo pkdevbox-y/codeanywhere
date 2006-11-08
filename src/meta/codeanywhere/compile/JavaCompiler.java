@@ -5,7 +5,9 @@ package meta.codeanywhere.compile;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.tools.Diagnostic;
 import javax.tools.DiagnosticCollector;
 import javax.tools.JavaCompilerTool;
 import javax.tools.JavaFileObject;
@@ -55,6 +57,10 @@ public class JavaCompiler implements ICompile {
 		task = compiler.getTask(null, fileManager, diagnostics, null, null, compilationUnits);
 		task.run();
 		return 0;
+	}
+	
+	public List<Diagnostic<? extends JavaFileObject>> getDiagnostics() {
+		return diagnostics.getDiagnostics();
 	}
 
 }
