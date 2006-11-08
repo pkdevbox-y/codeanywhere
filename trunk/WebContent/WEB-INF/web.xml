@@ -58,6 +58,16 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>run</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.RunServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>run</servlet-name>
+    <url-pattern>/run</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>user</servlet-name>
     <servlet-class>pfms.controller.servlet.velocity.UserInfoServlet</servlet-class>
   </servlet>
