@@ -1,12 +1,10 @@
 <div id="navigatorMainTabContainer" dojoType="TabContainer" class="container noborder" selectedTab="tab1">
 	<div id="tab1" dojoType="ContentPane" label="Project">
 
-		
-			
 		<div dojoType="Tree" menu="treeContextMenu" DNDMode="betwwen" selector="treeSelector" widgetId="tree" DNDAcceptTypes="tree"  controller="treeController">
 			
-			<div dojoType="TreeNode" title="Item 2.1" widgetId="2.1" isFolder="true"></div>
-			<div dojoType="TreeNode" title="Item 2.2" widgetId="2.2" isFolder="true"></div>
+			<div dojoType="TreeNode" title="Student" widgetId="1.1" isFolder="true"></div>
+			<div dojoType="TreeNode" title="Teacher" widgetId="1.2" isFolder="true"></div>
 		</div>
 		
 	</div>
