@@ -1,6 +1,6 @@
 <div id="toolbarContainer" dojoType="ToolbarContainer" >
 	<div dojoType="toolbar">
-		<img id="newbutton" src="icons/newl.png" class="toolbarbutton" />
+		<img id="newbutton" src="icons/newl.png" class="toolbarbutton" onmousedown="buttonClicked();"/>
 		<span dojoType="tooltip" connectId="newbutton" caption="New" ></span>
 		<img id="savebutton" src="icons/savel.png" class="toolbarbutton" />
 		<span dojoType="tooltip" connectId="savebutton" caption="Save" ></span>
