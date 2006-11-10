@@ -18,8 +18,7 @@ function afterSendSourceFile(req, sender)
  	var jsonObject = temp.parseJSON();
  	if (jsonObject.status == "failed") {
  		var array = jsonObject.info.parseJSON();
- 		var len = jsonObject.length;
- 		for (var i = 0; i < len; i++) {
+ 		for (var i = 0; i < array.length; i++) {
  			var jsonWarning = array[i];
  			theConsole.write(WARN, jsonWarning.line + " : " + jsonWarning.message);
  		}
@@ -31,7 +30,7 @@ function afterSendSourceFile(req, sender)
 function run() {		
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");
 	var fileName = tabcontainer.selectedTabWidget.label;
-	runFile("run", fileName, source);
+	runFile("run", fileName);
 }
 
 function runFile(url, fileName)
