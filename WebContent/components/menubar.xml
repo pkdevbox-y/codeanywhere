@@ -118,7 +118,7 @@
 	
 	<div dojoType="MenuItem2" caption="Run History"></div>
 	<div dojoType="MenuItem2" caption="Run As"></div>
-	<div dojoType="MenuItem2" caption="Run..." iconSrc="icons/run.gif" onClick="compile();"></div>
+	<div dojoType="MenuItem2" caption="Run..." iconSrc="icons/run.gif" onClick="run();"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Debug History"></div>

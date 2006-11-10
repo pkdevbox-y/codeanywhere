@@ -109,23 +109,42 @@ function insertAtCaret (objit, text)
 }
 
 
-
+var line = 0;
 function insertText(ta)
 {
+	if (window.event.keyCode == 13) {
+		var sv = "  ";		
+		if (ta.logPos)
+       	{
+          	insertAtCaret(ta, "\n");
+          	for (var i = 0; i < line; i++) {
+          		insertAtCaret(ta, sv);
+          	}
+          	return false;
+       	}
+	}
+	
+	if (window.event.keyCode == 219) {
+		line++;
+	}
+	if (window.event.keyCode == 221) {
+		line--;
+		insertAtCaret(ta, "\b\b\b\b");
+	}
+	
     if (window.event.keyCode == 9)
     {
        var sv = "    ";
-       var t = ta;
-       if (t.logPos)
+       if (ta.logPos)
        {
-          insertAtCaret(t, sv);
+          insertAtCaret(ta, sv);
        }
        else
        {
           sv = "\n" + sv;
-          t.innerText+= sv;
+          ta.innerText+= sv;
        }
-        return false;
+       return false;
    }
    else
    {
