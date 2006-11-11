@@ -12,6 +12,10 @@ function restoreIconSrc() {
 	this.icon.src = this.oldIconSrc;
 }
 
+function openClicked(selectedNode, controllerId) {
+	alert(selectedNode);
+}
+
 
 /* process up or down operation */
 function moveClicked(selectedNode, controllerId, icon, direction) {
@@ -129,6 +133,10 @@ dojo.addOnLoad(function(){
 
 /* setup menu actrions */
 dojo.addOnLoad(function() {
+	
+	dojo.event.topic.subscribe('treeContextMenuOpen/engage',
+		function (menuItem) { openClicked( menuItem.getTreeNode(), 'treeController'); }
+	);
 
 	dojo.event.topic.subscribe('treeContextMenuCreate/engage',
 		function (menuItem) { createClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
