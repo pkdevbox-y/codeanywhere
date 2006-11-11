@@ -46,6 +46,7 @@ var newClassDialog = 0;
  function OnNewButtonClick() {
  	var fileName = document.getElementById("newclassname").value;
  	OnFileNewClass(fileName); 	
+ 	OnNewTreeNode(fileName);
  }
  function OnFileNewClass(fileName) {
  	tabcount++;
@@ -150,4 +151,19 @@ function insertText(ta)
    {
         return true;
    }
+}
+
+function OnNewTreeNode(fileName)
+{
+	var properties = {
+ 		dojoType:"TreeNode",
+ 		widgetId:"treenode" + tabcount,
+ 		id:"treenode" + tabcount,
+ 		title:fileName,
+ 		isFolder:false
+ 	};
+ 	
+ 	var tree = dojo.widget.getWidgetById("project_tree");
+	var treeNode = dojo.widget.createWidget("TreeNode", properties);
+ 	tree.addChild(treeNode);
 }
