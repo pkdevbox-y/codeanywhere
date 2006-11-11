@@ -51,22 +51,6 @@
 	dojo.hostenv.writeIncludes();
 </script>
 
-<style type="text/css">
-.buttonDown {
-	position: relative;
-	float: left;
-	margin: 6px 4px 0px 4px;
-	cursor : pointer;
-}
-</style>
-
-<script type="text/javascript">
-function buttonClicked() {
-	document.getElementById('newbutton').className="buttonDown";
-	alert(document.getElementById('newbutton'));
-}
-</script>
-
 </head>
 
 <body>
@@ -76,12 +60,12 @@ function buttonClicked() {
 <div dojoType="TreeSelector" eventNames="select:nodeSelected" widgetId="treeSelector"></div>
 			
 <div dojoType="TreeContextMenu" toggle="explode" contextMenuForWindow="false" widgetId="treeContextMenu">
-	<div dojoType="TreeMenuItem" treeActions="addChild" iconSrc="images/static/createsmall.gif" widgetId="treeContextMenuCreate" caption="Create"></div>
+	<div dojoType="TreeMenuItem" treeActions="open" iconSrc="images/static/createsmall.gif " caption="Open" widgetId="treeContextMenuOpen"></div>
+	<div dojoType="TreeMenuItem" treeActions="addChild" iconSrc="images/static/createsmall.gif" caption="Create" widgetId="treeContextMenuCreate"></div>
 	<div dojoType="TreeMenuItem" treeActions="remove" iconSrc="images/static/removesmall.gif" caption="Remove" widgetId="treeContextMenuRemove"></div>
 	<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/downsmall.png" caption="Up" widgetId="treeContextMenuUp"></div>
 	<div dojoType="TreeMenuItem" treeActions="move" iconSrc="images/static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
-	<div dojoType="TreeMenuItem" treeActions="open" caption="Open" widgetId="Open"></div>
-
+	
 </div>
 <!-- end -->
 

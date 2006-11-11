@@ -116,13 +116,11 @@ dojo.addOnLoad(function(){
 	}
 
 	/* Add debug print for all tree events */
-	var tree = dojo.widget.manager.getWidgetById('tree');
-
-
+	var tree = dojo.widget.manager.getWidgetById('project_tree');
 	for(eventName in tree.eventNames) {
 		dojo.event.topic.subscribe(
 			tree.eventNames[eventName],
-			new reporter('tree'),
+			new reporter('project_tree'),
 			'go'
 		);
 	}
