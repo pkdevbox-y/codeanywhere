@@ -6,7 +6,7 @@
 function restoreIconSrc() {
 	//icon was changed during the action => no need to move it back
 	//alert("Restore "+this.icon.src.substr(-18))
-	if (this.icon.src.substr(-18) != '../images/static/loading.jpg') { // check if icon.src is loading icon
+	if (this.icon.src.substr(-18) != '../icons/loading.jpg') { // check if icon.src is loading icon
 		return;
 	}
 	this.icon.src = this.oldIconSrc;
@@ -55,7 +55,7 @@ function createClicked(selectedNode, controllerId, icon) {
 		return false;
 	}
 
-	this.icon.src = '../images/static/loading.jpg';
+	this.icon.src = '../icons/loading.jpg';
 
 	// I send some data to server and recieve feedback with right node
 	var res = controller.createChild(selectedNode, 0, { suggestedTitle: "New Node" }, dojo.lang.hitch(this, restoreIconSrc));
@@ -83,7 +83,7 @@ function removeClicked(selectedNode, controllerId, icon) {
 	this.controller = dojo.widget.manager.getWidgetById(controllerId);
 
 
-	this.icon.src = '../images/static/loading.jpg';
+	this.icon.src = '../icons/loading.jpg';
 
 	var res = controller.removeNode(selectedNode, dojo.lang.hitch(this, restoreIconSrc));
 
