@@ -6,29 +6,61 @@
 
 div.wiki {
 	width: 600px;
-	height: 450px;
+	height: 480px;
 }
 
 div.search {
-	width: 128px;
-	margin: 4px;
-	padding: 2px;
+	width: 128px;	
+	margin: 4px 2px 2px 2px;
 	float: left;
+}
+
+.searchinput {
+	margin: 0px;
+	padding: 0px;
 }
 
 input.searchtext {
 	border: solid 1px #3169B5;
-	width: 128px;
+	width: 100px;
+	height: 19px;
+	margin: 2px 0px 2px 2px;
+	float: left;
+}
+
+input.searchbtn {
+	border: solid 1px #3169B5;
+	width: 23px;
+	height: 19px;
+	margin: 2px 0px 2px 0px;
+	float: left;
 }
 
 div.index {
-	height: 85%;
+	border: solid 1px #3169B5;
+	width: 128px;
+	height: 419px;
+	margin: 4px 2px 2px 2px;
+	overflow: auto;
 }
 
 div.result {
-	width: 440px;
-	height: 90%;
-	margin: 4px;
+	width: 448px;
+	height: 444px;
+	margin: 6px 4px 2px 2px;
 	padding: 2px;
 	float: right;
+	overflow: auto;
+}
+
+.itemOnMouseOver {
+	height: 24px;
+	background-color: black;
+	color: white;
+}
+
+.itemOnMouseOut {
+	height: 24px;
+	background-color: white;
+	color: black;
 }

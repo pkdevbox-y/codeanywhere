@@ -22,22 +22,26 @@ public class WikiManager {
 	}
 	
 	public JSONArray search(String...tags) {
-		JSONArray source = new JSONArray();
+		JSONArray result = new JSONArray();
 		for (String tag: tags) {
 			JSONObject jsonObject = singleSearch(tag);
-			source.put(jsonObject);
+			result.put(jsonObject);
 		}
-		return source;
+		return result;
 	}
 	
 	private JSONObject singleSearch(String tag) {
 		JSONObject jsonObject = new JSONObject();
 		try {
 			jsonObject.put("title", "List");
-			jsonObject.put("source", "public class Student {}");
+			jsonObject.put("source", "public class Student {\n\tprivate String " + tag + ";\n}");
 		} catch (JSONException jsone) {
 			jsone.printStackTrace();
 		}
 		return jsonObject;
+	}
+	
+	public void addToWiki(String source, String...tags) {
+		
 	}
 }
