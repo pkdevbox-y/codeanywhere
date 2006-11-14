@@ -1,11 +1,14 @@
 <html>
 <head>
-<title>dialog test</title>
+<title>Wiki - Development Source</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/wikidialog.css"/>
 
-<script type="text/javascript" src="../scripts/dojo.js"></script>
+<script type="text/javascript" src="scripts/dojo.js"></script>
+<script type="text/javascript" src="scripts/ajax.js"></script>
+<script type="text/javascript" src="scripts/json.js"></script>
+<script type="text/javascript" src="scripts/wiki.js"></script>
 <script type="text/javascript">
 	dojo.require("dojo.dnd.HtmlDragMove");
 	dojo.require("dojo.event.*");
@@ -28,8 +31,11 @@
 		<div class="button close"></div>
 		<div class="button min"></div>
 	</div>
-	<div id="search" class="border search">
-	<input type="text" id="searchtext" class="searchtext"></input>
+	<div id="search" class="search">
+	<div id="searchinput" class="searchinput">
+		<input type="text" id="searchtext" class="searchtext"></input>
+		<input type="button" id="searchbtn" value="Go" class="searchbtn" onClick="wikiSearch();"></input>
+	</div>
 	<div id="index" class="index"></div>
 	</div>
 	

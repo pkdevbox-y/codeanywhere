@@ -68,6 +68,16 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>wikiSearch</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.WikiSearchServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>wikiSearch</servlet-name>
+    <url-pattern>/wikiSearch</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>user</servlet-name>
     <servlet-class>pfms.controller.servlet.velocity.UserInfoServlet</servlet-class>
   </servlet>
