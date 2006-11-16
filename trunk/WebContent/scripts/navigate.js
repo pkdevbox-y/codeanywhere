@@ -16,7 +16,7 @@ function openClicked(selectedNode, controllerId) {
 	alert(selectedNode);
 }
 
-/* add the fields and methods to the class */
+/* add fields and method to the class */
 function addFieldAndMethod(fileName, infos)
 {
 	var parentNode = dojo.widget.getWidgetById(fileName + "_treenode");
