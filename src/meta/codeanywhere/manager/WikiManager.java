@@ -1,7 +1,7 @@
 /**
  * 
  */
-package meta.codeanywhere.manage;
+package meta.codeanywhere.manager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
