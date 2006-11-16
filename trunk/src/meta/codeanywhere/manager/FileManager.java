@@ -10,5 +10,12 @@ package meta.codeanywhere.manager;
  * @version 11/10/2006
  */
 public class FileManager {
-
+	private static FileManager manager = null;
+	static {
+		manager = new FileManager();
+	}
+	
+	public static FileManager getManager() {
+		return manager;
+	}
 }

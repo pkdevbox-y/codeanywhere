@@ -16,11 +16,11 @@ public class WhileTruePolicy extends Policy {
 	
 	@Override
 	public boolean check(String block) {
-		if (block.matches("while(true).*"))
-			return true;
-		if (block.matches("for(;;).*"))
-			return true;
-		return false;
+		if (block.matches(".*while\\(true\\).*"))
+			return false;
+		if (block.matches(".*for\\(;;\\).*"))
+			return false;
+		return true;
 	}
 
 }

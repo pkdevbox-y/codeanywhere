@@ -10,5 +10,12 @@ package meta.codeanywhere.manager;
  * @version 11/10/2006
  */
 public class RunManager {
+	private static RunManager manager = null;
+	static {
+		manager = new RunManager();
+	}
 
+	public static RunManager getManager() {
+		return manager;
+	}
 }

@@ -17,6 +17,11 @@ public abstract class Policy {
 	 
 	 protected PolicyLevel level;
 	 
+	 /**
+	  * Check if the code is security
+	  * @param block The code block
+	  * @return True if passed else false
+	  */
 	 public abstract boolean check(String block);
 
 	/**
