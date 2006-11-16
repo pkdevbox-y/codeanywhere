@@ -111,3 +111,13 @@ div.consoletest {
 	height: 300px;
 	overflow: auto;
 }
+
+.infobar {
+	boder: solid 2px #3169b5;
+	background-color: yellow;
+	color: #3169b5;
+	width: 200px;
+	height: 40px;
+	display: none;
+	z-index: 16;
+}

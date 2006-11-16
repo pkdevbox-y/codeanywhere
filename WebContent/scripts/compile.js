@@ -1,8 +1,14 @@
 function compile() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
-	var fileName = tabcontainer.selectedTabWidget.label;
 	var aDiv = getActiveDiv();
+	if (aDiv == null) {
+		help("compile");
+		return;
+	}
+	var fileName = tabcontainer.selectedTabWidget.label;
 	var source = aDiv.innerText;
+	var infoBar = document.getElementById("infoBar");
+	infoBar.style.display = "inline";
 	sendSourceFile("compile", fileName, source);
 }
 
@@ -29,6 +35,11 @@ function afterSendSourceFile(req, sender)
  
 function run() {		
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");
+	var aDiv = getActiveDiv();
+	if (aDiv == null) {
+		help("run");
+		return;
+	}
 	var fileName = tabcontainer.selectedTabWidget.label;
 	runFile("run", fileName);
 }

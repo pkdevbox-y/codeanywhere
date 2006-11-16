@@ -6,8 +6,10 @@
 
 function getActiveDiv() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
-	var widgetId = tabcontainer.selectedTabWidget.widgetId;
-	
+	var selectedTab = tabcontainer.selectedTabWidget;
+	if (selectedTab == null)
+		return null;
+	var widgetId = selectedTab.widgetId;
 	var activeDiv = document.getElementById(widgetId + "_div");
 	return activeDiv;
 }

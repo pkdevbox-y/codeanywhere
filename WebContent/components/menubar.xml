@@ -20,7 +20,7 @@
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Properties..."></div>
-	<div dojoType="MenuItem2" caption="Exit"></div>
+	<div id="File_Exit" dojoType="MenuItem2" caption="Exit" onClick="OnQuit();"></div>
 	
 </div>
 
@@ -57,7 +57,7 @@
 	<div dojoType="MenuItem2" caption="Word Completion"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
-	<div dojoType="MenuItem2" caption="Set Encoding..."></div>
+	<div dojoType="MenuItem2" caption="Set Encoding..." onClick="OnLogin();"></div>
 	
 </div>
 
