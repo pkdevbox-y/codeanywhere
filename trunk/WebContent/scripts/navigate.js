@@ -13,7 +13,63 @@ function restoreIconSrc() {
 }
 
 function openClicked(selectedNode, controllerId) {
-	alert(selectedNode);
+
+	//alert(selectedNode);
+
+	var a = new Object();
+	a.kind = "Field";
+	a.name = "id";
+	a.modifier = "help";
+	addFieldAndMethod("a", new Array(a));
+}
+
+function addFieldAndMethod(fileName, infos)
+{
+	var parentNode = dojo.widget.getWidgetById(fileName + "_treenode");
+	parentNode.destroyChildren();
+ 	parentNode.isFolder=true;
+	var properties;
+	
+	for (var i=0;i<infos.length;i++)
+	{
+		
+		var info = infos[i];
+		//alert(info.name);
+		if (info.kind=="Field")
+		{
+			var field = info.name;
+			properties = {
+		 		dojoType:"TreeNode",
+		 		widgetId:field + "_treenode",
+		 		id:field + "_treenode",
+		 		title:field,
+		 		isFolder:false,
+		 		//childIconSrc:"icons/" + info.modifier + ".png"
+		 	};	
+		}
+		else if (info.kind=="Method")
+		{
+			var method = info.name;
+			
+			/*var parameters = info.parameterList;
+			for (var i=0;i<parameters.length;i++)
+			{
+				
+			}*/
+			
+			properties = {
+		 		dojoType:"TreeNode",
+		 		widgetId:method + "_treenode",
+		 		id:method + "_treenode",
+		 		title:method,
+		 		isFolder:false,
+		 		//childIconSrc:"icons/" + info.modifier + ".png"
+		 	};	
+		}
+
+		var treeNode = dojo.widget.createWidget("TreeNode", properties);
+	 	parentNode.addChild(treeNode);
+	}
 }
 
 
