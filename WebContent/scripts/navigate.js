@@ -13,16 +13,10 @@ function restoreIconSrc() {
 }
 
 function openClicked(selectedNode, controllerId) {
-
-	//alert(selectedNode);
-
-	var a = new Object();
-	a.kind = "Field";
-	a.name = "id";
-	a.modifier = "help";
-	addFieldAndMethod("a", new Array(a));
+	alert(selectedNode);
 }
 
+/* add the fields and methods to the class */
 function addFieldAndMethod(fileName, infos)
 {
 	var parentNode = dojo.widget.getWidgetById(fileName + "_treenode");
