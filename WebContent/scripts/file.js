@@ -157,10 +157,10 @@ function OnNewTreeNode(fileName)
 {
 	var properties = {
  		dojoType:"TreeNode",
- 		widgetId:"treenode" + tabcount,
- 		id:"treenode" + tabcount,
+ 		widgetId:fileName+"_treenode",
+ 		id:fileName+"_treenode",
  		title:fileName,
- 		isFolder:false
+ 		isFolder:true
  	};
  	
  	var tree = dojo.widget.getWidgetById("project_tree");
