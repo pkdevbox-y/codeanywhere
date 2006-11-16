@@ -3,6 +3,7 @@ function format() {
 	var strText = document.getElementById("search").value;
 	var activeDiv = getActiveDiv();
 	if (activeDiv == null) {
+		help("format");
 		return;
 	}
 	var content = activeDiv.innerHTML;

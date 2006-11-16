@@ -130,7 +130,7 @@ function insertText(ta)
 	}
 	if (window.event.keyCode == 221) {
 		line--;
-		insertAtCaret(ta, "\b\b\b\b");
+		insertAtCaret(ta, "");
 	}
 	
     if (window.event.keyCode == 9)

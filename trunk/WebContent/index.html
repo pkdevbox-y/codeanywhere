@@ -20,6 +20,8 @@
 <script language="javascript" type="text/javascript" src="scripts/compile.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/search.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/format.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/help.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/system.js"></script>
 
 <script language="javascript" type="text/javascript">
 	dojo.require("dojo.io.*");
@@ -69,7 +71,7 @@
 <!-- end -->
 
 <div id="window" class="border window">
-	<div id="titlebar" class="noborder titlebar"><div id="titlebartext" class="titlebartext">codeAnyehere - Untitled</div><div class="button close" onClick="window.close();"></div></div>
+	<div id="titlebar" class="noborder titlebar"><div id="titlebartext" class="titlebartext">codeAnyehere - Untitled</div><div class="button close" onClick="OnQuit();"></div></div>
 	<div id="menubar" class="noborder menubar" src="components/menubar.xml">
 	</div>
 	
@@ -100,7 +102,9 @@
 		</div>
 		
 	</div>
-	
+	<div id="infoBar" class="infobar">
+		Please wait, processing...
+	</div>
 </div>
 
 	<div dojoType="TaskBar" id="hiddentaskbar" hasShadow="true" resizable="false";
@@ -108,20 +112,43 @@
 	</div>
 
 <div dojoType="FloatingPane" id="newDialog" title="New Class" style="width: 300px; height: 200px; left: 300px; top: 100px; display: none;"
-	hasShadow="true" resizable="true">
+	hasShadow="true" resizable="true" displayMinimizeAction="true">
 Class name: <input type="text" id="newclassname"></input>
 <input type="button" id="hider" value="New" onClick="OnNewButtonClick();dojo.widget.byId('newDialog').hide();"></input>
 <input type="button" id="cancler" value="Cancle" onClick="dojo.widget.byId('newDialog').hide();"></input>
 </div>
 
 <div dojoType="FloatingPane" id="aboutDialog" title="About codeAnywhere" style="width: 320px; height: 240px; left: 300px; top: 100px; display: none;"
-	hasShadow="true" resizable="true">
+	hasShadow="true" resizable="true" displayMinimizeAction="true" toggle="fade">
 	<img src="images/calogo.png"></img>
 codeAnywhere - Online Development Tool
 <br>
 by Team Meta
 <br>
 <center><input type="button" id="oker" value="OK" onClick="dojo.widget.byId('aboutDialog').hide();"></input></center>
+</div>
+
+<div dojoType="FloatingPane" id="helpDialog" title="Help ?" style="width: 120px; height: 90px; float: right; display: none;"
+	hasShadow="true" resizable="false" displayMinimizeAction="true" toggle="fade">
+	<a href="javascript:alert('How should I know?')" id="problem">Help to use</a>
+</div>
+
+<div dojoType="FloatingPane" id="loginDialog" title="Login" style="width: 300px; height: 200px; float: right; display: inline;"
+	hasShadow="true" resizable="false" displayMinimizeAction="false">
+	Username: <input type="text" id="username"></input>
+	<br>
+	Password: <input type="password" id="password"></input>
+	<br>
+	<input type="button" value="Login" onClick="doLogin();"></input>
+	<input type="button" value="Register" onClick="OnRegister();"></input>
+</div>
+
+<div dojoType="FloatingPane" id="quitDialog" title="Quit codeAnywhere" style="width: 300px; height: 200px; float: right; display: none;"
+	hasShadow="true" resizable="false" displayCLoseAction="false" toggle="fade">
+	Do you really want to quit and save all the changes?
+	<br>
+	<input type="button" value="Quit" onClick="doQuit();"></input>
+	<input type="button" value="Cancle" onClick="cancleQuit();"></input>
 </div>
 </body>
 <script language="javascript" type="text/javascript">
