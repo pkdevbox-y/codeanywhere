@@ -1,7 +1,7 @@
 /**
  * @(#)CompileManager.java
  */
-package meta.codeanywhere.manage;
+package meta.codeanywhere.manager;
 
 /**
  * The CompileManager process all the request to compile a sourse file.

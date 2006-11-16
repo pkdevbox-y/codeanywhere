@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import meta.codeanywhere.manage.WikiManager;
+import meta.codeanywhere.manager.WikiManager;
 
 import org.json.JSONArray;
 

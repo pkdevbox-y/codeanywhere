@@ -1,7 +1,7 @@
 /**
  * @(#)FileManager.java
  */
-package meta.codeanywhere.manage;
+package meta.codeanywhere.manager;
 
 /**
  * The FileManager process all the request to create or open a file

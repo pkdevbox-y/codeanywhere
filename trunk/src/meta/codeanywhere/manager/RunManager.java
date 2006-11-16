@@ -1,7 +1,7 @@
 /**
  * @(#)RunManager.java
  */
-package meta.codeanywhere.manage;
+package meta.codeanywhere.manager;
 
 /**
  * The RunManaer process all the request to run a class
