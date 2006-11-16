@@ -12,13 +12,13 @@ import org.json.JSONObject;
  * @version 11/10/2006
  */
 public class WikiManager {
-	private static WikiManager instance = null;
+	private static WikiManager manager = null;
 	static {
-		instance = new WikiManager();
+		manager = new WikiManager();
 	}
 	
-	public static WikiManager getInstance() {
-		return instance;
+	public static WikiManager getManager() {
+		return manager;
 	}
 	
 	public JSONArray search(String...tags) {

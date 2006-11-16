@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import meta.codeanywhere.manager.security.Policy;
+import meta.codeanywhere.manager.security.RuntimeExecPolicy;
+import meta.codeanywhere.manager.security.WhileTruePolicy;
 /**
  * This is NOT a web security manager
  * This is for the code to run on the server to be security
@@ -17,11 +19,20 @@ import meta.codeanywhere.manager.security.Policy;
  * @version 11/16/2006
  */
 public class SecurityManager {
+	private static SecurityManager manager = null;
+	static {
+		manager = new SecurityManager();
+		manager.addPolicy(new RuntimeExecPolicy());
+		manager.addPolicy(new WhileTruePolicy());
+	}
+	public static SecurityManager getManager() {
+		return manager;
+	}
 	private List<Policy> classLevelPolicy = null;
 	private List<Policy> methodLevelPolicy = null;
 	private List<Policy> statementLevelPolicy = null;
 	
-	public SecurityManager() {
+	private SecurityManager() {
 		classLevelPolicy = new LinkedList<Policy>();
 		methodLevelPolicy = new LinkedList<Policy>();
 		statementLevelPolicy = new LinkedList<Policy>();
@@ -41,6 +52,11 @@ public class SecurityManager {
 		}
 	}
 	
+	/**
+	 * Check if the code contained in the source if security.
+	 * @param source The source code
+	 * @return Passed return true, else return false
+	 */
 	public boolean check(String source) {
 		BufferedReader reader = new BufferedReader(new StringReader(source));
 		String block = null;
@@ -48,7 +64,7 @@ public class SecurityManager {
 			block = reader.readLine();
 			while (block != null) {
 				for (Policy policy: statementLevelPolicy) {
-					if (policy.check(block))
+					if (!policy.check(block))
 						return false;
 				}
 				block = reader.readLine();
@@ -57,5 +73,10 @@ public class SecurityManager {
 			ioe.printStackTrace();
 		}		
 		return true;
+	}
+	
+	public static void main(String[] args) {
+		SecurityManager sm = SecurityManager.getManager();
+		System.out.println(sm.check("while(true) {"));
 	}
 }

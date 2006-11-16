@@ -16,9 +16,9 @@ public class RuntimeExecPolicy extends Policy {
 	@Override
 	public boolean check(String block) {
 		if (block.matches(".*exec(.*);")) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 }

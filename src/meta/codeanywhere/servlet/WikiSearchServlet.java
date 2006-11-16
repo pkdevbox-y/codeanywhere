@@ -46,7 +46,7 @@ public class WikiSearchServlet extends HttpServlet {
 		String tagsStr = request.getParameter("tags").trim();
 		String[] tags = tagsStr.split(" ");
 		
-		WikiManager wikiManager = WikiManager.getInstance();
+		WikiManager wikiManager = WikiManager.getManager();
 		JSONArray result = wikiManager.search(tags);
 		
 		
