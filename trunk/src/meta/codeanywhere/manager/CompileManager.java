@@ -50,10 +50,10 @@ public class CompileManager {
 		
 		List<Diagnostic<? extends JavaFileObject>> diagnosticList = javaCompiler.getDiagnostics();
 		JSONObject jsonObject = new JSONObject();
-		JSONArray jsonArray = new JSONArray();
 		
 		try {
 			if (diagnosticList.size() > 0) {
+				JSONArray jsonArray = new JSONArray();
 				for (Diagnostic<? extends JavaFileObject> diagnostic: diagnosticList) {
 					JSONObject jsonWarning  = new JSONObject();
 					jsonWarning.put("line", new Long(diagnostic.getLineNumber()).toString());
@@ -63,13 +63,13 @@ public class CompileManager {
 				jsonObject.put("length", jsonArray.length());
 				jsonObject.put("status", "failed");
 				jsonObject.put("info", jsonArray.toString());
-				buffer.append(jsonObject.toString());
+			} else {
+				JSONArray result = ReflectManager.getManager().getFieldsAndMethods(fileName);
+				jsonObject.put("fileName", fileName);
+				jsonObject.put("length", result.length());
+				jsonObject.put("status", "succeed");
+				jsonObject.put("info", result.toString());
 			}
-			JSONArray result = ReflectManager.getManager().getFieldsAndMethods(fileName);
-			jsonObject.put("fileName", fileName);
-			jsonObject.put("length", result.length());
-			jsonObject.put("status", "succeed");
-			jsonObject.put("info", result.toString());
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
