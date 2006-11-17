@@ -66,6 +66,7 @@ public class CompileManager {
 				buffer.append(jsonObject.toString());
 			}
 			JSONArray result = ReflectManager.getManager().getFieldsAndMethods(fileName);
+			jsonObject.put("fileName", fileName);
 			jsonObject.put("length", result.length());
 			jsonObject.put("status", "succeed");
 			jsonObject.put("info", result.toString());

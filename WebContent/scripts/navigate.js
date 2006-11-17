@@ -19,16 +19,14 @@ function openClicked(selectedNode, controllerId) {
 /* add fields and method to the class */
 function addFieldAndMethod(fileName, infos)
 {
-	var parentNode = dojo.widget.getWidgetById(fileName + "_treenode");
+	var parentNode = dojo.widget.byId(fileName + "_treenode");
 	parentNode.destroyChildren();
  	parentNode.isFolder=true;
 	var properties;
 	
-	for (var i=0;i<infos.length;i++)
+	for (var i = 0; i < infos.length; i++)
 	{
-		
 		var info = infos[i];
-		//alert(info.name);
 		if (info.kind=="Field")
 		{
 			var field = info.name;
@@ -37,26 +35,19 @@ function addFieldAndMethod(fileName, infos)
 		 		widgetId:field + "_treenode",
 		 		id:field + "_treenode",
 		 		title:field,
-		 		isFolder:false,
+		 		isFolder:false
 		 		//childIconSrc:"icons/" + info.modifier + ".png"
 		 	};	
 		}
 		else if (info.kind=="Method")
 		{
-			var method = info.name;
-			
-			/*var parameters = info.parameterList;
-			for (var i=0;i<parameters.length;i++)
-			{
-				
-			}*/
-			
+			var method = info.name;			
 			properties = {
 		 		dojoType:"TreeNode",
 		 		widgetId:method + "_treenode",
 		 		id:method + "_treenode",
 		 		title:method,
-		 		isFolder:false,
+		 		isFolder:false
 		 		//childIconSrc:"icons/" + info.modifier + ".png"
 		 	};	
 		}
@@ -65,7 +56,6 @@ function addFieldAndMethod(fileName, infos)
 	 	parentNode.addChild(treeNode);
 	}
 }
-
 
 /* process up or down operation */
 function moveClicked(selectedNode, controllerId, icon, direction) {
@@ -91,7 +81,6 @@ function moveClicked(selectedNode, controllerId, icon, direction) {
 		var res = controller.move(selectedNode, selectedNode.parent, selectedNode.getParentIndex()+1);
 	}
 }
-
 
 /* process create operation */
 function createClicked(selectedNode, controllerId, icon) {
