@@ -31,11 +31,13 @@ function afterSendSourceFile(req, sender)
  	} else if (jsonObject.status == "succeed") {
  		theConsole.write(INFO, "Process completed.")
  		var array = jsonObject.info.parseJSON();
- 		alert(jsonObject.info);
+ 		addFieldAndMethod(jsonObject.fileName, array);
+ 		/*
  		for (var i = 0; i < array.length; i++) {
  			var o = array[i];
  			alert(o.type + " : " + o.name + "@" + o.kind);
  		}
+ 		*/
  	}
 }
  
