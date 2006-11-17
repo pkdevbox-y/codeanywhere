@@ -23,13 +23,15 @@ function afterSendSourceFile(req, sender)
  	var temp = req.responseText;
  	var jsonObject = temp.parseJSON();
  	if (jsonObject.status == "failed") {
+ 		console.clear();
  		var array = jsonObject.info.parseJSON();
  		for (var i = 0; i < array.length; i++) {
  			var jsonWarning = array[i];
- 			theConsole.write(WARN, jsonWarning.line + " : " + jsonWarning.message);
+ 			console.write(WARN, jsonWarning.line + " : " + jsonWarning.message);
  		}
  	} else if (jsonObject.status == "succeed") {
- 		theConsole.write(INFO, "Process completed.")
+ 		console.clear();
+ 		console.write(INFO, "Process completed.")
  		var array = jsonObject.info.parseJSON();
  		addFieldAndMethod(jsonObject.fileName, array);
  		/*
@@ -60,5 +62,6 @@ function runFile(url, fileName)
  
 function afterRunFile(req, sender) {
 	var temp = req.responseText;
- 	theConsole.write(MESSAGE, temp);
+	console.clear();
+ 	console.write(MESSAGE, temp);
 }

@@ -8,15 +8,15 @@ var DEBUG = 1;
 var INFO = 2;
 var MESSAGE = 4;
 
-function Console(consoleId) {
-	this.console = document.getElementById(consoleId);
- 	this.write = globalWrite;
- 	this.read = globalRead;
- 	this.clean = function() { glablaClean(this.console); };
- }
- 
-function globalWrite(type, content) {
-	//globalClean(console);
+function Console(div) {
+	this.html = div;
+	this.console = document.getElementById(div);
+}
+
+Console.prototype.write = function(type, content) {
+	if (this.console == null) {
+		this.console = document.getElementById(this.html);
+	}
 	var message = document.createElement("div");
 	switch(type) {
 	case WARN:
@@ -38,17 +38,17 @@ function globalWrite(type, content) {
 		break;
 	}
 	message.innerHTML = content;
-	console.appendChild(message);
- }
- 
-function globalRead() {
-	 
+	this.console.appendChild(message);
 }
 
-function globalClean(c) {
-	while (c.hasChildNodes()) {
-		c.removeChild(c.childNodes[0]);
+Console.prototype.clear = function() {
+	while (this.console.hasChildNodes()) {
+		this.console.removeChild(this.console.firstChild);
 	}
 }
 
-var theConsole = new Console("console");
+Console.prototype.read = function() {
+	
+}
+
+var console = new Console("console");
