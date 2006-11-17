@@ -18,8 +18,4 @@ public class RunManager {
 	public static RunManager getManager() {
 		return manager;
 	}
-	
-	public void run(String classFile, String classPath) {
-		
-	}
 }
