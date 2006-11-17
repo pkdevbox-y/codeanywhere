@@ -83,50 +83,41 @@ function isSpace(ch) {
 		return false;
 }
 
-function doFormat(text) {;
+function doFormat(text) {
 	// Filer out the tags
-	var br = new RegExp("<br>", "g");
+	var br = new RegExp("<br>", "ig");
 	var startTag = new RegExp("<[^>]*>", "g");
 	var endTag = new RegExp("</.*>", "g");
 	text = text.replace(br, "\n");
 	text = text.replace(startTag, "");
 	text = text.replace(endTag, "");
 	
-	// Indentation
-	var indentCount = 0;
-	var tmp = "";
-	for (var i = 0; i < text.length; i++) {
-		if (text.charAt(i) == "{") {
-			tmp += "{";
-			indentCount++;
-		} else if (text.charAt(i) == "\n") {
-			tmp += "\n";
-			if (text.charAt(i + 1) == "}")
-				indentCount--;
-			for (var j = 0; j < indentCount; j++) {
-				tmp += indentStr;
-			}
-		} else {
-			tmp += text.charAt(i);
-		}
-	}
-	//alert(tmp);
+	// High light string
+	text = text.replace(/("[^"]*")/g, 
+		"<font color=\"Red\">$1</font>");
+	// High light comment /* */ 
+	text = text.replace(/(\/\*\/*(\**[^*\/]\/*)*\*+\/)/g, 
+		"<font color=\"Green\">$1</font>");
+	// High light comment //
+	text = text.replace(/(\/\/.*)\n/g, 
+		"<font color=\"Green\">$1</font>\n");
+	
 	// Search for the keywords
 	var result;
 	var html = "";
 	var i = 0;
 	var id = /[_a-zA-Z](\w|\$)*/g;
-	while ((result = id.exec(tmp)) != null) {
+	while ((result = id.exec(text)) != null) {
 		if (keywords[result[0]] == true) {  // Match a keyword
 			var hlt = hiLight(result[0]);
-			html += tmp.substring(i, result.index);
+			html += text.substring(i, result.index);
 			html += hlt;
 			i = id.lastIndex;
 		}
 	}
-	html += tmp.substring(i);
+	html += text.substring(i);
 	
 	html = html.replace(/\n/g, "<br>"); // Return to <br>
-	html = html.replace(/`/g, "&nbsp");
+	//html = html.replace(/`/g, "&nbsp");
 	return html;
 }
