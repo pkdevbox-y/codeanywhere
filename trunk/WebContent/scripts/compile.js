@@ -1,4 +1,5 @@
 function compile() {
+	format();
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
 	var aDiv = getActiveDiv();
 	if (aDiv == null) {

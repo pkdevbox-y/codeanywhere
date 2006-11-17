@@ -160,7 +160,8 @@ function OnNewTreeNode(fileName)
  		widgetId:fileName+"_treenode",
  		id:fileName+"_treenode",
  		title:fileName,
- 		isFolder:true
+ 		isFolder:true,
+ 		childIconSrc:"icons/class_tree.png"
  	};
  	
  	var tree = dojo.widget.getWidgetById("project_tree");

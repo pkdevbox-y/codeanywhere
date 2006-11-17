@@ -43,7 +43,6 @@ function addFieldAndMethod(fileName, infos) {
 		else if (info.kind=="Method")
 		{
 			var method = info.name;
-			alert(method);
 			var icon = "icons/" + getIcon(info.modifier) + "_method.png";
 			
 			properties = {
@@ -52,7 +51,7 @@ function addFieldAndMethod(fileName, infos) {
 		 		id:method + "_treenode",
 		 		title:method,
 		 		isFolder:false,
-		 		childIconSrc:icons
+		 		childIconSrc:icon
 		 	};	
 		}
 
