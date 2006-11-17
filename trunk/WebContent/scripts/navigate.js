@@ -21,8 +21,7 @@ function addFieldAndMethod(fileName, infos)
 {
 	var parentNode = dojo.widget.byId(fileName + "_treenode");
 	parentNode.destroyChildren();
- 	parentNode.isFolder=true;
-	var properties;
+ 	var properties;
 	
 	for (var i = 0; i < infos.length; i++)
 	{
