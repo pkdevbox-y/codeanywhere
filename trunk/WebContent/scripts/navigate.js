@@ -17,8 +17,7 @@ function openClicked(selectedNode, controllerId) {
 }
 
 /* add fields and method to the class */
-function addFieldAndMethod(fileName, infos)
-{
+function addFieldAndMethod(fileName, infos) {
 	var parentNode = dojo.widget.byId(fileName + "_treenode");
 	parentNode.destroyChildren();
  	var properties;
@@ -26,28 +25,34 @@ function addFieldAndMethod(fileName, infos)
 	for (var i = 0; i < infos.length; i++)
 	{
 		var info = infos[i];
+		
 		if (info.kind=="Field")
 		{
 			var field = info.name;
+			var icon = "icons/" + getIcon(info.modifier) + "_field.png";
+			
 			properties = {
 		 		dojoType:"TreeNode",
 		 		widgetId:field + "_treenode",
 		 		id:field + "_treenode",
 		 		title:field,
-		 		isFolder:false
-		 		//childIconSrc:"icons/" + info.modifier + ".png"
+		 		isFolder:false,
+		 		childIconSrc:icon
 		 	};	
 		}
 		else if (info.kind=="Method")
 		{
-			var method = info.name;			
+			var method = info.name;
+			alert(method);
+			var icon = "icons/" + getIcon(info.modifier) + "_method.png";
+			
 			properties = {
 		 		dojoType:"TreeNode",
 		 		widgetId:method + "_treenode",
 		 		id:method + "_treenode",
 		 		title:method,
-		 		isFolder:false
-		 		//childIconSrc:"icons/" + info.modifier + ".png"
+		 		isFolder:false,
+		 		childIconSrc:icons
 		 	};	
 		}
 
@@ -56,30 +61,30 @@ function addFieldAndMethod(fileName, infos)
 	}
 }
 
-/* process up or down operation */
-function moveClicked(selectedNode, controllerId, icon, direction) {
-	if (selectedNode.actionIsDisabled(selectedNode.actions.MOVE)) {
-		return false;
+
+function getIcon(modifier) {
+	var PUBLIC = 1;
+	var PRIVATE = 2;
+	var PROTECTED = 4;
+	
+	if ((modifier & PUBLIC) == PUBLIC)
+	{
+		return "public";
 	}
-
-	this.icon = icon;
-	this.oldIconSrc = icon.src;
-
-	this.controller = dojo.widget.manager.getWidgetById(controllerId);
-
-	if (!selectedNode) {
-		alert('No node selected');
-		return false;
+	else if ((modifier & PROTECTED) == PROTECTED)
+	{
+		return "protected";
 	}
-
-	if (direction == 'up') {
-		if (!selectedNode.getPreviousSibling()) return;
-		var res = controller.move(selectedNode, selectedNode.parent, selectedNode.getParentIndex()-1);
-	} else if (direction == 'down') {
-		if (!selectedNode.getNextSibling()) return;
-		var res = controller.move(selectedNode, selectedNode.parent, selectedNode.getParentIndex()+1);
+	else if ((modifier & PRIVATE) == PRIVATE)
+	{
+		return "private";
+	}
+	else
+	{
+		return "package";
 	}
 }
+
 
 /* process create operation */
 function createClicked(selectedNode, controllerId, icon) {
@@ -182,14 +187,6 @@ dojo.addOnLoad(function() {
 
 	dojo.event.topic.subscribe('treeContextMenuRemove/engage',
 		function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
-	);
-
-	dojo.event.topic.subscribe('treeContextMenuUp/engage',
-		function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'up'); }
-	);
-
-	dojo.event.topic.subscribe('treeContextMenuDown/engage',
-		function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'down'); }
 	);
 
 });
