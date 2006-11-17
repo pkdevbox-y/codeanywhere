@@ -3,6 +3,8 @@
  */
 package meta.codeanywhere.run;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -59,6 +61,14 @@ public class JavaRunner implements IRun {
 	}
 	public void setClassName(String className) {
 		this.className = className;
+	}
+	public InputStream getInputStream() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public OutputStream getOutputStream() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
