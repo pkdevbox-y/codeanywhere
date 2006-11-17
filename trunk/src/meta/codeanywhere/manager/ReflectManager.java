@@ -48,6 +48,7 @@ public class ReflectManager {
 					jsonObject.put("kind", "Method");
 					jsonObject.put("name", method.getName());
 					jsonObject.put("type", method.getReturnType().getName());
+					jsonObject.put("modifier", method.getModifiers());
 					jsonObject.put("parameterList", method.getParameterTypes());
 					jsonArray.put(jsonObject);
 				}
