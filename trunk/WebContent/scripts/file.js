@@ -160,7 +160,7 @@ function OnNewTreeNode(fileName)
  		widgetId:fileName+"_treenode",
  		id:fileName+"_treenode",
  		title:fileName,
- 		isFolder:true,
+ 		isFolder:false,
  		childIconSrc:"icons/class_tree.png"
  	};
  	
