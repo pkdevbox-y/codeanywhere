@@ -4,11 +4,15 @@
 package meta.codeanywhere.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import meta.codeanywhere.bean.User;
+import meta.codeanywhere.manager.UserManager;
 
 /**
  * @author Biao Zhang
@@ -34,7 +38,16 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		response.setContentType("text/plain");
+		PrintWriter out = response.getWriter();
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		
+		UserManager userManager = UserManager.getManager();
+		User u = userManager.register(username, password, email);
+		out.print(u != null);
+		out.close();
 	}
 	
 	
