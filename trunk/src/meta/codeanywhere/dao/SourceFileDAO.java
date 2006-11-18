@@ -3,7 +3,10 @@
  */
 package meta.codeanywhere.dao;
 
+import java.util.List;
+
 import meta.codeanywhere.bean.SourceFile;
+import meta.codeanywhere.bean.User;
 
 /**
  * @author Biao Zhang
@@ -11,4 +14,5 @@ import meta.codeanywhere.bean.SourceFile;
  */
 public interface SourceFileDAO extends GenericDAO<SourceFile, Integer> {
 	public SourceFile getByFileName(String path);
+	public List<SourceFile> getByOwner(User owner);
 }

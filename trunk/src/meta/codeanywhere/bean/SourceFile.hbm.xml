@@ -8,6 +8,6 @@
     </id>
     <property name="fileName" type="string" column="filename" length="32"/>
     <property name="source" type="blob" column="source" length="32"/>
-    <many-to-one name="owner" class="User" column="user" unique="true"/>
+    <many-to-one name="owner" class="User" column="owner" unique="true"/>
   </class>
 </hibernate-mapping>

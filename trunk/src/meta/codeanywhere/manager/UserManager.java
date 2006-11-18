@@ -26,12 +26,12 @@ public class UserManager {
 		userDAO = DAOFactory.DEFAULT.getUserDAO();
 	}
 	
-	public boolean check(String username, String password) {
+	public User check(String username, String password) {
 		User u = userDAO.getByUserName(username);
 		if (u != null && u.getPassword().equals(password)) {
-			return true;
+			return u;
 		}
-		return false;
+		return null;
 	}
 	
 	public User register(String username, String password, String email) {

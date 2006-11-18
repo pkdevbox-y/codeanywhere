@@ -94,8 +94,4 @@ public class RunManager {
 		}
 		return null; // Stream not reader or IOException
 	}
-	
-	public void run(String classFile, String classPath) {
-		
-	}
 }
