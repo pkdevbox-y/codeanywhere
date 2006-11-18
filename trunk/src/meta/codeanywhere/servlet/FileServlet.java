@@ -54,7 +54,6 @@ public class FileServlet extends HttpServlet {
 			try {
 				out.print(file.getSourceText());
 			} catch (SQLException e) {
-				// TODO 自动生成 catch 块
 				e.printStackTrace();
 			}
 		} else if (oper.equals("save")) {

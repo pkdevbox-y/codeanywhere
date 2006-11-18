@@ -1,8 +1,8 @@
 <div id="toolbarContainer" dojoType="ToolbarContainer" >
 	<div dojoType="toolbar">
-		<img id="newbutton" src="icons/newl.png" class="toolbarbutton"/>
+		<img id="newbutton" src="icons/newl.png" class="toolbarbutton" onclick="wokao();"/>
 		<span dojoType="tooltip" connectId="newbutton" caption="New" ></span>
-		<img id="savebutton" src="icons/savel.png" class="toolbarbutton" />
+		<img id="savebutton" src="icons/savel.png" class="toolbarbutton" onclick="OnFileSave();"/>
 		<span dojoType="tooltip" connectId="savebutton" caption="Save" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
