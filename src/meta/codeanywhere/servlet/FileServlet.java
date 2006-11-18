@@ -4,11 +4,18 @@
 package meta.codeanywhere.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import meta.codeanywhere.bean.SourceFile;
+import meta.codeanywhere.bean.User;
+import meta.codeanywhere.manager.FileManager;
 
 /**
  * @author Biao Zhang
@@ -34,7 +41,26 @@ public class FileServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+		PrintWriter out = response.getWriter();
+		String oper = request.getParameter("oper");
+		String fileName = request.getParameter("fileName");
+		String source = request.getParameter("source");
+		FileManager fileManager = FileManager.getManager();
+		System.out.println(user);
+		if (oper.equals("open")) {
+			SourceFile file = fileManager.getFileByName(fileName);
+			try {
+				out.print(file.getSourceText());
+			} catch (SQLException e) {
+				// TODO 自动生成 catch 块
+				e.printStackTrace();
+			}
+		} else if (oper.equals("save")) {
+			SourceFile file = fileManager.saveFile(fileName, user, source);
+			out.print(file != null);
+		}
 	}
 	
 	

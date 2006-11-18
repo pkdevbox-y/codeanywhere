@@ -6,6 +6,7 @@ package meta.codeanywhere.dao.impl;
 import java.util.List;
 
 import meta.codeanywhere.bean.SourceFile;
+import meta.codeanywhere.bean.User;
 import meta.codeanywhere.dao.SourceFileDAO;
 
 import org.hibernate.criterion.Restrictions;
@@ -23,6 +24,10 @@ public class SourceFileDAOImpl extends GenericDAOImpl<SourceFile, Integer, Sourc
 		}
 		
 		return null;
+	}
+
+	public List<SourceFile> getByOwner(User owner) {
+		return this.getByCriteria(Restrictions.eq("owner", owner));
 	}
 
 }
