@@ -112,10 +112,21 @@
 	</div>
 
 <div dojoType="FloatingPane" id="newDialog" title="New Class" style="width: 300px; height: 200px; left: 300px; top: 100px; display: none;"
-	hasShadow="true" resizable="true" displayMinimizeAction="true">
-Class name: <input type="text" id="newclassname"></input>
-<input type="button" id="hider" value="New" onClick="OnNewButtonClick();dojo.widget.byId('newDialog').hide();"></input>
-<input type="button" id="cancler" value="Cancle" onClick="dojo.widget.byId('newDialog').hide();"></input>
+	hasShadow="true" resizable="false" displayMinimizeAction="true">
+	<table>
+		<tbody>
+		<tr>
+		<td>Class name: </td><td><input type="text" id="newclassname"></input></td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>
+			<input type="button" id="hider" value="New" onClick="OnNewButtonClick();dojo.widget.byId('newDialog').hide();"></input>
+			<input type="button" id="cancler" value="Cancle" onClick="dojo.widget.byId('newDialog').hide();"></input>
+		</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
 
 <div dojoType="FloatingPane" id="aboutDialog" title="About codeAnywhere" style="width: 320px; height: 240px; left: 300px; top: 100px; display: none;"
@@ -133,26 +144,52 @@ by Team Meta
 	<a href="javascript:alert('How should I know?')" id="problem">Help to use</a>
 </div>
 
-<div dojoType="FloatingPane" id="loginDialog" title="Login" style="width: 300px; height: 200px; float: right; display: none;"
+<div dojoType="FloatingPane" id="loginDialog" title="Login" style="width: 300px; height: 200px; float: right; display: inline;"
 	hasShadow="true" resizable="false" displayMinimizeAction="false">
-	Username: <input type="text" id="username"></input>
-	<br>
-	Password: <input type="password" id="password"></input>
-	<br>
-	<input type="button" value="Login" onClick="doLogin();"></input>
-	<input type="button" value="Register" onClick="OnRegister();"></input>
+	<table>
+		<tbody>
+		<tr>
+			<td>Username:</td><td><input type="text" id="username"></input></td>
+		</tr>
+		<tr>
+			<td>Password:</td><td><input type="password" id="password"></input></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="button" value="Login" onClick="doLogin();"></input>
+				<input type="button" value="Register" onClick="OnRegister();"></input>
+			</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
 
 <div dojoType="FloatingPane" id="registerDialog" title="Register" style="width: 300px; height: 200px; float: right; display: none;"
 	hasShadow="true" resizable="false" displayMinimizeAction="false">
-	Username: <input type="text" id="usernameToR"></input>
-	<br>
-	Password: <input type="password" id="passwordToR"></input>
-	<br>
-	Email: <input type="text" id="emailToR"></input>
-	<br>
-	<input type="button" value="Register" onClick="doRegister();"></input>
-	<input type="button" value="Cancle" onClick="cancleRegister();"></input>
+	<table>
+		<tbody>
+		<tr>
+		<td>Username: </td>
+		<td><input type="text" id="usernameToR"></input></td>
+		</tr>
+		<tr>
+		<td>Password: </td>
+		<td><input type="password" id="passwordToR"></input></td>
+		</tr>
+		<tr>
+		<td>Email: </td>
+		<td><input type="text" id="emailToR"></input></td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>
+			<input type="button" value="Register" onClick="doRegister();"></input>
+			<input type="button" value="Cancle" onClick="cancleRegister();"></input>
+		</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
 
 <div dojoType="FloatingPane" id="quitDialog" title="Quit codeAnywhere" style="width: 300px; height: 200px; float: right; display: none;"

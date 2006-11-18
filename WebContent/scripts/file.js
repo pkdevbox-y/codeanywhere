@@ -93,6 +93,30 @@ var newClassDialog = 0;
  	//doc.body.innerHTML = "public class " + fileName + " {<br>" + "public static void main(String[] args) {<br>}<br>}";
  }
 
+function OnFileSave()
+{
+	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
+	var aDiv = getActiveDiv();
+	if (aDiv == null) {
+		help("save");
+		return;
+	}
+	var fileName = tabcontainer.selectedTabWidget.label;
+	var source = aDiv.innerText;
+	var params = "oper=save&fileName=" + fileName + "&source=" + source;
+	sendRequest("file", afterSaveFile, null, params, "POST");
+}
+
+function afterSaveFile(req, sender)
+{
+	var saved = req.responseText;
+	if (saved == "true") {
+		help("File Saved");
+	} else {
+		help("File Not Saved");
+	}
+}
+
 function logCart(obj)
 {
    obj.logPos = document.selection.createRange().duplicate();
@@ -169,4 +193,11 @@ function OnNewTreeNode(fileName)
  	var tree = dojo.widget.getWidgetById("project_tree");
 	var treeNode = dojo.widget.createWidget("TreeNode", properties);
  	tree.addChild(treeNode);
+}
+
+function wokao() {
+	var w = dojo.widget.getWidgetById("submenu_File_New");
+	var p = dojo.widget.getWidgetById("submenu_File");
+	w.open(14, 96, p, "fade");
+	window.setTimeout(function() { w.hide(); }, 2000);
 }
