@@ -14,9 +14,9 @@ function doLogin()
 	var un = document.getElementById("username").value;
 	var pw = document.getElementById("password").value;
 	if (checkPassword(un, pw)) {
-		alert("Welcome " + un + "!");
 		var loginDialog = dojo.widget.byId("loginDialog");
 		loginDialog.hide();
+		alert("Welcome " + un + "!");
 	} else {
 		alert("Wrong username or password!");
 	}

@@ -34,8 +34,13 @@ public class UserManager {
 		return false;
 	}
 	
-	public void register(String username, String password, String email) {
-		
+	public User register(String username, String password, String email) {
+		User u = new User();
+		u.setUsername(username);
+		u.setPassword(password);
+		u.setEmail(email);
+		userDAO.makePersistent(u);
+		return u;
 	}
 	
 	public static void main(String[] args) {
