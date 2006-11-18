@@ -16,10 +16,45 @@ function openClicked(selectedNode, controllerId) {
 	alert(selectedNode);
 }
 
-/* add fields and method to the class */
+/**
+ * new a TreeNode from the old one
+ */
+function newTreeNode(treeNode, name, flag)
+{
+	var properties = {
+		 		dojoType:"TreeNode",
+		 		widgetId:name + "_treenode",
+		 		id:name + "_treenode",
+		 		title:name,
+		 		isFolder:flag,
+		 		childIconSrc:treeNode.childIconSrc
+		 	};	
+	var newNode = dojo.widget.createWidget("TreeNode", properties);
+	return newNode;
+}
+
+
+/** 
+ * add fields and method to the class 
+ */
 function addFieldAndMethod(fileName, infos) {
 	var parentNode = dojo.widget.byId(fileName + "_treenode");
-	parentNode.destroyChildren();
+	var newParentNode;
+	
+	if (parentNode.isFolder == true)
+	{
+		parentNode.destroyChildren();
+	}
+	else
+	{
+		var index = parentNode.getParentIndex();
+		var name = parentNode.title;
+		newParentNode = newTreeNode(parentNode, name, true);
+		var tree = dojo.widget.getWidgetById("project_tree");
+		tree.removeChild(parentNode);
+		tree.addChild(newParentNode, index);
+	}
+	
  	var properties;
 	
 	for (var i = 0; i < infos.length; i++)
@@ -56,11 +91,13 @@ function addFieldAndMethod(fileName, infos) {
 		}
 
 		var treeNode = dojo.widget.createWidget("TreeNode", properties);
-	 	parentNode.addChild(treeNode);
+	 	newParentNode.addChild(treeNode);
 	}
 }
 
-
+/**
+ * get the icon of the modifier
+ */
 function getIcon(modifier) {
 	var PUBLIC = 1;
 	var PRIVATE = 2;
@@ -140,6 +177,29 @@ function removeClicked(selectedNode, controllerId, icon) {
 
 }
 
+/**
+ * rename the node
+ */
+function renameClicked(selectedNode) {
+	
+	if (!selectedNode) 
+	{
+		alert('No node selected');
+		return false;
+	}
+	else
+	{
+		var index = selectedNode.getParentIndex();
+		
+		//it should be got dynamicly
+		var newName = "zz";
+		var newNode = newTreeNode(selectedNode, newName, false);
+		var tree = dojo.widget.getWidgetById("project_tree");
+		tree.removeChild(selectedNode);
+		tree.addChild(newNode, index);
+	}
+}
+
 var reporter = function(reporter) {
 	this.name = eventName;
 	this.go = function(message) {
@@ -186,6 +246,10 @@ dojo.addOnLoad(function() {
 
 	dojo.event.topic.subscribe('treeContextMenuRemove/engage',
 		function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+	);
+	
+	dojo.event.topic.subscribe('treeContextMenuRename/engage',
+		function (menuItem) { renameClicked( menuItem.getTreeNode()); }
 	);
 
 });
