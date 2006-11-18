@@ -14,12 +14,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author Biao Zhang
  * @version 11/17/2006
  */
-public class RegisterServlet extends HttpServlet {
+public class FileServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1648190357457643767L;
+	private static final long serialVersionUID = -8369658195261937913L;
 
 	/* £¨·Ç Javadoc£©
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
@@ -30,12 +30,13 @@ public class RegisterServlet extends HttpServlet {
 	}
 
 	/* £¨·Ç Javadoc£©
-	 * @see javax.servlet.http.HttpServlet#doPut(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 	}
 	
 	
+
 }

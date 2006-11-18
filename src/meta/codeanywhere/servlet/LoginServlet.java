@@ -4,11 +4,14 @@
 package meta.codeanywhere.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import meta.codeanywhere.manager.UserManager;
 
 /**
  * @author Biao Zhang
@@ -34,7 +37,15 @@ public class LoginServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/plain");
+		PrintWriter out = response.getWriter();
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		
+		UserManager userManager = UserManager.getManager();
+		boolean passed = userManager.check(username, password);
+		out.print(passed);
+		out.close();
 	}
 
 	
