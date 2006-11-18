@@ -149,31 +149,20 @@ function createClicked(selectedNode, controllerId, icon) {
 	}
 }
 
-function removeClicked(selectedNode, controllerId, icon) {
+function removeClicked(selectedNode) {
 
 	if (!selectedNode) {
 		alert('No node selected');
 		return false;
 	}
-
-	if (selectedNode.actionIsDisabled(selectedNode.actions.REMOVE)) {
-		return false;
-	}
-
-	this.icon = icon;
-	this.oldIconSrc = icon.src;
-
-	this.controller = dojo.widget.manager.getWidgetById(controllerId);
-
-
-	this.icon.src = '../icons/loading.jpg';
-
-	var res = controller.removeNode(selectedNode, dojo.lang.hitch(this, restoreIconSrc));
-
-	// local checks failed
-	if (res == false) {
-		restoreIconSrc.apply(this);
-	}
+	
+	var fileName = selectedNode.title;
+	var tree = dojo.widget.getWidgetById("project_tree");
+	tree.removeChild(selectedNode);
+	
+	var tab = dojo.widget.getWidgetById(fileName + "_tab");
+	var tabcontainer = dojo.widget.getWidgetById("codeareaMainTabContainer");
+	tabcontainer.removeChild(tab);	
 
 }
 
@@ -181,7 +170,7 @@ function removeClicked(selectedNode, controllerId, icon) {
  * rename the node
  */
 function renameClicked(selectedNode) {
-	
+		
 	if (!selectedNode) 
 	{
 		alert('No node selected');
@@ -193,11 +182,28 @@ function renameClicked(selectedNode) {
 		
 		//it should be got dynamicly
 		var newName = "zz";
+		renameTab(selectedNode.title, newName);
 		var newNode = newTreeNode(selectedNode, newName, false);
 		var tree = dojo.widget.getWidgetById("project_tree");
 		tree.removeChild(selectedNode);
 		tree.addChild(newNode, index);
+		
 	}
+}
+
+/**
+ * rename a tab
+ */
+function renameTab(fileName, newName) {
+	
+	var tab = dojo.widget.getWidgetById(fileName + "_tab");
+	
+	var div = getDivByFileName(fileName);
+	//alert(div.innerText);
+	var tabcontainer = dojo.widget.getWidgetById("codeareaMainTabContainer");
+	tabcontainer.removeChild(tab);	
+	
+	OnFileNewClass(newName,div.innerHTML);
 }
 
 var reporter = function(reporter) {
@@ -209,7 +215,7 @@ var reporter = function(reporter) {
 	}
 }
 
-dojo.addOnLoad(function(){
+dojo.addOnLoad(function() {
 
 	/* Add debug print for all controller events */
 	var controller = dojo.widget.manager.getWidgetById('treeController');
@@ -245,7 +251,7 @@ dojo.addOnLoad(function() {
 	);
 
 	dojo.event.topic.subscribe('treeContextMenuRemove/engage',
-		function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+		function (menuItem) { removeClicked( menuItem.getTreeNode()); }
 	);
 	
 	dojo.event.topic.subscribe('treeContextMenuRename/engage',

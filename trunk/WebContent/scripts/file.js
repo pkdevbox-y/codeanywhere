@@ -4,7 +4,6 @@
  * date: 2006-9-27
  */
 
-var tabcount = 0;
 var newClassDialog = 0;
  function OnFileOpen() {
  	/*var dialog = document.getElementById("openfile");	
@@ -48,12 +47,11 @@ var newClassDialog = 0;
  	OnFileNewClass(fileName); 	
  	OnNewTreeNode(fileName);
  }
- function OnFileNewClass(fileName) {
- 	tabcount++;
+ function OnFileNewClass(fileName, text) {
  	var properties = {
  		dojoType:"ContentPane",
- 		widgetId:"tab" + tabcount,
- 		id:"tab" + tabcount,
+ 		widgetId:fileName + "_tab",
+ 		id:fileName + "_tab",
  		label:fileName
  	};
  	
@@ -67,7 +65,11 @@ var newClassDialog = 0;
  	cframe.frameBorder = "no";
  	tabdiv.appendChild(cframe);*/
  	var innerdiv = document.createElement("div");
- 	var divid = properties.id + "_div"
+ 	if (text!=undefined)
+ 	{
+ 		innerdiv.innerHTML = text;
+ 	}
+ 	var divid = properties.id + "_div";
  	innerdiv.id = divid;
  	innerdiv.setAttribute("class", "codeframe");
  	innerdiv.setAttribute("className", "codeframe");

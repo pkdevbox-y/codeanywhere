@@ -3,6 +3,11 @@
  * @author: zz
  * @date: 2006-10-5
  */
+function getDivByFileName(fileName) {
+	var id = fileName + "_tab_div";
+	var div = document.getElementById(id);
+	return div;
+}
 
 function getActiveDiv() {
 	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");//document.getElementById("mainTabContainer");
