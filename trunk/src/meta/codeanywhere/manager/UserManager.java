@@ -3,6 +3,10 @@
  */
 package meta.codeanywhere.manager;
 
+import meta.codeanywhere.bean.User;
+import meta.codeanywhere.dao.DAOFactory;
+import meta.codeanywhere.dao.UserDAO;
+
 /**
  * @author Biao Zhang
  * @version 11/17/2006
@@ -17,16 +21,25 @@ public class UserManager {
 		return manager;
 	}
 	
+	private UserDAO userDAO = null;
 	private UserManager() {
-		
+		userDAO = DAOFactory.DEFAULT.getUserDAO();
 	}
 	
 	public boolean check(String username, String password) {
-	
+		User u = userDAO.getByUserName(username);
+		if (u != null && u.getPassword().equals(password)) {
+			return true;
+		}
 		return false;
 	}
 	
 	public void register(String username, String password, String email) {
 		
+	}
+	
+	public static void main(String[] args) {
+		UserManager um = UserManager.getManager();
+		System.out.println(um.check("admin", "1985zb"));
 	}
 }
