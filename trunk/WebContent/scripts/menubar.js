@@ -3,6 +3,7 @@ dojo.addOnLoad(function() {
 	dojo.event.connect(dojo.widget.byId("File_New_Class"), "onClick", showNewClassDialog);
 	dojo.event.connect(dojo.widget.byId("Help_About"), "onClick", showAboutDialog);
 	dojo.event.connect(dojo.widget.byId("Help_Wiki"), "onClick", OnWikiSearch);
+	dojo.event.connect(dojo.widget.byId("Help_API"), "onClick", OnAPISearch);
 });
 
 function showNewClassDialog() {
