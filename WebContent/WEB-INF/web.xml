@@ -93,6 +93,16 @@
     <servlet-name>init</servlet-name>
     <url-pattern>/init</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>download</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.DownloadServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>download</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
   <!-- The Usual Welcome File List -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
