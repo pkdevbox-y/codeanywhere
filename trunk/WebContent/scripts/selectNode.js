@@ -3,11 +3,12 @@
  * @author: zz
  * @date: 2006-9-29 
  */
+var selectedNode;
+
 function selectNode(){
     this.update = function(message) {
         var clickedTreeNode = message.node;
-
-		alert(clickedTreeNode);
+		selectedNode = clickedTreeNode;
     };
 }
 
