@@ -1,37 +1,113 @@
+body {
+	font-size: 9pt;	
+}
 p {
 	margin: 0px;
 	padding: 0px;	
 }
 .ide {
-	border: solid 1px blue;
-	width: 1px;
-	height: 1px;
-	margin: 4px;
-	padding: 2px;	
+	border:solid 1px #3169b5;
+	width: 240px; /* 100% */
+	height: 320px; /* 100% */
+	overflow: auto;
 }
 
 .title {
-	border: solid 1px blue;
-	background-color: #0000FF;
-	color: #FFFFFF;
-	width: 400px;
-	height: 24px;
-	margin: 4px 2px 2px 2px;
-	padding: 2px;
+	background-image: url(../scripts/src/widget/templates/images/toolbar-bg.gif);
+	background-repeat: repeat-x;
+	background-position: center;
+	width: auto;
+	height: 20px;
+	margin: 0;
 }
 
 .editor {
-	border: solid 1px #3169B5;
-	width: 400px;
-	height: 300px;
-	margin: 6px 2px 2px 2px;
+	border-top:solid 1px #a0a0a0;
+	border-bottom:solid 1px #a0a0a0;
+	width: auto;
+	height: 200px;
+	margin: 0 0 0 0;
 	padding: 2px;
+	overflow: auto;
 }
 
 .console {
-	border: solid 1px #0066A9;
-	width: 400px;
-	height: 150px;
-	margin: 6px 2px 2px 2px;
+	border-top:solid 1px #a0a0a0;
+	margin: 2px 0 0 0;
 	padding: 2px;
+	width: auto;
+	height: 80px;
+	overflow: auto;
 }
+
+.tbbutton {
+	margin: 2px 1px 0 1px;
+	padding: 0;
+	width: 23px;
+	height: 100%;
+	float: left;
+	cursor: pointer;
+}
+
+.dialog {
+	border: solid 1px #3169b5;
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 100px;
+	left: 30px;
+	display: none;
+}
+
+.dialogtitle {
+	background-image: url(../scripts/src/widget/templates/images/toolbar-bg.gif);
+	background-repeat: repeat-x;
+	background-position: center;
+	width: auto;
+	height: 20px;
+	padding: 3px;
+}
+
+.content {
+	border-top: solid 1px #3169b5;
+	width: auto;
+	height: 80px;
+	vertical-align: middle;
+}
+
+.nctext {
+	position: absolute;
+	border: solid 1px #0066a9;
+	left: 10%;
+	top: 40%;
+	width: 50%;
+	height: 22px;
+}
+
+.ncbutton {
+	position: absolute;
+	top: 40%;
+	left: 60%;
+	height: 22px;
+}
+
+/**
+ * Style used in CONSOLE
+ */ 
+div.warn {
+	color: #FF0000;
+}
+
+div.debug {
+	color; #000000;
+}
+
+div.info {
+	color: #0066A9;
+}
+
+div.message {
+	color: #3169B5;
+}
+
+ 

@@ -32,3 +32,13 @@ function setItemClass(item, className) {
 	item.setAttribute("class", className);
 	item.setAttribute("className", className);
 }
+
+function OnPublicWiki()
+{
+	
+}
+
+function DoPublicWiki()
+{
+	
+}
