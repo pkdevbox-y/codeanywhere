@@ -22,7 +22,6 @@ function OnNewClass()
 function DoNewClass()
 {
 	var editor = document.getElementById("editor");
-	editor.contentEditable = true;
 	var fileName = document.getElementById("filename").value;
 	if (fileName == "") {
 		alert("Class name can't be null!");
@@ -50,8 +49,8 @@ function AfterSaveFile(req, sender)
 
 function OnCompile()
 {
-	var editor = document.getElementById("editor");
-	var source = editor.innerText;
+	var source = document.getElementById("source").value;
+	var source;
 	var fileName = editor["fileName"];
 	var params = "fileName=" + fileName + "&source=" + source;  
  	sendRequest("compile", AfterCompile, null, params, "POST");

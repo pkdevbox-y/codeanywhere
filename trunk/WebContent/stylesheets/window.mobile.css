@@ -27,8 +27,6 @@ p {
 	width: auto;
 	height: 200px;
 	margin: 0 0 0 0;
-	padding: 2px;
-	overflow: auto;
 }
 
 .console {
@@ -56,7 +54,7 @@ p {
 	height: 100px;
 	top: 100px;
 	left: 30px;
-	display: none;
+	display: inline;
 }
 
 .dialogtitle {
@@ -75,6 +73,13 @@ p {
 	vertical-align: middle;
 }
 
+textarea {
+	margin: 0;
+	width: 100%;
+	height: 100%;	
+	border: 0;
+}
+
 .nctext {
 	position: absolute;
 	border: solid 1px #0066a9;
@@ -91,6 +96,32 @@ p {
 	height: 22px;
 }
 
+#newbutton {
+	background: url(../icons/newl.png);
+	background-position: center;
+	border: 0;
+	width: 23px;
+	height: 18px;
+}
+
+#savebutton {
+	background: url(../icons/savel.png);
+	background-position: center;
+	width: 23px;
+	height: 18px;
+}
+#compilebutton {
+	background: url(../icons/compilel.png);
+	background-position: center;
+	width: 23px;
+	height: 18px;
+}
+#runbutton {
+	background: url(../icons/runl.png);
+	background-position: center;
+	width: 23px;
+	height: 18px;
+}
 /**
  * Style used in CONSOLE
  */ 
@@ -99,7 +130,7 @@ div.warn {
 }
 
 div.debug {
-	color; #000000;
+	color: #000000;
 }
 
 div.info {

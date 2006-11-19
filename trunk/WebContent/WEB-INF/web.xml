@@ -63,6 +63,15 @@
     <url-pattern>/file</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>compileToRun</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.CompileAndRunServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>compileToRun</servlet-name>
+    <url-pattern>/compileToRun</url-pattern>
+  </servlet-mapping>
 
   <!-- The Usual Welcome File List -->
   <welcome-file-list>
