@@ -9,58 +9,48 @@ div.wiki {
 	height: 480px;
 }
 
-div.search {
-	width: 128px;	
-	margin: 4px 2px 2px 2px;
+div.searchtable {
+	width: 120px;
+	height: 100%;
 	float: left;
 }
 
 .searchinput {
-	margin: 0px;
-	padding: 0px;
+	height: 24px;
 }
 
-input.searchtext {
-	border: solid 1px #3169B5;
-	width: 100px;
-	height: 19px;
-	margin: 2px 0px 2px 2px;
+#wikitext {
+	width: 70%;
+	height: 22px;
 	float: left;
 }
-
-input.searchbtn {
-	border: solid 1px #3169B5;
-	width: 23px;
-	height: 19px;
-	margin: 2px 0px 2px 0px;
+#searchbtn {
+	width: 32px;
+	height: 22px;
 	float: left;
 }
 
 div.index {
-	border: solid 1px #3169B5;
-	width: 128px;
-	height: 419px;
-	margin: 4px 2px 2px 2px;
-	overflow: auto;
+	border: solid 1px #3169b5;
+	width: 120px;
+	height: 400px;;
 }
 
 div.result {
-	width: 448px;
-	height: 444px;
-	margin: 6px 4px 2px 2px;
-	padding: 2px;
-	float: right;
-	overflow: auto;
+	width: 430px;
+	height: 98%;
+	margin: 2px 2px 2px 4px;
+	float: left;
 }
 
 .itemOnMouseOver {
-	height: 24px;
-	background-color: black;
+	background-color: #3169b5;
 	color: white;
+	padding: 2px;
+	height: 22px;
 }
 
 .itemOnMouseOut {
-	height: 24px;
-	background-color: white;
-	color: black;
+	padding: 2px;
+	height: 22px;
 }

@@ -2,11 +2,37 @@
  * This file define some function in the macro system.
  * 
  */
-dojo.addOnLoad(OnLogin);
+dojo.addOnLoad(OnSystemLoad);
+function OnSystemLoad()
+{
+	sendRequest("init", AfterSystemLoad);
+}
+
+function AfterSystemLoad(req, sender)
+{
+	var logined = req.responseText;
+	if (logined == "true") {
+		HideLogiDialog();
+	} else {
+		OnLogin();
+	}
+}
+
 function OnLogin()
 {
-	var loginDialog = dojo.widget.byId("loginDialog");
-	loginDialog.show();	
+	var loginDialog = document.getElementById("loginDialog");	
+	loginDialog.style.display = "inline";
+}
+
+function ShowLogiDialog() 
+{
+	var loginDialog = dojo.widget.byId("registerDialog");	
+	loginDialog.show();
+}
+function HideLogiDialog() 
+{
+	var loginDialog = dojo.widget.byId("registerDialog");	
+	loginDialog.hide();
 }
 
 function doLogin()

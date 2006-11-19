@@ -5,49 +5,47 @@ package meta.codeanywhere.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import meta.codeanywhere.manager.CompileManager;
+import meta.codeanywhere.manager.WikiManager;
 
 /**
  * @author Biao Zhang
- * @date 2006-7-14
+ * @version 11/19/2006
  */
-public class CompileServlet extends HttpServlet {
+public class WikiPublicServlet extends HttpServlet {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1064167350482325718L;
+	private static final long serialVersionUID = 1512999184233907166L;
 
+	/* £¨·Ç Javadoc£©
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
+	/* £¨·Ç Javadoc£©
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String path = session.getServletContext().getRealPath("/");
-		response.setContentType("text/plain");
-		response.setLocale(Locale.CHINESE);
-		response.setCharacterEncoding("UTF-8");
-		
 		PrintWriter out = response.getWriter();
 		String fileName = request.getParameter("fileName");
 		String source = request.getParameter("source");
-		
-		CompileManager cm = CompileManager.getManager();
-		String result = cm.compile(path, fileName, source);
-		out.print(result);
-		System.out.println(result);
+		String tags = request.getParameter("tags");
+		WikiManager wm = WikiManager.getManager();
+		wm.addToWiki(fileName, source, tags.split(","));
+		out.print(true);
 		out.close();
 	}
+
 	
 }
