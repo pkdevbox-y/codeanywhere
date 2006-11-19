@@ -152,7 +152,7 @@ function createClicked(selectedNode, controllerId, icon) {
 function removeClicked(selectedNode) {
 
 	if (!selectedNode) {
-		alert('No node selected');
+		alert('No Class selected');
 		return false;
 	}
 	
@@ -173,7 +173,7 @@ function renameClicked(selectedNode) {
 		
 	if (!selectedNode) 
 	{
-		alert('No node selected');
+		alert('No Class selected');
 		return false;
 	}
 	else
