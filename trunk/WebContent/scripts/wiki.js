@@ -1,5 +1,12 @@
+
+function OnWikiSearch()
+{
+	var wikiDialog = dojo.widget.byId("wikiDialog");
+	wikiDialog.show();
+}
+
 function wikiSearch() {
-	var tags = document.getElementById("searchtext").value;
+	var tags = document.getElementById("wikitext").value;
 	var params = "tags=" + tags;  
  	sendRequest("wikiSearch", afterWikiSearch, null, params, "POST"); 
 }
@@ -35,10 +42,36 @@ function setItemClass(item, className) {
 
 function OnPublicWiki()
 {
-	
+	var wikisource = document.getElementById("sourcetopublic");
+	var activeDiv = getActiveDiv();
+	if (activeDiv == null) {
+		help("wiki");
+		return;
+	}
+	wikisource.value = activeDiv.innerText;
+	var dlg = dojo.widget.byId("publicWikiDialog");
+	dlg.show();	
 }
 
 function DoPublicWiki()
 {
+	var tags = document.getElementById("tags").value;
+	var source = document.getElementById("sourcetopublic").value;
+	var tabcontainer = dojo.widget.byId("codeareaMainTabContainer");
+	var fileName = tabcontainer.selectedTabWidget.label;
+	var params = "tags=" + tags + "&fileName=" + fileName + "&source=" + source;
+	sendRequest("wikiPublic", AfterPublicWiki, null, params, "POST")
 	
+}
+
+function AfterPublicWiki(req, sender)
+{
+	alert(req.responseText);
+	CanclePublicWiki();
+}
+
+function CanclePublicWiki()
+{
+	var dlg = dojo.widget.byId("publicWikiDialog");
+	dlg.hide();	
 }

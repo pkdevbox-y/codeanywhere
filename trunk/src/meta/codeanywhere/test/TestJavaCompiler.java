@@ -24,6 +24,7 @@ public class TestJavaCompiler {
 		PrintWriter out = new PrintWriter(System.out);
 		JavaProcessRunner javaRunner = new JavaProcessRunner("Hello", ".");
 		javaRunner.run();
+		
 		out.close();
 	}
 

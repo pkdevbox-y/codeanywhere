@@ -10,6 +10,7 @@ import java.util.List;
 import meta.codeanywhere.bean.SourceFile;
 import meta.codeanywhere.bean.Tag;
 import meta.codeanywhere.dao.DAOFactory;
+import meta.codeanywhere.dao.SourceFileDAO;
 import meta.codeanywhere.dao.TagDAO;
 
 import org.json.JSONArray;
@@ -30,9 +31,10 @@ public class WikiManager {
 		return manager;
 	}
 	private TagDAO tagDAO = null;
-	
+	private SourceFileDAO fileDAO = null;
 	private WikiManager() {
 		tagDAO = DAOFactory.DEFAULT.getTagDAO();
+		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
 	}
 	
 	public JSONArray search(String...tags) {
@@ -59,7 +61,6 @@ public class WikiManager {
 			for (Tag t: tags) {
 				file = t.getFile();
 				JSONObject jsonObject = new JSONObject();
-				System.out.println(file.getFileName());
 				jsonObject.put("title", file.getFileName());
 				jsonObject.put("source", file.getSourceText());
 				list.add(jsonObject);
@@ -72,7 +73,18 @@ public class WikiManager {
 		return list.toArray(new JSONObject[0]);
 	}
 	
-	public void addToWiki(String source, String...tags) {
+	public void addToWiki(String fileName, String source, String...tags) {
+		for (String tag: tags) {
+			addSingleTag(fileName, source, tag.trim());
+		}
 		
+	}
+	
+	private void addSingleTag(String fileName, String source, String tagString) {
+		SourceFile file = fileDAO.getByFileName(fileName);
+		Tag tag = new Tag();
+		tag.setFile(file);
+		tag.setTag(tagString);
+		tagDAO.makePersistent(tag);
 	}
 }

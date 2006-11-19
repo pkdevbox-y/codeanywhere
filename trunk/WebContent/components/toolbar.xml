@@ -43,5 +43,12 @@
 		<img id="searchbutton" src="icons/searchl.png" class="toolbarbutton" onClick="search();"/>
 		<span dojoType="tooltip" connectId="searchbutton" caption="Search" ></span>
 		
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img id="publishbutton" src="icons/publish.png" class="toolbarbutton" onClick="OnPublicWiki();"/>
+		<span dojoType="tooltip" connectId="publishbutton" caption="Publish the resource to wiki" ></span>
+		
+		<img id="downloadbutton" src="icons/download.png" class="toolbarbutton" onClick="OnDownload();"/>
+		<span dojoType="tooltip" connectId="downloadbutton" caption="Download the file or the entire project" ></span>
 	</div>
 </div>

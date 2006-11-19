@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/dialog.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/window.css"/>
 <link rel="stylesheet" type="text/css" href="stylesheets/common.css"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/wikidialog.css"/>
 
 <script language="javascript" type="text/javascript" src="scripts/dojo.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/json.js"></script>
@@ -20,6 +21,7 @@
 <script language="javascript" type="text/javascript" src="scripts/compile.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/search.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/format.js"></script>
+<script language="javascript" type="text/javascript" src="scripts/wiki.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/help.js"></script>
 <script language="javascript" type="text/javascript" src="scripts/system.js"></script>
 
@@ -192,13 +194,54 @@ by Team Meta
 	</table>
 </div>
 
-<div dojoType="FloatingPane" id="quitDialog" title="Quit codeAnywhere" style="width: 300px; height: 200px; float: right; display: none;"
-	hasShadow="true" resizable="false" displayCLoseAction="false" toggle="fade">
+<div dojoType="FloatingPane" id="quitDialog" title="Quit codeAnywhere" style="width: 300px; height: 200px; display: none;"
+	hasShadow="true" resizable="false" displayMinimizeAction="true" displayCloseAction="false" toggle="fade">
 	Do you really want to quit and save all the changes?
 	<br>
 	<input type="button" value="Quit" onClick="doQuit();"></input>
 	<input type="button" value="Cancle" onClick="cancleQuit();"></input>
 </div>
+
+<div dojoType="FloatingPane" id="wikiDialog" title="Wiki - Development Source" style="width: 600px; height: 480px; display: none;"
+	hasShadow="true" resizable="false" displayMinimizeAction="true" toggle="fade">
+	<div id="searchtable" class="searchtable">
+		<div id="searchinput" class="searchinput">
+			<input type="text" id="wikitext"></input>
+			<input type="button" id="searchbtn" value="Go" onClick="wikiSearch();"></input>
+		</div>
+		<div id="index" class="index"></div>
+	</div>
+	
+	<div id="result" class="border result">
+	</div>
+</div>
+
+<div dojoType="FloatingPane" id="publicWikiDialog" title="Public the resource" style="width: 300px; height: 320px; display: none;"
+	hasShadow="true" resizable="false" displayMinimizeAction="true" displayCloseAction="false" toggle="fade">
+	<table>
+		<tbody>
+		<tr>
+			<td>Tags(Seperated with comma):
+			</td>
+			<td>
+				<input id="tags" type="text"></input>
+			</td>
+		</tr>
+		<tr>
+			<td>Source:
+			</td>
+			<td>
+				<textarea id="sourcetopublic" rows="10", cols="20"></textarea>
+			</td>
+		</tr>
+		
+		</tbody>
+	</table>
+	<br>
+	<input type="button" value="Public" onClick="DoPublicWiki();"></input>
+	<input type="button" value="Cancle" onClick="CanclePublicWiki();"></input>
+</div>
+
 </body>
 <script language="javascript" type="text/javascript">
 	initComponentById("menubar");

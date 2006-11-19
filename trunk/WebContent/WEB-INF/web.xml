@@ -34,6 +34,16 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>wikiPublic</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.WikiPublicServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>wikiPublic</servlet-name>
+    <url-pattern>/wikiPublic</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>login</servlet-name>
     <servlet-class>meta.codeanywhere.servlet.LoginServlet</servlet-class>
   </servlet>
@@ -73,6 +83,16 @@
     <url-pattern>/compileToRun</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>init</servlet-name>
+    <servlet-class>meta.codeanywhere.servlet.InitSystemServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>init</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
   <!-- The Usual Welcome File List -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
