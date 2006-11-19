@@ -13,3 +13,8 @@ function showAboutDialog() {
 	var dlg = dojo.widget.byId("aboutDialog");
 	dlg.show();
 }
+
+function OnCommand(cmd, userInterface, value){
+	//var doc = getActiveDoc(); //("codeframe1").contentWindow.document;
+	document.execCommand(cmd, userInterface, value);
+}

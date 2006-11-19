@@ -16,7 +16,7 @@
 	
 	<div dojoType="MenuItem2" caption="Move..."></div>
 	<div dojoType="MenuItem2" caption="Rename..." onClick="renameClicked(selectedNode);"></div>
-	<div dojoType="MenuItem2" caption="Refresh" iconSrc="icons/refresh.gif"></div>
+	<div dojoType="MenuItem2" caption="Refresh" iconSrc="icons/refresh.gif" onClick="OnCommand('Refresh');"></div>
 	<div dojoType="MenuSeparator2"></div>
 	
 	<div dojoType="MenuItem2" caption="Properties..."></div>
