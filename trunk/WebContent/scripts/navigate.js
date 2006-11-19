@@ -12,8 +12,20 @@ function restoreIconSrc() {
 	this.icon.src = this.oldIconSrc;
 }
 
+var fileName;
+
 function openClicked(selectedNode, controllerId) {
 	alert(selectedNode);
+	fileName = selectNode.title;
+	var params = "oper=open&fileName=" + fileName + "source=??";
+	sendRequest("file", FillFile, null, params, "POST");	
+}
+
+function FillFile(req, sender)
+{
+	var text = req.responseText;
+	alert(text);
+	OnFileNewClass(fileName, text);
 }
 
 /**
@@ -64,13 +76,14 @@ function addFieldAndMethod(fileName, infos) {
 		if (info.kind=="Field")
 		{
 			var field = info.name;
+			var type = info.type;
 			var icon = "icons/" + getIcon(info.modifier) + "_field.png";
 			
 			properties = {
 		 		dojoType:"TreeNode",
 		 		widgetId:field + "_treenode",
 		 		id:field + "_treenode",
-		 		title:field,
+		 		title:field + " : " + type,
 		 		isFolder:false,
 		 		childIconSrc:icon
 		 	};	
@@ -78,13 +91,14 @@ function addFieldAndMethod(fileName, infos) {
 		else if (info.kind=="Method")
 		{
 			var method = info.name;
+			var type = info.type;
 			var icon = "icons/" + getIcon(info.modifier) + "_method.png";
 			
 			properties = {
 		 		dojoType:"TreeNode",
 		 		widgetId:method + "_treenode",
 		 		id:method + "_treenode",
-		 		title:method,
+		 		title:method + "() : " + type,
 		 		isFolder:false,
 		 		childIconSrc:icon
 		 	};	
