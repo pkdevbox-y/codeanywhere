@@ -48,6 +48,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		UserManager userManager = UserManager.getManager();
 		User u = userManager.register(username, password, email);
+		System.out.println(u);
 		out.print(u != null);
 		session.setAttribute("user", u);
 		out.close();

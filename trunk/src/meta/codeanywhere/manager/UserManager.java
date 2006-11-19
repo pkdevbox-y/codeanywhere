@@ -45,6 +45,7 @@ public class UserManager {
 	
 	public static void main(String[] args) {
 		UserManager um = UserManager.getManager();
+		um.register("zb1985", "123456", "zb1985");
 		System.out.println(um.check("admin", "1985zb"));
 	}
 }

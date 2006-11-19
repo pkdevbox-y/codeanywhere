@@ -61,7 +61,7 @@ public class WikiManager {
 			for (Tag t: tags) {
 				file = t.getFile();
 				JSONObject jsonObject = new JSONObject();
-				jsonObject.put("title", file.getFileName());
+				jsonObject.put("title", file != null ? file.getFileName() : tag);
 				jsonObject.put("source", file.getSourceText());
 				list.add(jsonObject);
 			}
