@@ -16,12 +16,11 @@ import org.hibernate.criterion.Restrictions;
  */
 public class TagDAOImpl extends GenericDAOImpl<Tag, Integer, TagDAO> implements TagDAO {
 
-	public Tag getByTagName(String tag) {
+	public List<Tag> getByTagName(String tag) {
 		List<Tag> tags = this.getByCriteria(Restrictions.eq("tag", tag));
 		if (tags.size() > 0) {
-			return tags.get(0);
-		}
-		
+			return tags;
+		}		
 		return null;
 	}
 

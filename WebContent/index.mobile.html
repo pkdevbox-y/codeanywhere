@@ -2,15 +2,32 @@
 <head>
 <title>codeAnywhere</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/window.mobile.css"/>
+<script type="text/javascript" src="scripts/index.mobile.js"></script>
+<script type="text/javascript" src="scripts/ajax.js"></script>
+<script type="text/javascript" src="scripts/console.js"></script>
+<script type="text/javascript" src="scripts/json.js"></script>
 </head>
-<body>
+<body onLoad="initialize();">
 <div id="ide" class="ide">
 	<div id="title" class="title">
-	codeAnywhere
+		<div class="tbbutton"><img src="icons/newl.png" onClick="OnNewClass();"></img></div>
+		<div class="tbbutton"><img src="icons/savel.png"></img></div>
+		<div class="tbbutton"><img src="icons/compilel.png" onClick="OnCompile();"></img></div>
+		<div class="tbbutton"><img src="icons/runl.png" onClick="OnRun();"></img></div>
 	</div>
-	<div id="editor" contentEditable=true class="editor">
+	<div id="editor" contentEditable="false" class="editor">
 	</div>
 	<div id="console" class="console">
+	</div>
+</div>
+
+<div id="newDialog" class="dialog">
+	<div id="dialogTitle" class="dialogtitle">
+		Name of the new class
+	</div>
+	<div id="dialogContent" class="content">
+	<input type="text" id="filename" class="nctext"></input>
+	<input type="button" id="ok" class="ncbutton" value="OK" onClick="DoNewClass();"></input>
 	</div>
 </div>
 </body>

@@ -3,6 +3,8 @@
  */
 package meta.codeanywhere.dao;
 
+import java.util.List;
+
 import meta.codeanywhere.bean.Tag;
 
 /**
@@ -10,5 +12,5 @@ import meta.codeanywhere.bean.Tag;
  * @version 11/17/2006
  */
 public interface TagDAO extends GenericDAO<Tag, Integer> {
-	public Tag getByTagName(String tag);
+	public List<Tag> getByTagName(String tag);
 }
