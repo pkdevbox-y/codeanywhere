@@ -33,8 +33,7 @@ public class WikiManager {
 	private TagDAO tagDAO = null;
 	private SourceFileDAO fileDAO = null;
 	private WikiManager() {
-		tagDAO = DAOFactory.DEFAULT.getTagDAO();
-		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
+
 	}
 	
 	public JSONArray search(String...tags) {
@@ -51,6 +50,8 @@ public class WikiManager {
 	}
 	
 	private JSONObject[] singleSearch(String tag) {
+		tagDAO = DAOFactory.DEFAULT.getTagDAO();
+
 		List<JSONObject> list = new LinkedList<JSONObject>();
 		List<Tag> tags = tagDAO.getByTagName(tag);
 		if(tags == null) {
@@ -62,7 +63,7 @@ public class WikiManager {
 				file = t.getFile();
 				JSONObject jsonObject = new JSONObject();
 				jsonObject.put("title", file != null ? file.getFileName() : tag);
-				jsonObject.put("source", file.getSourceText());
+				jsonObject.put("source", file != null ? file.getSourceText() : tag);
 				list.add(jsonObject);
 			}
 		} catch (JSONException jsone) {
@@ -81,6 +82,8 @@ public class WikiManager {
 	}
 	
 	private void addSingleTag(String fileName, String source, String tagString) {
+		tagDAO = DAOFactory.DEFAULT.getTagDAO();
+		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
 		SourceFile file = fileDAO.getByFileName(fileName);
 		Tag tag = new Tag();
 		tag.setFile(file);

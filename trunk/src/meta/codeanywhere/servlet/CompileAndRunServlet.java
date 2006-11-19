@@ -63,9 +63,8 @@ public class CompileAndRunServlet extends HttpServlet {
 			RunManager rm = RunManager.getManager();
 			User u = (User) session.getAttribute("user");
 			Integer uid = u != null ? u.getId() : new Integer(1);
-			if (rm.run(uid, fileName, path + "WEB-INF/classes/") != -1) {
-				String s = rm.read(uid);
-				out.print(s);
+			if (rm.run(uid, fileName, path + "WEB-INF/classes/", out) != -1) {
+				
 			}
 		}
 		out.print("<br><a href=\"mobile/index.html\">Go back</a>");

@@ -23,10 +23,11 @@ public class UserManager {
 	
 	private UserDAO userDAO = null;
 	private UserManager() {
-		userDAO = DAOFactory.DEFAULT.getUserDAO();
+		
 	}
 	
 	public User check(String username, String password) {
+		userDAO = DAOFactory.DEFAULT.getUserDAO();
 		User u = userDAO.getByUserName(username);
 		if (u != null && u.getPassword().equals(password)) {
 			return u;
@@ -35,6 +36,7 @@ public class UserManager {
 	}
 	
 	public User register(String username, String password, String email) {
+		userDAO = DAOFactory.DEFAULT.getUserDAO();
 		User u = new User();
 		u.setUsername(username);
 		u.setPassword(password);
