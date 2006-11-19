@@ -47,6 +47,7 @@
 }
 
 .toolbarSeparator {
+	margin-top: 7px;
 	cursor : default;
 }
 

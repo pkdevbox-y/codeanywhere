@@ -13,6 +13,8 @@
 		<span dojoType="tooltip" connectId="compilebutton" caption="Compile"></span>
 		<img id="runbutton" src="icons/runl.png" class="toolbarbutton" onclick="run();"/>
 		<span dojoType="tooltip" connectId="runbutton" caption="Run" ></span>
+		<img id="stopbutton" src="icons/stopl.png" class="toolbarbutton"/>
+		<span dojoType="tooltip" connectId="stopbutton" caption="Stop Run" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
@@ -30,25 +32,21 @@
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img id="lasteditlocationbutton" src="icons/lasteditlocationl.png" class="toolbarbutton" />
-		<span dojoType="tooltip" connectId="lasteditlocationbutton" caption="Last edit location" ></span>
-		<img id="backbutton" src="icons/backl.png" class="toolbarbutton" />
-		<span dojoType="tooltip" connectId="backbutton" caption="Back" ></span>
-		<img id="forwardbutton" src="icons/forwardl.png" class="toolbarbutton" />
-		<span dojoType="tooltip" connectId="forwardbutton" caption="Forward" ></span>
-	
-		<span dojoType="ToolbarSeparator"></span> 
-		
 		<input type="text" id="search" size="16" class="searchtext" widgetId="search" />
 		<img id="searchbutton" src="icons/searchl.png" class="toolbarbutton" onClick="search();"/>
 		<span dojoType="tooltip" connectId="searchbutton" caption="Search" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
 		
-		<img id="publishbutton" src="icons/publish.png" class="toolbarbutton" onClick="OnPublicWiki();"/>
+		<img id="wikibutton" src="icons/wikil.png" class="toolbarbutton"/>
+		<span dojoType="tooltip" connectId="wikibutton" caption="Wiki" ></span>
+		
+		<img id="publishbutton" src="icons/publishl.png" class="toolbarbutton" onClick="OnPublicWiki();"/>
 		<span dojoType="tooltip" connectId="publishbutton" caption="Publish the resource to wiki" ></span>
 		
-		<img id="downloadbutton" src="icons/download.png" class="toolbarbutton" onClick="OnDownload();"/>
+		<span dojoType="ToolbarSeparator"></span> 
+		
+		<img id="downloadbutton" src="icons/downloadl.png" class="toolbarbutton" onClick="OnDownload();"/>
 		<span dojoType="tooltip" connectId="downloadbutton" caption="Download the file or the entire project" ></span>
 	</div>
 </div>
