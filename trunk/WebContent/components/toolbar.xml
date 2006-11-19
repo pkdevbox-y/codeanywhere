@@ -45,9 +45,10 @@
 		<span dojoType="tooltip" connectId="publishbutton" caption="Publish the resource to wiki" ></span>
 		
 		<span dojoType="ToolbarSeparator"></span> 
-		<a ref="download">
-			<img id="downloadbutton" src="icons/downloadl.png" class="toolbarbutton" onClick="OnDownload();"/>
-			<span dojoType="tooltip" connectId="downloadbutton" caption="Download the project" ></span>
+		<a href="download">
+			<img id="downloadbutton" src="icons/downloadl.png" class="toolbarbutton"/>
 		</a>
+			<span dojoType="tooltip" connectId="downloadbutton" caption="Download the project" ></span>
+		
 	</div>
 </div>
