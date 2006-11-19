@@ -77,4 +77,29 @@ public class CompileManager {
 		buffer.append(jsonObject.toString());		
 		return buffer.toString();
 	}
+	
+	public String _compile(String path, String fileName, String source) {
+		StringBuffer buffer = new StringBuffer();
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(path + "WEB-INF/classes/" + fileName + ".java");
+			fw.write(source);
+			fw.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		JavaCompiler javaCompiler = new JavaCompiler();
+		javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java");
+		//javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java", source);
+		javaCompiler.compile();
+		
+		List<Diagnostic<? extends JavaFileObject>> diagnosticList = javaCompiler.getDiagnostics();
+		if (diagnosticList.size() > 0) {
+			for (Diagnostic<? extends JavaFileObject> diagnostic: diagnosticList) {
+				buffer.append(diagnostic.getMessage(Locale.ENGLISH));
+			}
+		}
+		return buffer.toString();
+	}
 }

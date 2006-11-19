@@ -10,12 +10,14 @@
 <body onLoad="initialize();">
 <div id="ide" class="ide">
 	<div id="title" class="title">
-		<div class="tbbutton"><img src="icons/newl.png" onClick="OnNewClass();"></img></div>
-		<div class="tbbutton"><img src="icons/savel.png"></img></div>
-		<div class="tbbutton"><img src="icons/compilel.png" onClick="OnCompile();"></img></div>
-		<div class="tbbutton"><img src="icons/runl.png" onClick="OnRun();"></img></div>
+		<div class="tbbutton"><input type="button" id="newbutton" onClick="OnNewClass();"></input></div>
+		<div class="tbbutton"><input type="button" id="savebutton" onClick="alert('123')"></input></div>
+		<div class="tbbutton"><input type="button" id="compilebutton" onClick="OnCompile();"></input></div>
+		<div class="tbbutton"><input type="button" id="runbutton" onClick="OnRun();"></input></div>
 	</div>
-	<div id="editor" contentEditable="false" class="editor">
+	<div id="editor" class="editor">
+		<textarea type="textarea" id="source">
+		</textarea>
 	</div>
 	<div id="console" class="console">
 	</div>

@@ -17,9 +17,7 @@ function sendRequest(url, parseMethod, sender, params, httpMethod) {
 	if (!httpMethod) {
 		httpMethod = "GET";
 	}
-	
 	var req = initXMLHttpRequest();
-	
 	if (req) {
 		req.onreadystatechange = function() { onReadyHandler(parseMethod, req, sender); };
 		req.open(httpMethod, url, true);
