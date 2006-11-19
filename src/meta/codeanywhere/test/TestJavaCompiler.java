@@ -22,7 +22,7 @@ public class TestJavaCompiler {
 		javaCompiler.addSourceFile("D:/Hello.java");
 		javaCompiler.compile();
 		PrintWriter out = new PrintWriter(System.out);
-		JavaProcessRunner javaRunner = new JavaProcessRunner("Hello", ".");
+		JavaProcessRunner javaRunner = new JavaProcessRunner("Hello", ".", out);
 		javaRunner.run();
 		
 		out.close();

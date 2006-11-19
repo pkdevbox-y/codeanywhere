@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.HashMap;
 
 import meta.codeanywhere.run.IRun;
@@ -42,8 +43,9 @@ public class RunManager {
 	 * @param classFile The name of the class file to run
 	 * @param classPath The class path
 	 */
-	public int run(Integer uid, String classFile, String classPath) {
-		IRun runner = new JavaProcessRunner(classFile, classPath);
+	public int run(Integer uid, String classFile, String classPath, Writer writer) {
+		IRun runner = new JavaProcessRunner(classFile, classPath, writer);
+		
 		if (runner.run() == -1) { // Error
 			return -1;
 		} else {

@@ -27,18 +27,21 @@ public class FileManager {
 	private SourceFileDAO fileDAO = null;
 	
 	private FileManager() {
-		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
+		
 	}
 	
 	public SourceFile getFileByName(String fileName) {
+		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
 		return fileDAO.getByFileName(fileName);
 	}
 	
 	public SourceFile[] getFilesByOwner(User owner) {
+		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
 		return fileDAO.getByOwner(owner).toArray(new SourceFile[0]);
 	}
 	
 	public SourceFile saveFile(String fileName, User owner, String content) {
+		fileDAO = DAOFactory.DEFAULT.getSourceFileDAO();
 		SourceFile file = new SourceFile();
 		file.setFileName(fileName);
 		file.setOwner(owner);
