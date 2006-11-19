@@ -23,10 +23,10 @@ public class RunManager {
 	
 	private static RunManager manager;
 	
-	private HashMap<String, IRun> runners;
+	private HashMap<Integer, IRun> runners;
 	
 	private RunManager() {
-		runners = new HashMap<String, IRun>();
+		runners = new HashMap<Integer, IRun>();
 	}
 
 	public static RunManager getManager() {
@@ -42,7 +42,7 @@ public class RunManager {
 	 * @param classFile The name of the class file to run
 	 * @param classPath The class path
 	 */
-	public int run(String uid, String classFile, String classPath) {
+	public int run(Integer uid, String classFile, String classPath) {
 		IRun runner = new JavaProcessRunner(classFile, classPath);
 		if (runner.run() == -1) { // Error
 			return -1;
@@ -57,7 +57,7 @@ public class RunManager {
 	 * @param uid The id of the usr.
 	 * @param content The content of the input.
 	 */
-	public void write(String uid, String content) {
+	public void write(Integer uid, String content) {
 		IRun runner = runners.get(uid);
 		BufferedWriter writer = new BufferedWriter(
 				new OutputStreamWriter(runner.getOutputStream()));
@@ -73,7 +73,7 @@ public class RunManager {
 	 * @param uid The id of the usr.
 	 * @return The output of the program.
 	 */
-	public String read(String uid) {
+	public String read(Integer uid) {
 		IRun runner = runners.get(uid);
 		BufferedReader reader = new BufferedReader(
 				new InputStreamReader(runner.getInputStream()));

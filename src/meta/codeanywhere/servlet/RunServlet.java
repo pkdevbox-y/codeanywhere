@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import meta.codeanywhere.run.JavaProcessRunner;
+import meta.codeanywhere.bean.User;
+import meta.codeanywhere.manager.RunManager;
 
 /**
  * @author Biao Zhang
@@ -46,9 +47,13 @@ public class RunServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		String fileName = request.getParameter("fileName");
-		JavaProcessRunner javaRunner = new JavaProcessRunner(fileName, path + "WEB-INF/classes/");
-		javaRunner.setWriter(out);
-		javaRunner.run();
+		RunManager rm = RunManager.getManager();
+		User u = (User) session.getAttribute("user");
+		Integer uid = u != null ? u.getId() : new Integer(1);
+		if (rm.run(uid, fileName, path + "WEB-INF/classes/") != -1) {
+			String s = rm.read(uid);
+			out.print(s);
+		}
 		out.close();
 	}
 	

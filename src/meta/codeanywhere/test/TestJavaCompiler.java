@@ -23,7 +23,6 @@ public class TestJavaCompiler {
 		javaCompiler.compile();
 		PrintWriter out = new PrintWriter(System.out);
 		JavaProcessRunner javaRunner = new JavaProcessRunner("Hello", ".");
-		javaRunner.setWriter(out);
 		javaRunner.run();
 		out.close();
 	}
