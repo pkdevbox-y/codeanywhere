@@ -182,23 +182,23 @@ function renameClicked(selectedNode) {
 		
 		//it should be got dynamicly
 		var newName = "zz";
-		renameTab(selectedNode.title, newName);
+		var oldName = selectedNode.title;
 		var newNode = newTreeNode(selectedNode, newName, false);
 		var tree = dojo.widget.getWidgetById("project_tree");
 		tree.removeChild(selectedNode);
 		tree.addChild(newNode, index);
-		
+		renameTab(oldName, newName);
 	}
 }
 
 /**
  * rename a tab
  */
-function renameTab(fileName, newName) {
+function renameTab(oldName, newName) {
 	
-	var tab = dojo.widget.getWidgetById(fileName + "_tab");
+	var tab = dojo.widget.getWidgetById(oldName + "_tab");
 	
-	var div = getDivByFileName(fileName);
+	var div = getDivByFileName(oldName);
 	//alert(div.innerText);
 	var tabcontainer = dojo.widget.getWidgetById("codeareaMainTabContainer");
 	tabcontainer.removeChild(tab);	
