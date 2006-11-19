@@ -29,9 +29,6 @@ function getActiveText() {
 	return activeDiv.innerText;
 }
 
-function OnCommand(cmd, userInterface, value){
-	//var doc = getActiveDoc(); //("codeframe1").contentWindow.document;
-	document.execCommand(cmd, userInterface, value);
-}
+
 
 
