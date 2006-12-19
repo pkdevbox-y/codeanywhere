@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry path="src" kind="src"/>
-	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
-	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/MySQL Connector" kind="con"/>
-	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/Hibernate" kind="con"/>
-	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/Servlet and JSP" kind="con"/>
-	<classpathentry path="org.eclipse.jdt.USER_LIBRARY/JSon" kind="con"/>
-	<classpathentry path="WebContent/WEB-INF/classes" kind="output"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySQL Connector"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Servlet and JSP"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Json"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
