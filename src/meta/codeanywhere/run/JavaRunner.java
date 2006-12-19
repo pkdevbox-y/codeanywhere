@@ -32,6 +32,7 @@ public class JavaRunner implements IRun {
 		/* attention here */
 		args = new String[]{};
 	}
+	
 	public int run() {
 		try {
 			cls = loader.loadClass(className);
