@@ -11,7 +11,7 @@ import java.util.Locale;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
 
-import meta.codeanywhere.compile.JavaCompiler;
+import meta.codeanywhere.compile.CAJavaCompiler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,7 +43,7 @@ public class CompileManager {
 			e1.printStackTrace();
 		}
 		
-		JavaCompiler javaCompiler = new JavaCompiler();
+		CAJavaCompiler javaCompiler = new CAJavaCompiler();
 		javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java");
 		//javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java", source);
 		javaCompiler.compile();
@@ -89,7 +89,7 @@ public class CompileManager {
 			e1.printStackTrace();
 		}
 		
-		JavaCompiler javaCompiler = new JavaCompiler();
+		CAJavaCompiler javaCompiler = new CAJavaCompiler();
 		javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java");
 		//javaCompiler.addSourceFile(path + "WEB-INF/classes/" + fileName + ".java", source);
 		javaCompiler.compile();
