@@ -5,7 +5,7 @@ package meta.codeanywhere.test;
 
 import java.io.PrintWriter;
 
-import meta.codeanywhere.compile.JavaCompiler;
+import meta.codeanywhere.compile.CAJavaCompiler;
 import meta.codeanywhere.run.JavaProcessRunner;
 
 /**
@@ -18,7 +18,7 @@ public class TestJavaCompiler {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		JavaCompiler javaCompiler = new JavaCompiler();
+		CAJavaCompiler javaCompiler = new CAJavaCompiler();
 		javaCompiler.addSourceFile("D:/Hello.java");
 		javaCompiler.compile();
 		PrintWriter out = new PrintWriter(System.out);
