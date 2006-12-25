@@ -38,7 +38,8 @@ public class JavaRunner implements IRun {
 			cls = loader.loadClass(className);
 			//cls = Class.forName(className);
 			obj = cls.newInstance();
-			method = cls.getMethod("main", String[].class);
+			Method method2 = cls.getMethod("main", String[].class);
+			method = method2;
 			method.invoke(obj, (Object)args);
 		} catch (ClassNotFoundException cnfe) {
 			cnfe.printStackTrace();
