@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.c3p0.max_size">200</property>
+        <property name="hibernate.c3p0.min_size">10</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">1985</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/library</property>
+        <property name="hibernate.connection.username">meta</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <mapping resource="meta/library/model/bean/User.hbm.xml" />
+        <mapping resource="meta/library/model/bean/Book.hbm.xml" />
+        <mapping resource="meta/library/model/bean/Borrow.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="/user" class="meta.library.controller.action.UserAction">
+		<property name="manager" ref="UserManager" />
+	</bean>
+	
+	<bean name="/login" class="meta.library.controller.action.LoginAction">
+		<property name="manager" ref="UserManager" />
+	</bean>
+	
+	<bean name="/ajax/login" class="meta.library.controller.action.ajax.LoginAction">
+		<property name="manager" ref="UserManager" />
+	</bean>
+	
+	<bean name="/book" class="meta.library.controller.action.BookAction">
+		<property name="manager" ref="BookManager" />
+	</bean>
+	
+	<bean name="/borrow" class="meta.library.controller.action.BorrowAction">
+		<property name="manager" ref="BorrowManager" />
+		<property name="userManager" ref="UserManager" />
+		<property name="bookManager" ref="BookManager" />
+	</bean>
+	
+	<bean name="/cover" class="meta.library.controller.action.BookCoverAction">
+		<property name="manager" ref="BookManager" />
+	</bean>
+</beans>

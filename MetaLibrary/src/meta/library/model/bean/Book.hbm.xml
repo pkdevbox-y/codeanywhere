@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="meta.library.model.bean"> 
+  <class name="Book" table="book" optimistic-lock="none"> 
+    <id name="id" type="integer" unsaved-value="null" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="title" type="string" column="title" length="128"/>
+    <property name="author" type="string" column="author" length="128"/>
+    <property name="isbn" type="string" column="isbn" length="18"/>
+    <property name="catalog" type="string" column="catalog" length="64"/>
+    <property name="description" type="string" column="description" length="512"/>
+    <property name="cover" type="java.sql.Blob" column="cover" />
+  </class>
+</hibernate-mapping>

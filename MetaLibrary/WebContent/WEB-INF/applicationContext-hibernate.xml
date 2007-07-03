@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- Hibernate SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mappingResources">
+			<list>
+				<value>meta/library/model/bean/User.hbm.xml</value>
+				<value>meta/library/model/bean/Book.hbm.xml</value>
+				<value>meta/library/model/bean/Borrow.hbm.xml</value>
+				<value>meta/library/model/bean/BookCover.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="UserDao" class="meta.library.model.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>	
+	</bean>
+	<bean id="BookDao" class="meta.library.model.dao.impl.BookDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>	
+	</bean>
+	<bean id="BorrowDao" class="meta.library.model.dao.impl.BorrowDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>	
+	</bean>
+	
+	<bean id="BookCoverDao" class="meta.library.model.dao.impl.BookCoverDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>	
+	</bean>
+</beans>

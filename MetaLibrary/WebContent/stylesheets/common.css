@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: Tahoma, Verdana, Arial;
+	font-size: 9pt;
+}
+
+.wrapper {
+	text-align: center;	
+}
+
+a {
+	text-decoration: none;
+	color: green;
+}
+
+/*
+a:link {
+	
+}
+
+a:visited {
+	color: black;	
+}
+*/
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+.toolbar {
+	border-bottom: solid 1px green;
+	background-color: #F1F1F1;
+	
+	margin-top: 0;
+	
+	float: left;
+}
+
+.toolbar span {
+	line-height: 24px;
+	margin-right: 8px;
+	float: right;
+}
+
+.toolbar span.link {
+	margin-right: 0;
+	
+	margin-left: 8px;
+	float: left;
+}
+
+.alert {
+	border: solid 1px red;
+	background-color: #EEFFFF;
+}
+
+.info {
+	border: solid 1px yellow;
+	background-color: #EEEEFF;
+}
+
+.tip {
+	border: solid 1px green;
+	background-color: #FFEEEE;
+}
+
+.wrong, .right {
+
+}
+
+.wrong {
+	background: url(../images/delete.gif) no-repeat right center;
+}
+
+.right {
+	background: url(../images/public.gif) no-repeat right center;
+}

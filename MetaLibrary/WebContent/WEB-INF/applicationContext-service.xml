@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="transactionManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="txProxyTemplate" 
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="proxyTargetClass" value="true" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="remove*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="UserManager" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="meta.library.model.service.impl.UserManagerImpl" >
+				<property name="dao" ref="UserDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="BookManager" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="meta.library.model.service.impl.BookManagerImpl" >
+				<property name="dao" ref="BookDao" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="BorrowManager" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="meta.library.model.service.impl.BorrowManagerImpl" >
+				<property name="dao" ref="BorrowDao" />
+				<property name="userDao" ref="UserDao" />
+				<property name="bookDao" ref="BookDao" />
+			</bean>
+		</property>
+	</bean>
+</beans>

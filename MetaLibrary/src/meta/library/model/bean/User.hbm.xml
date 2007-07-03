@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="meta.library.model.bean"> 
+  <class name="User" table="user" optimistic-lock="none"> 
+    <id name="id" type="integer" unsaved-value="null" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="username" type="string" column="username" length="16" />
+    <property name="password" type="string" column="password" length="16" />
+    <property name="email" type="string" column="email" length="32" />
+    <property name="priviledge" type="integer" column="priviledge" />
+  </class>
+</hibernate-mapping>
