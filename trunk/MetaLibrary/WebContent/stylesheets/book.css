@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+div.list {
+	border: solid 1px green;
+	width: 600px;
+	text-align: left;
+	
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	clear: both;
+}
+
+div.list div.entry {
+	border: dotted 1px green;
+	margin: 6px;
+	padding: 4px;
+}
+
+div.cover, div.desc {
+	float: left;
+}
+
+div.cover {
+	/*background-color: gray;*/
+	/*margin: 5px 0 0 5px;*/
+}
+
+div.cover img {
+	/*margin: -5px 5px 5px -5px;*/
+	width: 101px;
+	height: 133px;
+}	
+
+div.desc {
+	margin-left: 8px;
+}
+
+div.desc span {
+	display: block;
+	line-height: 24px;
+}
+
+div.action {
+	text-align: right;
+	clear: both;
+}
+
+div.action button {
+	border: none;
+	background: url(../images/button.gif) no-repeat left top;
+	color: white;
+	width: 100px;
+	height: 26px;
+
+	margin-left: 24px;
+}
