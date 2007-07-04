@@ -11,7 +11,7 @@
 	
 	<div class="toolbar">
 	<span class="link"><a href="index.jsp">Home</a></span>
-	<span class="link"><a href="book.do?method=add">Add a book</a></span>
+	<span class="link"><a href="addbook.jsp">Add a book</a></span>
 	<span class="link"><a href="book.do?method=list">List books</a></span>
 	<span class="link"><a href="borrow.do?method=borrow">Borrow a book</a></span>
 	<span class="link"><a href="about.jsp">About</a></span>
