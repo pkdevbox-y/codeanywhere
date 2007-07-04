@@ -18,7 +18,7 @@
 		<div class="entry">
 			<div class="cover"><img src="cover.do?id=<jsp:getProperty name="book" property="id" />"></img></div>
 			<div class="desc">
-				<span>Title: <jsp:getProperty name="book" property="title" /></span>
+				<span>Title: <a href="http://localhost:8080/MetaLibrary/book.do?method=info&id=${book.id}"><jsp:getProperty name="book" property="title" /></a></span>
 				<span>Author: <jsp:getProperty name="book" property="author" /></span>
 				<span>ISBN: <jsp:getProperty name="book" property="isbn" /></span>
 				<span>Catalog: <jsp:getProperty name="book" property="catalog" /></span>

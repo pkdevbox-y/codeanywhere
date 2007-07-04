@@ -131,5 +131,13 @@ public class BookAction extends MetaAction<BookManager> {
 
 		return forward;
 	}
+	
+	public ActionForward search(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+
+		ActionForward forward = mapping.findForward("index");
+
+		return forward;
+	}
 
 }
