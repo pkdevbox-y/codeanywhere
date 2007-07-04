@@ -17,7 +17,7 @@
 		<div class="entry">
 			<div class="cover"><img src="cover.do?id=${book.id}"></img></div>
 			<div class="desc">
-				<span>Title: ${book.title} </span>
+				<span>Title: <a href="http://localhost:8080/MetaLibrary/book.do?method=info&id=${book.id}">${book.title}</a> </span>
 				<span>Author: ${book.author} </span>
 				<span>ISBN: ${book.isbn} </span>
 				<span>Catalog: ${book.catalog} </span>
