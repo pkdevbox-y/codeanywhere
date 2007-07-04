@@ -78,6 +78,7 @@
 			<forward name="list" path="/booklist.jsp" />
 			<forward name="add" path="/addbook.jsp" redirect="true" />
 			<forward name="borrow" path="/library.jsp" />
+			<forward name="info" path="/bookinfo.jsp" />
 		</action>
 		
 		<action

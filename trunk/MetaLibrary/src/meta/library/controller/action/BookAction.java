@@ -59,6 +59,22 @@ public class BookAction extends MetaAction<BookManager> {
 		forward = mapping.findForward("list");
 		return forward;
 	}
+	
+	public ActionForward info(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+
+		ActionForward forward;
+
+		String bookIdStr = request.getParameter("id");
+		if (bookIdStr != null) {
+			int bookId = Integer.parseInt(bookIdStr);
+			Book book = manager.findById(bookId);
+			request.setAttribute("book", book);
+		}
+
+		forward = mapping.findForward("info");
+		return forward;
+	}
 
 	public ActionForward add(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
