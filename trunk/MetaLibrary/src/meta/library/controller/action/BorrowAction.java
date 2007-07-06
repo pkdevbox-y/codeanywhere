@@ -70,7 +70,12 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			int userId = Integer.parseInt(user);
 			
 			manager.borrowBook(userId, bookId);
-			forward = mapping.findForward("borrow");
+			
+			request.setAttribute("message", "Successful borrow the book!");
+			request.setAttribute("url", "borrow.do?method=borrow");
+			
+			forward = mapping.findForward("complete");
+			
 		}
 		return forward;
 	}

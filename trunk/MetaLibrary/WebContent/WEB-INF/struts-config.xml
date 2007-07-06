@@ -44,8 +44,9 @@
 <!-- =========================================== Global Forward Definitions -->
 
     <global-forwards>
-
 		<forward name="index" path="/index.jsp" redirect="true" />
+		<forward name="complete" path="/complete.jsp" />
+		<forward name="error" path="/error.jsp" />
     </global-forwards>
 
 

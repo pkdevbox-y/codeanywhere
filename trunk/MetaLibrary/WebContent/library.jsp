@@ -35,6 +35,14 @@
 			</div>
 			
 			<div>
+				<label for="action">User:</label>
+				<select name="action">
+					<option value="0">Borrow</option>
+					<option value="1">Return</option>
+				</select>
+			</div>
+			
+			<div>
 				<label for="date">Date:</label>
 				<input name="date" type="text" value="2007-7-1"></input>
 			</div>
