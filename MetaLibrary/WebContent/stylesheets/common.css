@@ -77,3 +77,21 @@ a:hover {
 .right {
 	background: url(../images/public.gif) no-repeat right center;
 }
+
+.complete, .error {
+	width: 600px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	padding: 16px;
+	clear: both;
+}
+
+.complete {
+	border: solid 1px green;
+}
+
+.error {
+	border: solid 1px red;
+}
