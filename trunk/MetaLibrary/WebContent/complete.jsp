@@ -9,12 +9,13 @@
 </head>
 <body>
 	<%@ include file="templates/toolbar.jsp"%>
+	<jsp:useBean id="actionResultMessage" class="meta.library.model.bean.ActionResultMessage" scope="request"></jsp:useBean>
 	<div class="complete">
 		<div>
-			<%= request.getAttribute("message") %>
+			<jsp:getProperty name="actionResultMessage" property="message" />
 		</div>
 		<div>
-			<a href="<%= request.getAttribute("url") %>">Return</a>
+			<a href="<jsp:getProperty name="actionResultMessage" property="url" />">Return</a>
 		</div>
 	</div>
 </body>
