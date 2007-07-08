@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import meta.library.model.bean.ActionResultMessage;
 import meta.library.model.bean.Book;
 import meta.library.model.bean.User;
 import meta.library.model.service.BookManager;
@@ -70,9 +71,11 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			int userId = Integer.parseInt(user);
 			
 			manager.borrowBook(userId, bookId);
+			ActionResultMessage actionResultMessage = new ActionResultMessage();
+			actionResultMessage.setMessage("Successful borrow the book!");
+			actionResultMessage.setUrl("borrow.do?method=borrow");
 			
-			request.setAttribute("message", "Successful borrow the book!");
-			request.setAttribute("url", "borrow.do?method=borrow");
+			request.setAttribute("actionResultMessage", actionResultMessage);
 			
 			forward = mapping.findForward("complete");
 			
