@@ -2,11 +2,16 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="meta.library.model.bean"> 
-  <class name="Borrow" table="borrow" optimistic-lock="none"> 
-    <id name="id" type="integer" unsaved-value="null" column="id">
-      <generator class="increment"/>
-    </id>
-	<many-to-one name="user" entity-name="meta.library.model.bean.User" cascade="save-update" foreign-key="user_fk" column="userid"/>
-	<many-to-one name="book" entity-name="meta.library.model.bean.Book" cascade="save-update" foreign-key="book_fk" column="bookid"/>
+  <class name="Borrow" table="borrow" optimistic-lock="none">
+  	<id name="id" type="integer" unsaved-value="null" column="id">
+  		<generator class="increment" />
+  	</id>
+  	<many-to-one name="user"
+  		entity-name="meta.library.model.bean.User" cascade="save-update"
+  		foreign-key="user_fk" column="userid" />
+  	<many-to-one name="book"
+  		entity-name="meta.library.model.bean.Book" cascade="save-update"
+  		foreign-key="book_fk" column="bookid" />
+  	<property name="date" type="timestamp" column="borrowdate"/>
   </class>
 </hibernate-mapping>

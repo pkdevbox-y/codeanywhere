@@ -77,4 +77,10 @@ public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements B
 		return book;
 	}
 
+	@Override
+	public Book getByTitle(String title) {
+		Book book = dao.getByTitle(title);
+		return book;
+	}
+
 }

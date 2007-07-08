@@ -92,6 +92,11 @@ public class Book {
 
 	public void setCover(Blob cover) {
 		this.cover = cover;
-	}	
-	
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.title;
+	}
 }

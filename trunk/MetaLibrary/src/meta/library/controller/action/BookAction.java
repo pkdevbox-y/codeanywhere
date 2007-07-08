@@ -66,10 +66,16 @@ public class BookAction extends MetaAction<BookManager> {
 		ActionForward forward;
 
 		String bookIdStr = request.getParameter("id");
-		if (bookIdStr != null) {
-			int bookId = Integer.parseInt(bookIdStr);
-			Book book = manager.findById(bookId);
-			request.setAttribute("book", book);
+		String bookTitle = request.getParameter("title");
+		if (bookIdStr != null || bookTitle != null) {
+			if (bookIdStr != null) {
+				int bookId = Integer.parseInt(bookIdStr);
+				Book book = manager.findById(bookId);
+				request.setAttribute("book", book);
+			} else {
+				Book book = manager.getByTitle(bookTitle);
+				request.setAttribute("book", book);
+			}
 		}
 
 		forward = mapping.findForward("info");

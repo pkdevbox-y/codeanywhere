@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import meta.library.model.bean.ActionResultMessage;
 import meta.library.model.bean.Book;
+import meta.library.model.bean.Borrow;
 import meta.library.model.bean.User;
 import meta.library.model.service.BookManager;
 import meta.library.model.service.BorrowManager;
@@ -80,6 +81,16 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			forward = mapping.findForward("complete");
 			
 		}
+		return forward;
+	}
+	
+	public ActionForward list(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		
+		ActionForward forward;
+		List<Borrow> borrowlist = manager.findAll();
+		request.setAttribute("borrowlist", borrowlist);
+		forward = mapping.findForward("list");
 		return forward;
 	}
 }
