@@ -13,6 +13,8 @@ import meta.library.model.dao.BookDao;
  *
  */
 public interface BookManager extends BaseManager<BookDao, Book> {
+	public Book getByTitle(String title);
+	
 	public Book addBook(String title, String author, String isbn, String catalog, String description);
 	
 	public Book addBook(String title, String author, String isbn, String catalog, String description, InputStream cover);

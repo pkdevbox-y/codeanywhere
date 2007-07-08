@@ -65,4 +65,9 @@ public class User {
 		this.priviledge = priviledge;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.username;
+	}
 }

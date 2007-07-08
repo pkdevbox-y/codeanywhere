@@ -18,6 +18,22 @@ div.list div.entry {
 	padding: 4px;
 }
 
+div.list div.entry span.item, div.list div.entry span.action {
+	min-width: 100px;
+	
+	text-align: center;
+}
+
+div.list div.entry span.item {
+	border-right: dotted 1px green;
+	line-height: 24px;
+	float: left;
+}
+
+div.list div.entry span.action {
+	clear: right;
+}
+
 div.cover, div.desc {
 	float: left;
 }
@@ -47,7 +63,7 @@ div.action {
 	clear: both;
 }
 
-div.action button {
+div.action button, span.action button {
 	border: none;
 	background: url(../images/button.gif) no-repeat left top;
 	color: white;
