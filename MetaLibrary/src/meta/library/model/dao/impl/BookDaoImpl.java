@@ -26,5 +26,39 @@ public class BookDaoImpl extends GenericDaoImpl<Book, Integer>	implements BookDa
 		}
 		return book;
 	}
+
+	@Override
+	public List<Book> getByAuthor(String author) {
+		List<Book> books = this.getHibernateTemplate().find("from Book where author=?", author);
+		
+		return books;
+	}
+
+	@Override
+	public List<Book> getByPress(String press) {
+		List<Book> books = this.getHibernateTemplate().find("from Book where press=?", press);
+		return books;
+	}
+
+	@Override
+	public List<Book> searchByTitle(String title) {
+		List<Book> books = this.getHibernateTemplate().find("from Book where title like ?", "%" + title + "%");
+
+		return books;
+	}
+
+	@Override
+	public List<Book> searchByAuthor(String author) {
+		List<Book> books = this.getHibernateTemplate().find("from Book where author like ?", "%" + author + "%");
+
+		return books;
+	}
+
+	@Override
+	public List<Book> searchByPress(String press) {
+		List<Book> books = this.getHibernateTemplate().find("from Book where press like ?", "%" + press + "%");
+
+		return books;
+	}
 	
 }

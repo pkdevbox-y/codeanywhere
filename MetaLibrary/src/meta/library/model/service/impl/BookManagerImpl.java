@@ -6,6 +6,8 @@ package meta.library.model.service.impl;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 
 import meta.library.model.bean.Book;
 import meta.library.model.dao.BookDao;
@@ -81,6 +83,55 @@ public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements B
 	public Book getByTitle(String title) {
 		Book book = dao.getByTitle(title);
 		return book;
+	}
+
+	@Override
+	public List<Book> getByAuthor(String author) {
+		List<Book> books = dao.getByAuthor(author);
+		return books;
+	}
+
+	@Override
+	public List<Book> getByPress(String press) {
+		List<Book> books = dao.getByPress(press);
+		return books;
+	}
+
+	@Override
+	public List<Book> searchByTitle(String title) {
+		List<Book> books = dao.searchByTitle(title);
+		
+		return books;
+	}
+
+	@Override
+	public List<Book> search(String keywords) {
+		String[] words = keywords.split(" ");
+		List<Book> result = new LinkedList<Book>();
+		
+		for (String keyword: words) {
+			List<Book> books = dao.searchByTitle(keyword);
+			result.addAll(books);
+			
+			books = dao.searchByAuthor(keyword);
+			result.addAll(books);
+			
+			books = dao.searchByPress(keyword);
+			result.addAll(books);
+		}
+		return result;
+	}
+
+	@Override
+	public List<Book> searchByAuthor(String author) {
+		List<Book> books = dao.searchByAuthor(author);
+		return books;
+	}
+
+	@Override
+	public List<Book> searchByPress(String press) {
+		List<Book> books = dao.searchByPress(press);
+		return books;
 	}
 
 }

@@ -20,6 +20,7 @@
 			<div class="desc">
 				<span>Title: <a href="http://localhost:8080/MetaLibrary/book.do?method=info&id=${book.id}"><jsp:getProperty name="book" property="title" /></a></span>
 				<span>Author: <jsp:getProperty name="book" property="author" /></span>
+				<span>Press: <jsp:getProperty name="book" property="press" /></span>
 				<span>ISBN: <jsp:getProperty name="book" property="isbn" /></span>
 				<span>Catalog: <jsp:getProperty name="book" property="catalog" /></span>
 				<span>Description: <jsp:getProperty name="book" property="description" /></span>
