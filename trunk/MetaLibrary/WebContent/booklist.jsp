@@ -18,6 +18,7 @@
 			<div class="desc">
 				<span>Title: <a href="book.do?method=info&id=${book.id}">${book.title}</a> </span>
 				<span>Author: ${book.author} </span>
+				<span>Press: ${book.press} </span>
 				<span>ISBN: ${book.isbn} </span>
 				<span>Catalog: ${book.catalog} </span>
 				<span>Description: ${book.description} </span>

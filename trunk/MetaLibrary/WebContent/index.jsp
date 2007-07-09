@@ -12,7 +12,7 @@
 <body>
 	<%@ include file="templates/toolbar.jsp"%>
 	<div class="logo"><img src="images/logo.gif"></img></div>
-	<form id="searchform" action="search.do" method="post">
+	<form id="searchform" action="book.do?method=search" method="post">
 		<div>
 		<input id="search" name="search" type="text"></input>
 		<input id="submitbutton" type="submit" value="Search"></input>

@@ -18,6 +18,7 @@
 				<prop key="save*">PROPAGATION_REQUIRED</prop>
 				<prop key="remove*">PROPAGATION_REQUIRED</prop>
 				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="search*">PROPAGATION_REQUIRED,readOnly</prop>
 			</props>
 		</property>
 	</bean>

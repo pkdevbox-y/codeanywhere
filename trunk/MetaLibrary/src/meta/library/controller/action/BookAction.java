@@ -144,8 +144,18 @@ public class BookAction extends MetaAction<BookManager> {
 	public ActionForward search(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 
-		ActionForward forward = mapping.findForward("index");
+		ActionForward forward;
+		String search = request.getParameter("search");
+		
+		if (search != null && search.length() > 0) {
+			List<Book> booklist = manager.search(search);
+			request.setAttribute("booklist", booklist);
 
+			forward = mapping.findForward("list");
+		} else {
+			forward = mapping.findForward("index");
+		}
+		
 		return forward;
 	}
 
