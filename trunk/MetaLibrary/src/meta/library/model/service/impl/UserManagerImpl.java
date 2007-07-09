@@ -19,7 +19,7 @@ public class UserManagerImpl extends BaseManagerImpl<UserDao, User> implements U
 	}
 
 	@Override
-	public User registerUser(String username, String password, String email) {
+	public User addUser(String username, String password, String email) {
 		
 		User user = new User();
 		user.setUsername(username);

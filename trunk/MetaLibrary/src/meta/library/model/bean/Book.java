@@ -14,9 +14,11 @@ public class Book {
 	private Integer id = null;
 	private String title = null;
 	private String author;
+	private String press;
 	private String isbn;
 	private String catalog;
 	private String description;
+	private int copy;
 	
 	private Blob cover;
 	
@@ -29,10 +31,11 @@ public class Book {
 		this.title = title;
 	}
 
-	public Book(String title, String author, String isbn,
+	public Book(String title, String author, String press, String isbn,
 			String catalog, String description) {
 		this.title = title;
 		this.author = author;
+		this.press = press;
 		this.isbn = isbn;
 		this.catalog = catalog;
 		this.description = description;
@@ -60,6 +63,14 @@ public class Book {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getPress() {
+		return press;
+	}
+
+	public void setPress(String press) {
+		this.press = press;
 	}
 
 	public String getIsbn() {
@@ -92,6 +103,14 @@ public class Book {
 
 	public void setCover(Blob cover) {
 		this.cover = cover;
+	}
+
+	public int getCopy() {
+		return copy;
+	}
+
+	public void setCopy(int copy) {
+		this.copy = copy;
 	}
 
 	@Override

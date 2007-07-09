@@ -46,6 +46,11 @@
 			</div>
 			
 			<div>
+				<label for="press">Press:</label>
+				<input id="press" name="press" type="text"></input>
+			</div>
+			
+			<div>
 				<label for="isbn">ISBN:</label>
 				<input id="isbn" name="isbn" type="text"></input>
 			</div>

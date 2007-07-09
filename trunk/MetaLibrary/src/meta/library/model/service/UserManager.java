@@ -14,5 +14,5 @@ public interface UserManager extends BaseManager<UserDao, User>{
 	
 	public User getByUsername(String username);
 	
-	public User registerUser(String username, String password, String email);
+	public User addUser(String username, String password, String email);
 }

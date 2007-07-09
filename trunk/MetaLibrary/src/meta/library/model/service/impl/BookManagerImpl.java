@@ -20,9 +20,9 @@ import org.hibernate.Hibernate;
 public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements BookManager {
 
 	@Override
-	public Book addBook(String title, String author, String isbn,
+	public Book addBook(String title, String author, String press, String isbn,
 			String catalog, String description) {
-		Book book = new Book(title, author, isbn, catalog, description);
+		Book book = new Book(title, author, press, isbn, catalog, description);
 		
 		dao.save(book);		
 		
@@ -60,9 +60,9 @@ public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements B
 	}
 
 	@Override
-	public Book addBook(String title, String author, String isbn,
+	public Book addBook(String title, String author, String press, String isbn,
 			String catalog, String description, InputStream cover) {
-		Book book = new Book(title, author, isbn, catalog, description);
+		Book book = new Book(title, author, press, isbn, catalog, description);
 		
 		if (cover != null) {
 			try {

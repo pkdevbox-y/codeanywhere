@@ -8,9 +8,11 @@
     </id>
     <property name="title" type="string" column="title" length="128"/>
     <property name="author" type="string" column="author" length="128"/>
+    <property name="press" type="string" column="press" length="128"/>
     <property name="isbn" type="string" column="isbn" length="18"/>
     <property name="catalog" type="string" column="catalog" length="64"/>
     <property name="description" type="string" column="description" length="512"/>
+    <property name="copy" type="integer" column="copy"/>
     <property name="cover" type="java.sql.Blob" column="cover" />
   </class>
 </hibernate-mapping>
