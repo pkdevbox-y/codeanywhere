@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import meta.library.model.bean.ActionResultMessage;
 import meta.library.model.bean.Book;
 import meta.library.model.service.BookManager;
 
@@ -67,18 +68,31 @@ public class BookAction extends MetaAction<BookManager> {
 
 		String bookIdStr = request.getParameter("id");
 		String bookTitle = request.getParameter("title");
+		Book book = null;
+		
 		if (bookIdStr != null || bookTitle != null) {
 			if (bookIdStr != null) {
 				int bookId = Integer.parseInt(bookIdStr);
-				Book book = manager.findById(bookId);
+				book = manager.findById(bookId);
 				request.setAttribute("book", book);
 			} else {
-				Book book = manager.getByTitle(bookTitle);
+				book = manager.getByTitle(bookTitle);
 				request.setAttribute("book", book);
 			}
+		} 
+		
+		if (book != null) {
+			forward = mapping.findForward("info");
+		} else {
+			ActionResultMessage actionResultMessage = new ActionResultMessage();
+			actionResultMessage.setMessage("Can not find the book!");
+			actionResultMessage.setUrl("book.do?method=list");
+		
+			request.setAttribute("actionResultMessage", actionResultMessage);
+		
+			forward = mapping.findForward("error");
 		}
-
-		forward = mapping.findForward("info");
+		
 		return forward;
 	}
 

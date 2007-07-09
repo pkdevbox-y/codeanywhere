@@ -118,4 +118,8 @@ public class Book {
 		// TODO Auto-generated method stub
 		return this.title;
 	}
+
+	public void borrow() {
+		this.copy--;		
+	}
 }
