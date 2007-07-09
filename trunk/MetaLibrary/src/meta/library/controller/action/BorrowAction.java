@@ -71,14 +71,23 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			int bookId = Integer.parseInt(book);
 			int userId = Integer.parseInt(user);
 			
-			manager.borrowBook(userId, bookId);
-			ActionResultMessage actionResultMessage = new ActionResultMessage();
-			actionResultMessage.setMessage("Successful borrow the book!");
-			actionResultMessage.setUrl("borrow.do?method=borrow");
+			if (manager.borrowBook(userId, bookId) != null) {
+				ActionResultMessage actionResultMessage = new ActionResultMessage();
+				actionResultMessage.setMessage("Successful borrow the book!");
+				actionResultMessage.setUrl("borrow.do?method=borrow");
 			
-			request.setAttribute("actionResultMessage", actionResultMessage);
+				request.setAttribute("actionResultMessage", actionResultMessage);
 			
-			forward = mapping.findForward("complete");
+				forward = mapping.findForward("complete");
+			} else {
+				ActionResultMessage actionResultMessage = new ActionResultMessage();
+				actionResultMessage.setMessage("Can not borrow the book!");
+				actionResultMessage.setUrl("borrow.do?method=borrow");
+			
+				request.setAttribute("actionResultMessage", actionResultMessage);
+			
+				forward = mapping.findForward("error");
+			}
 			
 		}
 		return forward;

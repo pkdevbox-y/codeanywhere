@@ -16,7 +16,7 @@
 		<div class="entry">
 			<span class="item">${borrow.id}</span>
 			<span class="item">${borrow.user}</span>
-			<span class="item"><a href="book.do?method=info&title=${borrow.book}">${borrow.book}</a></span>
+			<span class="item"><a href="book.do?method=info&id=${borrow.book.id}">${borrow.book}</a></span>
 			<span class="item">${borrow.date}</span>
 			<span class="action"><button>${borrow.id}</button></span>
 		</div>

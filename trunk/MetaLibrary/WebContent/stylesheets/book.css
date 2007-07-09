@@ -19,12 +19,13 @@ div.list div.entry {
 }
 
 div.list div.entry span.item, div.list div.entry span.action {
-	min-width: 100px;	
+	min-width: 100px;
+	margin-left: 4px;
 	text-align: center;
 }
 
 div.list div.entry span.item {
-	border-right: dotted 1px green;
+	/*border-right: dotted 1px green;*/
 	line-height: 24px;
 	float: left;
 }
