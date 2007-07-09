@@ -98,7 +98,7 @@ public class UserAction extends MetaAction<UserManager> {
 			if (username == null || password == null || email == null) {
 				forward = mapping.findForward("register");
 			} else {
-				user = manager.registerUser(username, password, email);
+				user = manager.addUser(username, password, email);
 				if (user != null) {
 					session.setAttribute("user", user);
 					forward = mapping.findForward("index");

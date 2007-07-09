@@ -35,7 +35,7 @@
 			</div>
 			
 			<div>
-				<label for="action">User:</label>
+				<label for="action">Action:</label>
 				<select name="action">
 					<option value="0">Borrow</option>
 					<option value="1">Return</option>

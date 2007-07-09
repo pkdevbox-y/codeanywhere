@@ -89,6 +89,7 @@ public class BookAction extends MetaAction<BookManager> {
 
 		String title = null;
 		String author = null;
+		String press = null;
 		String isbn = null;
 		String catalog = null;
 		String description = null;
@@ -105,6 +106,8 @@ public class BookAction extends MetaAction<BookManager> {
 					title = file.getString();
 				} else if(file.getFieldName().equals("author")) {
 					author = file.getString();
+				} else if(file.getFieldName().equals("press")) {
+					press = file.getString();
 				} else if(file.getFieldName().equals("isbn")) {
 					isbn = file.getString();
 				} else if(file.getFieldName().equals("catalog")) {
@@ -130,7 +133,7 @@ public class BookAction extends MetaAction<BookManager> {
 		if (title == null || author == null || isbn == null) {
 			forward = mapping.findForward("add");
 		} else {
-			manager.addBook(title, author, isbn, catalog, description, cover);
+			manager.addBook(title, author, press, isbn, catalog, description, cover);
 
 			forward = this.list(mapping, form, request, response);
 		}
