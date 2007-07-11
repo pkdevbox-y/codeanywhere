@@ -32,13 +32,14 @@ public class Book {
 	}
 
 	public Book(String title, String author, String press, String isbn,
-			String catalog, String description) {
+			String catalog, String description, int copy) {
 		this.title = title;
 		this.author = author;
 		this.press = press;
 		this.isbn = isbn;
 		this.catalog = catalog;
 		this.description = description;
+		this.copy = copy;
 	}
 
 	public Integer getId() {
@@ -121,5 +122,9 @@ public class Book {
 
 	public void borrow() {
 		this.copy--;		
+	}
+	
+	public void returnBook() {
+		this.copy++;
 	}
 }

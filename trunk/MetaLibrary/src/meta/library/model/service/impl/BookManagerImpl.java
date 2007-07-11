@@ -23,8 +23,8 @@ public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements B
 
 	@Override
 	public Book addBook(String title, String author, String press, String isbn,
-			String catalog, String description) {
-		Book book = new Book(title, author, press, isbn, catalog, description);
+			String catalog, String description, int copy) {
+		Book book = new Book(title, author, press, isbn, catalog, description, copy);
 		
 		dao.save(book);		
 		
@@ -63,8 +63,8 @@ public class BookManagerImpl extends BaseManagerImpl<BookDao, Book> implements B
 
 	@Override
 	public Book addBook(String title, String author, String press, String isbn,
-			String catalog, String description, InputStream cover) {
-		Book book = new Book(title, author, press, isbn, catalog, description);
+			String catalog, String description, int copy, InputStream cover) {
+		Book book = new Book(title, author, press, isbn, catalog, description, copy);
 		
 		if (cover != null) {
 			try {

@@ -21,4 +21,6 @@ public interface BorrowManager extends BaseManager<BorrowDao, Borrow> {
 	
 	public Borrow borrowBook(int userId, int bookId);
 	public Borrow returnBook(int userId, int bookId);
+	
+	public boolean returnBook(int borrowId);
 }

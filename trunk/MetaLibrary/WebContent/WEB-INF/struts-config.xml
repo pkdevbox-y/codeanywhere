@@ -87,6 +87,7 @@
 			parameter="method"
 			type="meta.library.model.controller.BorrowAction">
 			<forward name="borrow" path="/library.jsp" />
+			<forward name="return" path="/returnbook.jsp" />
 			<forward name="list" path="/borrowlist.jsp" />
 		</action>
 		

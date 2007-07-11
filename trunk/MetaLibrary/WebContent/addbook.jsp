@@ -63,14 +63,22 @@
 					<option value="dotnet">.Net Framework</option>
 					<option value="j2ee">Java EE</option>
 					<option value="wince">Windows Mobile</option>
-					<option value="dynamic">PHP | Perl | Python</option>
+					<option value="dynamic">Python</option>
 					<option value="linux">Linux</option>
+					<option value="js">JavaScript</option>
+					<option value="css">CSS</option>
+					<option value="mfc">MFC</option>
 				</select>
 			</div>
 			
 			<div>
 				<label for="description">Description:</label>
 				<textarea id="description" name="description" rows="10"></textarea>
+			</div>
+			
+			<div>
+				<label for="copy">Copy:</label>
+				<input id="copy" name="copy" type="text"></input>
 			</div>
 			
 			<div id="submitdiv">

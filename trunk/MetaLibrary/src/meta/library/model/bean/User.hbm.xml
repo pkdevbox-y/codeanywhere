@@ -10,5 +10,6 @@
     <property name="password" type="string" column="password" length="16" />
     <property name="email" type="string" column="email" length="32" />
     <property name="priviledge" type="integer" column="priviledge" />
+    <property name="haveBook" type="integer" column="have_book" />
   </class>
 </hibernate-mapping>

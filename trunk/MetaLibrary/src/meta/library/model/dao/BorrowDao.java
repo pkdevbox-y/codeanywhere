@@ -10,5 +10,5 @@ import meta.library.model.bean.Borrow;
  *
  */
 public interface BorrowDao extends GenericDao<Borrow, Integer> {
-
+	public Borrow getByUserAndBook(int uesrId, int bookId);
 }
