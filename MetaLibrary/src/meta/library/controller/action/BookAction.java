@@ -107,10 +107,11 @@ public class BookAction extends MetaAction<BookManager> {
 		String isbn = null;
 		String catalog = null;
 		String description = null;
+		int copy = 0;
 		
 		InputStream cover = null;
 		
-		ServletFileUpload fileUpload = new ServletFileUpload(new DiskFileItemFactory(512, new File("C:/Users/Talent/workspace_wtp/MetaLibrary/WebContent/temp")));
+		ServletFileUpload fileUpload = new ServletFileUpload(new DiskFileItemFactory(512, new File("D:/temp")));
 		try {
 			List<FileItem> files = fileUpload.parseRequest(request);
 			for (FileItem file : files) {
@@ -128,6 +129,8 @@ public class BookAction extends MetaAction<BookManager> {
 					catalog = file.getString();
 				} else if(file.getFieldName().equals("description")) {
 					description = file.getString();
+				} else if(file.getFieldName().equals("copy")) {
+					copy = Integer.parseInt(file.getString());
 				}
 			}
 		} catch (FileUploadException e) {
@@ -147,7 +150,7 @@ public class BookAction extends MetaAction<BookManager> {
 		if (title == null || author == null || isbn == null) {
 			forward = mapping.findForward("add");
 		} else {
-			manager.addBook(title, author, press, isbn, catalog, description, cover);
+			manager.addBook(title, author, press, isbn, catalog, description, copy, cover);
 
 			forward = this.list(mapping, form, request, response);
 		}

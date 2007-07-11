@@ -37,38 +37,42 @@ public class BorrowManagerImpl extends BaseManagerImpl<BorrowDao, Borrow> implem
 	public Borrow borrowBook(String username, String title) {
 		User user = userDao.getByUsername(username);
 		Book book = bookDao.getByTitle(title);
-		Borrow borrow;
 		
-		if (book.getCopy() > 1 && user != null && book != null) {
-			borrow = new Borrow();
-			borrow.setUser(user);
-			borrow.setBook(book);
-			borrow.setDate(new Date());
-			
-			dao.save(borrow);
-			
-			book.borrow();
-			bookDao.save(book);
-		} else {
-			borrow = null;
-		}
-		
-		return borrow;
+		return this.borrow(user, book);
 	}
 
 	@Override
 	public Borrow returnBook(String username, String title) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = userDao.getByUsername(username);
+		Book book = bookDao.getByTitle(title);
+		return this.returnBook(user, book);
 	}
 
 	@Override
 	public Borrow borrowBook(int userId, int bookId) {
 		User user = userDao.findById(userId);
 		Book book = bookDao.findById(bookId);
+		
+		return this.borrow(user, book);
+	}
+
+	@Override
+	public Borrow returnBook(int userId, int bookId) {
+		User user = userDao.findById(userId);
+		Book book = bookDao.findById(bookId);
+		return this.returnBook(user, book);
+	}
+
+	private Borrow returnBook(User user, Book book) {
+		Borrow borrow = null;
+		
+		return borrow;
+	}
+	
+	private Borrow borrow(User user, Book book) {
 		Borrow borrow;
 		
-		if (user != null && book != null) {
+		if (book.getCopy() > 1 && user != null && book != null && user.borrow()) {
 			borrow = new Borrow();
 			borrow.setUser(user);
 			borrow.setBook(book);
@@ -86,9 +90,14 @@ public class BorrowManagerImpl extends BaseManagerImpl<BorrowDao, Borrow> implem
 	}
 
 	@Override
-	public Borrow returnBook(int userId, int bookId) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean returnBook(int borrowId) {
+		Borrow borrow = dao.findById(borrowId);
+		
+		if (borrow != null) {
+			dao.delete(borrow);
+			return true;
+		} else {
+			return false;
+		}
 	}
-
 }

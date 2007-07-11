@@ -70,10 +70,10 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 		} else {
 			int bookId = Integer.parseInt(book);
 			int userId = Integer.parseInt(user);
-			
-			if (manager.borrowBook(userId, bookId) != null) {
+			Borrow borrow = manager.borrowBook(userId, bookId);
+			if ( borrow != null) {
 				ActionResultMessage actionResultMessage = new ActionResultMessage();
-				actionResultMessage.setMessage("Successful borrow the book!");
+				actionResultMessage.setMessage("Successful borrow the book!, and borrow id is: " + borrow.getId());
 				actionResultMessage.setUrl("borrow.do?method=borrow");
 			
 				request.setAttribute("actionResultMessage", actionResultMessage);
@@ -100,6 +100,37 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 		List<Borrow> borrowlist = manager.findAll();
 		request.setAttribute("borrowlist", borrowlist);
 		forward = mapping.findForward("list");
+		return forward;
+	}
+	
+	public ActionForward returnBook(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		
+		ActionForward forward;
+		String borrowIdStr = request.getParameter("borrowid");
+		
+		if (borrowIdStr != null) {
+			int borrowId = Integer.parseInt(borrowIdStr);
+			if (manager.returnBook(borrowId)) {
+				ActionResultMessage actionResultMessage = new ActionResultMessage();
+				actionResultMessage.setMessage("Successful return the book!");
+				actionResultMessage.setUrl("borrow.do?method=return");
+			
+				request.setAttribute("actionResultMessage", actionResultMessage);
+			
+				forward = mapping.findForward("complete");
+			} else {
+				ActionResultMessage actionResultMessage = new ActionResultMessage();
+				actionResultMessage.setMessage("Can not return the book!");
+				actionResultMessage.setUrl("borrow.do?method=return");
+			
+				request.setAttribute("actionResultMessage", actionResultMessage);
+			
+				forward = mapping.findForward("error");
+			}
+		} else {
+			forward = mapping.findForward("return");
+		}
 		return forward;
 	}
 }

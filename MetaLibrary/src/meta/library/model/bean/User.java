@@ -14,6 +14,7 @@ public class User {
 	private String password;
 	private String email;
 	private int priviledge;
+	private int haveBook;
 	
 	public User() {
 		
@@ -65,9 +66,35 @@ public class User {
 		this.priviledge = priviledge;
 	}
 
+	public int getHaveBook() {
+		return haveBook;
+	}
+
+	public void setHaveBook(int haveBook) {
+		this.haveBook = haveBook;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.username;
+	}
+	
+	public boolean borrow() {
+		if (this.haveBook < this.priviledge) {
+			this.haveBook++;
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean returnBook() {
+		if (this.haveBook > 0) {
+			this.haveBook--;
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

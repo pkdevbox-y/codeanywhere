@@ -11,10 +11,6 @@
 	
 	<div class="toolbar">
 	<span class="link"><a href="index.jsp">Home</a></span>
-	<span class="link"><a href="addbook.jsp">Add a book</a></span>
-	<span class="link"><a href="book.do?method=list">List books</a></span>
-	<span class="link"><a href="borrow.do?method=borrow">Borrow a book</a></span>
-	<span class="link"><a href="borrow.do?method=list">Borrowed books</a></span>
 	<span class="link"><a href="about.jsp">About</a></span>
 	
 	<%
@@ -25,7 +21,16 @@
 	<span><a href="user.do?method=login">Login</a></span>
 	<% 
 		} else {
+			if (user.getPriviledge() > 3) {
 	%>
+	<span class="link"><a href="addbook.jsp">Add a book</a></span>
+	<span class="link"><a href="borrow.do?method=borrow">Borrow a book</a></span>
+	<span class="link"><a href="returnbook.jsp">Return a book</a></span>
+	<span class="link"><a href="borrow.do?method=list">Borrowed books</a></span>
+	<%
+			}
+	%>
+	<span class="link"><a href="book.do?method=list">List books</a></span>
 	<span>Hello, <%= user.getUsername() %></span>
 	<span><a href="user.do?method=logout">Logout</a></span>
 	<%

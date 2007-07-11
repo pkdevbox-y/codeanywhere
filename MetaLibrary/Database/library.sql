@@ -6,6 +6,7 @@ create table user (
 	password char(16),
 	email char(32),
 	priviledge int default 0,
+	have_book int default 0,
 	primary key(id)
 );
 
@@ -36,8 +37,8 @@ create table borrow (
 	primary key(id)
 );
 
-insert into user values(1, "admin", "1985", "bbiao@msn.com", 7);
-insert into user values(2, "zz", "integer", "zz1985@gmail.com", 3);
+insert into user values(1, "admin", "1985", "bbiao@msn.com", 7, 0);
+insert into user values(2, "zz", "integer", "zz1985@gmail.com", 3, 0);
 
 #insert into book values(1, "CSS Mastery", "Andy Budd", "7-115-15316-7", NULL, NULL, NULL);
 #insert into book values(2, "Tomcat Java Web", "Guo Jing", "7-5053-9392-8", NULL, NULL, NULL);
