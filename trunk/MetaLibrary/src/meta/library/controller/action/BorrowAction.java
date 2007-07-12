@@ -114,7 +114,7 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			if (manager.returnBook(borrowId)) {
 				ActionResultMessage actionResultMessage = new ActionResultMessage();
 				actionResultMessage.setMessage("Successful return the book!");
-				actionResultMessage.setUrl("borrow.do?method=return");
+				actionResultMessage.setUrl("borrow.do?method=returnBook");
 			
 				request.setAttribute("actionResultMessage", actionResultMessage);
 			
@@ -122,7 +122,7 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			} else {
 				ActionResultMessage actionResultMessage = new ActionResultMessage();
 				actionResultMessage.setMessage("Can not return the book!");
-				actionResultMessage.setUrl("borrow.do?method=return");
+				actionResultMessage.setUrl("borrow.do?method=returnBook");
 			
 				request.setAttribute("actionResultMessage", actionResultMessage);
 			

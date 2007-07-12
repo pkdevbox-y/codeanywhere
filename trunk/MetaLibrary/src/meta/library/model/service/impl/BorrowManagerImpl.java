@@ -72,7 +72,7 @@ public class BorrowManagerImpl extends BaseManagerImpl<BorrowDao, Borrow> implem
 	private Borrow borrow(User user, Book book) {
 		Borrow borrow;
 		
-		if (book.getCopy() > 1 && user != null && book != null && user.borrow()) {
+		if (book.getCopy() > 0 && user != null && book != null && user.borrow()) {
 			borrow = new Borrow();
 			borrow.setUser(user);
 			borrow.setBook(book);
@@ -94,6 +94,10 @@ public class BorrowManagerImpl extends BaseManagerImpl<BorrowDao, Borrow> implem
 		Borrow borrow = dao.findById(borrowId);
 		
 		if (borrow != null) {
+			Book book = borrow.getBook();
+			book.returnBook();
+			bookDao.save(book);
+			
 			dao.delete(borrow);
 			return true;
 		} else {

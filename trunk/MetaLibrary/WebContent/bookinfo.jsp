@@ -24,6 +24,7 @@
 				<span>ISBN: <jsp:getProperty name="book" property="isbn" /></span>
 				<span>Catalog: <jsp:getProperty name="book" property="catalog" /></span>
 				<span>Description: <jsp:getProperty name="book" property="description" /></span>
+				<span>Copy: <jsp:getProperty name="book" property="copy" /></span>
 			</div>
 			<div class="action">
 				<button bookid="<jsp:getProperty name="book" property="id" />" onclick="alert(this.bookid);">Modify</button>
