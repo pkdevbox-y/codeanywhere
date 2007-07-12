@@ -20,7 +20,7 @@
 			</div>			
 			
 			<div id="submitdiv">
-				<input id="submitbutton" type="submit" value="Borrow"></input>
+				<input id="submitbutton" type="submit" value="Return"></input>
 			</div>
 		</div>
 	</form>

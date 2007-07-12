@@ -22,6 +22,7 @@
 				<span>ISBN: ${book.isbn} </span>
 				<span>Catalog: ${book.catalog} </span>
 				<span>Description: ${book.description} </span>
+				<span>Copy: ${book.copy} </span>
 			</div>
 			<div class="action">
 				<button bookid="${book.id}" onclick="alert(this.bookid);">Modify</button>
