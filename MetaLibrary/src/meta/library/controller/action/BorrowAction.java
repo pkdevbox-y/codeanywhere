@@ -71,7 +71,7 @@ public class BorrowAction extends MetaAction<BorrowManager> {
 			int bookId = Integer.parseInt(book);
 			int userId = Integer.parseInt(user);
 			Borrow borrow = manager.borrowBook(userId, bookId);
-			if ( borrow != null) {
+			if (borrow != null) {
 				ActionResultMessage actionResultMessage = new ActionResultMessage();
 				actionResultMessage.setMessage("Successful borrow the book!, and borrow id is: " + borrow.getId());
 				actionResultMessage.setUrl("borrow.do?method=borrow");

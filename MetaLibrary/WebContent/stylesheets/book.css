@@ -19,7 +19,7 @@ div.list div.entry {
 }
 
 div.list div.entry span.item, div.list div.entry span.action {
-	min-width: 100px;
+	min-width: 80px;
 	margin-left: 4px;
 	text-align: center;
 }
